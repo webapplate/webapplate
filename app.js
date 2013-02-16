@@ -27,9 +27,9 @@ app.configure(function(){
 
     // error
     app.use(express.errorHandler({
-    dumpExceptions: true,
-    showStack: true
-  }));
+      dumpExceptions: true,
+      showStack: true
+    }));
 });
 
 // routes
