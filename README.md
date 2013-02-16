@@ -20,6 +20,9 @@ Controller sample::
         res.render('index.html', {foo:'bar'});
     });
 
+4. Manage Javascript library with [bower](http://sindresorhus.com/bower-components/)
+
+
 Install
 ---------------
 
@@ -29,17 +32,23 @@ Install
 
     $ git clone https://github.com/gasolin/noderea.git
 
-3. enter the folder, run
+3. To fetch dependent packages, enter the folder, run
 
     $ npm install
 
-to fetch dependent packages
 
-4. run
+4. To start the server, run
 
     $ node app.js
 
-to start the server. Now you can open browser and see the web page at localhost:3000 
+Now you can open browser and see the web page at localhost:3000 
+
+5. (optional) config component.json and run
+
+    $ bower install
+
+To fetch proper libraries which hosted at /public/lib folder.
+
 
 License
 -----------------
