@@ -1,7 +1,9 @@
-nodegears
+Noderea
 =========
 
-A familiar project bootstrap settings like Django/TurboGears/Play! framework
+Provide node.js a familiar project bootstrap settings like Django/TurboGears/Play! framework.
+
+Nodera denotes "node area", which means connect many dots(node components) to form an usable framework.
 
 
 Features:
