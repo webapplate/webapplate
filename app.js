@@ -38,4 +38,8 @@ app.get('/', function(req, res) {
     res.render('index.html', {foo:'bar'});
 });
 
-app.listen(process.env.VCAP_APP_PORT || 3000);
+// port
+var app_port = process.env.VCAP_APP_PORT || 3000;
+app.listen(app_port, function() {
+  console.log("Listening on " + app_port);
+});
