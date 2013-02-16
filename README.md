@@ -27,18 +27,21 @@ Install
 
 2. Clone the source
 
-$ git clone https://github.com/gasolin/noderea.git
+    $ git clone https://github.com/gasolin/noderea.git
 
 3. enter the folder, run
 
-$ npm install
+    $ npm install
 
 to fetch dependent packages
 
 4. run
 
-$ node app.js
+    $ node app.js
 
 to start the server. Now you can open browser and see the web page at localhost:3000 
 
-License: [The MIT License](http://opensource.org/licenses/MIT)
+License
+-----------------
+
+[The MIT License](http://opensource.org/licenses/MIT)
