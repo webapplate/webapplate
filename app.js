@@ -1,7 +1,7 @@
 var express = require('express');
 var cons = require('consolidate');
 var swig = require('swig');
-var app = express.createServer();
+var app = express();
 
 app.configure(function(){
     // template
