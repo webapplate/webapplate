@@ -17,6 +17,7 @@ app.configure(function(){
 
     // static
     app.use("/public", express.static(__dirname+'/public'));
+    app.use("/public/lib", express.static(__dirname+'/components'));
 
     // mime
     // express.static.mime.define({'text/plain': ['md']});

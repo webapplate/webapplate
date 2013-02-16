@@ -1,8 +1,13 @@
-<!DOCTYPE html>
-<html "en">
-<head>
-</head>
-<body>
-	<h1>Hello {{ foo }}</h1>
-</body>
-</html>
+{% extends 'main.html' %}
+
+{% block title %}My Page{% endblock %}
+
+{% block head %}
+  {% parent %}
+  <!--link rel="stylesheet" href="/public/css/custom.css"-->
+  <!--script src="/public/js/custom.js"></script-->
+{% endblock %}
+
+{% block content %}
+<h1>Hello {{ foo }}</h1>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}My Site{% endblock %}</title>
+	{% block head %}
+	<!--script src="/public/lib/jquery/jquery.min.js"></script-->
+    <link rel="stylesheet" href="/public/css/main.css">
+    {% endblock %}
+</head>
+<body>
+	{% block content %}
+	<h1>Hello World</h1>
+    {% endblock %}
+</body>
+</html>
