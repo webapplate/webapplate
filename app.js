@@ -39,7 +39,7 @@ app.get('/', function(req, res) {
 });
 
 // port
-var app_port = process.env.VCAP_APP_PORT || 3000;
+var app_port = process.env.VCAP_APP_PORT || 8000;
 app.listen(app_port, function() {
   console.log("Listening on " + app_port);
 });
