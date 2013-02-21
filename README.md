@@ -66,3 +66,5 @@ License
 -----------------
 
 [The MIT License](http://opensource.org/licenses/MIT)
+
+Credit: developers and designers from node.js, express, bower, Firefox OS, font-awesome, and people who involved in improving Web technologies.
