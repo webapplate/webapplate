@@ -1,7 +1,9 @@
 Noderea
 =========
 
-Provide node.js a familiar project bootstrap settings like Django/TurboGears/Play! framework.
+A Mobile First Web App fromework that can help you quickly start the mobile web app development. 
+
+Nodera provide [node.js](http://nodejs.org/) a familiar project bootstrap settings like Django/TurboGears/Play! framework.
 
 Noderea is prepared for static and dynamic mobile web app development. Can be deployed to PaaS like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
 
