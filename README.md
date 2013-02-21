@@ -1,5 +1,4 @@
-Noderea
-=========
+# Noderea v0.2
 
 A Mobile First Web App fromework that can help you quickly start the mobile web app development. 
 
@@ -10,8 +9,7 @@ Noderea is prepared for static and dynamic mobile web app development. Can be de
 Nodera denotes "node area", which means connect many dots(node components) to form an usable framework.
 
 
-Features
--------------
+## Features
 
 1. HTML5 Mobile Web App support in mind. Support mobile friendly templates and MIME types.
 
@@ -31,24 +29,23 @@ Controller sample (in app.js):
     });
 
 
-Install
----------------
+## Install
 
 1. install [node.js](http://www.nodejs.org), and [bower](http://sindresorhus.com/bower-components/) (optional for library management)
 
-    $ npm install -g bower
+        $ npm install -g bower
 
 2. Clone the source
 
-    $ git clone https://github.com/gasolin/noderea.git
+        $ git clone https://github.com/gasolin/noderea.git
 
 3. To fetch dependent packages, enter the folder, run
 
-    $ npm install
+        $ npm install
 
 4. To start the server, run
 
-    $ node app.js
+        $ node app.js
 
 Now you can open browser and see the web page at localhost:3000 
 
@@ -62,8 +59,7 @@ To manage libraries, config component.json and run
 bower will fetch proper libraries to components/ folder, which will be hosted as /public/lib folder.
 
 
-License
------------------
+## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
