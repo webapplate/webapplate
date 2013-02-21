@@ -1,6 +1,6 @@
 ![project logo](https://raw.github.com/gasolin/noderea/master/public/img/icon128.png)
 
-# Noderea v0.2
+# Noderea v0.3
 
 A Mobile First Web App fromework that can help you quickly start the mobile web app development. 
 
