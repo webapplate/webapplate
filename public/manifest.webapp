@@ -1,0 +1,15 @@
+{
+    "version": "0.3",
+    "name": "My App",
+    "launch_path": "/public/index.html",
+    "description": "My App Description",
+    "icons":{
+        "128": "/public/img/icon128.png"
+    },
+    "developer": {
+        "name": "Your Name",
+        "url": "https://github.com/gasolin/noderea"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en"
+}
