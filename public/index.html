@@ -19,22 +19,23 @@
 
 <script type="text/javascript">
 //check if app is installed
-var manifestUrl=location.href.substring(0, location.href.lastIndexOf("/"))+'manifest.webapp';
-var request = navigator.mozApps.getSelf();
-request.onsuccess = function() {
-	if (request.result) {
+var manifestUrl = location.href.substring(0, location.href.lastIndexOf('/'))+'/manifest.webapp';
+// alert(manifestUrl);
+var app_stat = navigator.mozApps.getSelf();
+app_stat.onsuccess = function() {
+  if (app_stat.result) {
         //instsalled
-	} else {
+  } else {
         // not installed
-        var request = navigator.mozApps.install(manifestUrl);
-        request.onsuccess = function() {
+        var app_install = navigator.mozApps.install(manifestUrl);
+        app_install.onsuccess = function() {
         };
-        request.onerror = function() {
+        app_install.onerror = function() {
         };
-	}
+  }
 };
-request.onerror = function() {
-	alert('Error checking installation status: '+ this.error.message);
+app_stat.onerror = function() {
+  alert('Error checking installation status: '+ this.error.message);
 };
 </script>
 </body>
