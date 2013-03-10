@@ -15,6 +15,8 @@ app.configure(function(){
     app.set('view options', { layout: false });
     app.set('view cache', false);
 
+    // gzip
+    app.use(express.compress());
     // static
     app.use("/public", express.static(__dirname+'/public'));
     app.use("/public/lib", express.static(__dirname+'/components'));
