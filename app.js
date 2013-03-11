@@ -24,6 +24,7 @@ app.configure(function(){
     // mime
     express.static.mime.define({'application/x-web-app-manifest+json': ['webapp']});
     express.static.mime.define({'text/cache-manifest': ['appcache']});
+    express.static.mime.define({'image/x-icon': ['ico']});
     // express.static.mime.define({'audio/ogg': ['ogg']});
     // express.static.mime.define({'audio/mp4': ['m4a']});
 
