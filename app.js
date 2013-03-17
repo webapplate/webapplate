@@ -19,7 +19,8 @@ app.configure(function(){
     app.use(express.compress());
     // static
     app.use("/public", express.static(__dirname+'/public'));
-    app.use("/public/lib", express.static(__dirname+'/components'));
+    // link to bower libraries
+    // app.use("/public/lib", express.static(__dirname+'/components'));
 
     // mime
     express.static.mime.define({'application/x-web-app-manifest+json': ['webapp']});
