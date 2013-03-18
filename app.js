@@ -17,9 +17,9 @@ app.configure(function(){
 
     // gzip
     app.use(express.compress());
-    // static
-    app.use("/public", express.static(__dirname+'/public'));
-    // link to bower libraries
+    // static files, cached and expire in 30 days
+    app.use("/public", express.static(__dirname+'/public', {maxAge:2592000000}));
+    // link to bower components
     // app.use("/public/lib", express.static(__dirname+'/components'));
 
     // mime
