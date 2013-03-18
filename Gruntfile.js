@@ -17,11 +17,12 @@ module.exports = function(grunt) {
         options: {
           // basePath: "public",
           // cache: ["js/app.js", "css/style.css"],
-          network: ["http://*", "https://*"],
+          cachePrefix: "/",
+          // network: ["http://*", "https://*"],
           // fallback: ["/ /offline.html"],
           // exclude: ["js/jquery.min.js"],
           preferOnline: true,
-          verbose: true,
+          verbose: false,
           timestamp: true
         },
         src: [
@@ -31,7 +32,7 @@ module.exports = function(grunt) {
             "public/img/*.png",
             "public/img/*.jpg"
         ],
-        dest: "manifest.appcache"
+        dest: "public/manifest.appcache"
       }
     }
   });
