@@ -15,17 +15,18 @@ Nodera denotes "node area", which means connect many dots(node components) to fo
 
 1. *HTML5 Mobile Web App support in mind*: Support mobile friendly templates, MIME types, favicons and webapp menifest (Firefox OS).
 
-2. *Default Static file hosting*: host static files in /public folder.
+2 Dynamic Routes and underlying functions based on [express](http://www.expressjs.com).
 
-3. *Support appcache/manifest generator* via [grunt.js](https://github.com/gunta/grunt-manifest)
+3. *Default Static file hosting*: host static files in /public folder.
 
-### options
+4. *Support appcache/manifest generator* via [grunt.js](https://github.com/gunta/grunt-manifest)
 
-* Dynamic Routes and underlying functions based on [express](http://www.expressjs.com).
+### options (prefered defaults)
 
 * Default template support: use the Django-like template [swig](http://paularmstrong.github.com/swig) syntax to render templates from /views folder.
 
 * Manage Javascript libraries with [bower](http://sindresorhus.com/bower-components/) .
+
 
 ## Get Nodera
 
