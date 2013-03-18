@@ -1,6 +1,6 @@
 ![project logo](https://raw.github.com/gasolin/noderea/master/public/img/icon128.png)
 
-# Noderea v0.3
+# Noderea v0.4
 
 A Mobile First Web App fromework that can help you quickly start the mobile web app development. 
 
@@ -13,23 +13,27 @@ Nodera denotes "node area", which means connect many dots(node components) to fo
 
 ## Features
 
-1. HTML5 Mobile Web App support in mind. Support mobile friendly templates and MIME types.
+1. *HTML5 Mobile Web App support in mind*: Support mobile friendly templates, MIME types, favicons and webapp menifest (Firefox OS).
 
-2. Default Static file hosting: host static files in /public folder.
+2. *Default Static file hosting*: host static files in /public folder.
 
-3. Dynamic Routes and underlying functions based on [express](http://www.expressjs.com).
+3. *Support appcache/manifest generator* via [grunt.js](https://github.com/gunta/grunt-manifest)
 
-4. Default template support: use the Django-like template [swig](http://paularmstrong.github.com/swig) syntax to render templates from /views folder.
+### options
 
-5. Manage Javascript libraries with [bower](http://sindresorhus.com/bower-components/) .
+* Dynamic Routes and underlying functions based on [express](http://www.expressjs.com).
 
+* Default template support: use the Django-like template [swig](http://paularmstrong.github.com/swig) syntax to render templates from /views folder.
 
-Controller sample (in app.js):
+* Manage Javascript libraries with [bower](http://sindresorhus.com/bower-components/) .
 
-    app.get('/', function(req, res) {
-        res.render('index.html', {foo:'bar'});
-    });
+## Get Nodera
 
+Go to https://github.com/gasolin/noderea, press 'ZIP' button to download nodera template.
+
+or you can use git command to get nodera:
+
+    git clone https://github.com/gasolin/noderea.git
 
 ## Install
 
