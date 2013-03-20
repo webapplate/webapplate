@@ -4,12 +4,15 @@
 
 {% block head %}
   {% parent %}
+  <!-- uncomment to use dynamic page -->
+  <meta http-equiv="Refresh" content="2; url=/public/index.html">
   <!--link rel="stylesheet" href="/public/css/custom.css"-->
   <!--script src="/public/js/custom.js"></script-->
 {% endblock %}
 
 {% block content %}
 <h1>Hello {{ foo }}</h1>
+redirect to static page
 
 <!--script type="text/javascript">
 //check if app is installed
