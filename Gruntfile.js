@@ -15,9 +15,9 @@ module.exports = function(grunt) {
     manifest: {
       generate: {
         options: {
-          // basePath: "public",
+          basePath: "./public/",
           // cache: ["js/app.js", "css/style.css"],
-          cachePrefix: "/",
+          // cachePrefix: "/",
           // network: ["http://*", "https://*"],
           // fallback: ["/ /offline.html"],
           // exclude: ["js/jquery.min.js"],
@@ -26,11 +26,13 @@ module.exports = function(grunt) {
           timestamp: true
         },
         src: [
-            "public/*.html",
-            "public/js/*.js",
-            "public/css/*.css",
-            "public/img/*.png",
-            "public/img/*.jpg"
+            "*.ico",
+            "*.png",
+            "*.html",
+            "js/*.js",
+            "css/*.css",
+            "img/*.png",
+            "img/*.jpg"
         ],
         dest: "public/manifest.appcache"
       }
