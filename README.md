@@ -45,23 +45,19 @@ or you can use git command to get nodera:
 
 ## Install
 
-1. install [node.js](http://www.nodejs.org), and [bower](http://sindresorhus.com/bower-components/) (optional for library management)
+1. install [node.js](http://www.nodejs.org), [grunt.js](http://gruntjs.com/) and [bower] (http://twitter.github.com/bower/)
 
-        $ npm install -g grunt grunt-init bower
+        $ npm install -g grunt bower
 
-2. Clone the source
-
-        $ git clone https://github.com/gasolin/noderea.git
-
-3. To fetch dependent packages, enter the folder, run
+2. To fetch dependent packages, enter the folder, run
 
         $ npm install
 
-4. To start the server, run
+3. To start the server, run
 
         $ node app.js
 
-Now you can open browser and see the web page at localhost:3000 
+Now you can open browser and see the web page at localhost:8000 
 
 
 (optional) 
@@ -72,6 +68,11 @@ To manage libraries, config component.json and run
 
 bower will fetch proper libraries to components/ folder, which will be hosted as /public/lib folder.
 
+To generate appcache, run
+
+    $ grunt
+
+the manifest.appcache will be generated at public/manifest.appcache
 
 ## License
 
