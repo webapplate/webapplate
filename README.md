@@ -60,7 +60,16 @@ or you can use git command to get nodera:
 Now you can open browser and see the web page at localhost:8000 
 
 
-(optional) 
+## Generate offline cache manifest (optional)
+
+To generate appcache, run
+
+    $ grunt
+
+the manifest.appcache will be generated at public/manifest.appcache
+
+
+## Manage Libraries (optional)
 
 To manage libraries, config component.json and run
 
@@ -68,11 +77,6 @@ To manage libraries, config component.json and run
 
 bower will fetch proper libraries to components/ folder, which will be hosted as /public/lib folder.
 
-To generate appcache, run
-
-    $ grunt
-
-the manifest.appcache will be generated at public/manifest.appcache
 
 ## License
 
