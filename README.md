@@ -2,20 +2,27 @@
 
 # Noderea v0.4
 
-A Mobile First Web App fromework that can help you quickly start the mobile web app development. 
+A Mobile First WebApp fromework that help you quickly start the mobile web app development. 
 
-Nodera provide [node.js](http://nodejs.org/) a familiar project bootstrap settings like Django/TurboGears/Play! framework.
+Nodera provide a familiar project bootstrap settings like Django/TurboGears/Play! framework but based on [node.js](http://nodejs.org/).
 
-Noderea is prepared for static and dynamic mobile web app development. Can be deployed to PaaS like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
+Noderea is prepared for static and dynamic mobile web app development. Support grade A speed in yslow measurement with elegant server/client configuration.
+
+Can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
+
 
 Nodera denotes "node area", which means connect many dots(node components) to form an usable framework.
 
+## Demos
+
+* [UI Demos] (https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before its officially release.
+* [FxOS BMI] (http://gasolin.github.com/fxosbmi/public/index.html) , the BMI calculator demo, with offline support
 
 ## Features
 
 1. *HTML5 Mobile Web App support in mind*: Support mobile friendly templates, MIME types, favicons and webapp menifest (Firefox OS).
 
-2 Dynamic Routes and underlying functions based on [express](http://www.expressjs.com).
+2. Provide Dynamic Routes and underlying functions based on [express](http://www.expressjs.com).
 
 3. *Default Static file hosting*: host static files in /public folder.
 
@@ -70,4 +77,4 @@ bower will fetch proper libraries to components/ folder, which will be hosted as
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Credit: developers and designers from node.js, express, bower, Firefox OS, font-awesome, and people who involved in improving Web technologies.
+Credit: developers and designers from node.js, express, grunt.js, Firefox OS, font-awesome, bower, and people who involved in improving Web technologies.
