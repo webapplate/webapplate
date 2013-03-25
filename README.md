@@ -47,7 +47,7 @@ or you can use git command to get nodera:
 
 1. install [node.js](http://www.nodejs.org), and [bower](http://sindresorhus.com/bower-components/) (optional for library management)
 
-        $ npm install -g bower
+        $ npm install -g grunt grunt-init bower
 
 2. Clone the source
 
