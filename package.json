@@ -7,7 +7,6 @@
     "swig": ">=0.13.5"
   },
   "devDependencies": {
-    "grunt": ">=0.4.1",
     "grunt-manifest": ">=0.4.0"
   }
 }
