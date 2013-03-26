@@ -6,7 +6,7 @@ A Mobile First WebApp fromework that help you quickly start the mobile web app d
 
 Webapplate provide a familiar project bootstrap settings like Django/TurboGears/Play! framework but based on [node.js](http://nodejs.org/).
 
-Webapplate is prepared for static and dynamic mobile web app development. Support grade A speed in yslow measurement with elegant server/client configuration.
+Webapplate is prepared for static and dynamic mobile web app development. Support grade A speed in [yslow](http://developer.yahoo.com/yslow/) measurement with elegant server/client configuration.
 
 Can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
 
@@ -15,8 +15,8 @@ Webapplate denotes "webapp template". Provide templates that suit for both offli
 
 ## Demos
 
-* [UI Demos] (https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before its officially release.
-* [FxOS BMI] (http://gasolin.github.com/fxosbmi/public/index.html) , the BMI calculator demo, with offline support
+* [UI Demos](https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before its officially release.
+* [FxOS BMI](http://gasolin.github.com/fxosbmi/public/index.html) , the BMI calculator demo, with offline support
 
 ## Features
 
@@ -45,7 +45,7 @@ or you can use git command to get Webapplate:
 
 ## Install
 
-1. install [node.js](http://www.nodejs.org), [grunt.js](http://gruntjs.com/) and [bower] (http://twitter.github.com/bower/)
+1. install [node.js](http://www.nodejs.org), [grunt.js](http://gruntjs.com/) and [bower](http://twitter.github.com/bower/)
 
         $ npm install -g grunt bower
 
