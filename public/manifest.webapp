@@ -1,5 +1,5 @@
 {
-    "version": "1.0",
+    "version": "1.0.0",
     "name": "My App",
     "launch_path": "/public/index.html",
     "description": "My App Description",
@@ -8,7 +8,7 @@
     },
     "developer": {
         "name": "Your Name",
-        "url": "https://github.com/gasolin/noderea"
+        "url": "https://github.com/gasolin/webapplate"
     },
     "installs_allowed_from": ["*"],
     "default_locale": "en"

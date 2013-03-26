@@ -1,17 +1,17 @@
 ![project logo](https://raw.github.com/gasolin/noderea/master/public/img/icon128.png)
 
-# Noderea v0.4
+# Webapplate v0.4
 
 A Mobile First WebApp fromework that help you quickly start the mobile web app development. 
 
-Nodera provide a familiar project bootstrap settings like Django/TurboGears/Play! framework but based on [node.js](http://nodejs.org/).
+Webapplate provide a familiar project bootstrap settings like Django/TurboGears/Play! framework but based on [node.js](http://nodejs.org/).
 
-Noderea is prepared for static and dynamic mobile web app development. Support grade A speed in yslow measurement with elegant server/client configuration.
+Webapplate is prepared for static and dynamic mobile web app development. Support grade A speed in yslow measurement with elegant server/client configuration.
 
 Can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
 
 
-Nodera denotes "node area", which means connect many dots(node components) to form an usable framework.
+Webapplate denotes "webapp template". Provide templates that suit for both offline and server hosting webapp development.
 
 ## Demos
 
@@ -35,13 +35,13 @@ Nodera denotes "node area", which means connect many dots(node components) to fo
 * Manage Javascript libraries with [bower](http://sindresorhus.com/bower-components/) .
 
 
-## Get Nodera
+## Get Webapplate
 
-Go to https://github.com/gasolin/noderea, press 'ZIP' button to download nodera template.
+Go to https://github.com/gasolin/Webapplate, press 'ZIP' button to download nodera template.
 
-or you can use git command to get nodera:
+or you can use git command to get Webapplate:
 
-    git clone https://github.com/gasolin/noderea.git
+    git clone https://github.com/gasolin/Webapplate.git
 
 ## Install
 
