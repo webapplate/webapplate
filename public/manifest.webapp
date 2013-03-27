@@ -1,15 +1,15 @@
 {
     "version": "1.0.0",
     "name": "My App",
-    "launch_path": "/public/index.html",
     "description": "My App Description",
-    "icons":{
-        "128": "/public/img/icon128.png"
-    },
     "developer": {
         "name": "Your Name",
         "url": "https://github.com/gasolin/webapplate"
     },
-    "installs_allowed_from": ["*"],
+    "launch_path": "/public/index.html",
     "default_locale": "en"
+    "icons":{
+        "128": "/public/img/icon128.png"
+    },
+    "installs_allowed_from": ["*"],
 }
