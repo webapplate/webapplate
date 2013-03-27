@@ -22,17 +22,13 @@ Webapplate denotes "webapp template". Provide templates that suit for both offli
 
 1. *HTML5 Mobile Web App support in mind*: Support mobile friendly templates, MIME types, favicons and webapp menifest (Firefox OS).
 
-2. Provide Dynamic Routes and underlying functions based on [express](http://www.expressjs.com).
+2. Marketplace-ready: provide every elements that needs to apply your webapp to [Marketplace](http://marketplace.firefox.com/)
 
-3. *Default Static file hosting*: host static files in /public folder.
+3. Server-side support: Provide Dynamic Routes and underlying functions based on [express](http://www.expressjs.com).
+with Dynamic page and host static files in /public folder.
 
 4. *Support appcache/manifest generator* via [grunt.js](https://github.com/gunta/grunt-manifest)
 
-### options (prefered defaults)
-
-* Default template support: use the Django-like template [swig](http://paularmstrong.github.com/swig) syntax to render templates from /views folder.
-
-* Manage Javascript libraries with [bower](http://sindresorhus.com/bower-components/) .
 
 
 ## Get Webapplate
@@ -71,11 +67,21 @@ the manifest.appcache will be generated at public/manifest.appcache
 
 ## Manage Libraries (optional)
 
+Manage Javascript libraries with [bower](http://sindresorhus.com/bower-components/) .
+
 To manage libraries, config component.json and run
 
     $ bower install
 
 bower will fetch proper libraries to components/ folder, which will be hosted as /public/lib folder.
+
+## Development without Server (optional)
+
+provide default page that redirect to public/index.html
+
+## Development with Dynamic pages (optional)
+
+* Default template support: use the Django-like template [swig](http://paularmstrong.github.com/swig) syntax to render templates from /views folder.
 
 
 ## License
