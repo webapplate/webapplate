@@ -26,13 +26,13 @@ module.exports = function(grunt) {
           timestamp: true
         },
         src: [
-            "*.ico",
-            "*.png",
             "*.html",
             "js/*.js",
-            "css/*.css",
-            "img/*.png",
-            "img/*.jpg"
+            "style/*.css",
+            "style/images/*.png",
+            "style/images/*.jpg",
+            "style/icons/*.ico",
+            "style/icons/*.png"
         ],
         dest: "public/manifest.appcache"
       }
