@@ -7,9 +7,9 @@
         "url": "https://github.com/gasolin/webapplate"
     },
     "launch_path": "/public/index.html",
-    "default_locale": "en"
+    "default_locale": "en",
     "icons":{
         "128": "/public/style/icons/icon128.png"
     },
-    "installs_allowed_from": ["*"],
+    "installs_allowed_from": ["*"]
 }
