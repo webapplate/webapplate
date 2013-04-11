@@ -1,9 +1,10 @@
 //check if app is installed
-var manifestUrl = location.href.substring(0, location.href.lastIndexOf('/'))+'/manifest.webapp';
+var manifestUrl = location.href.substring(0, location.href.lastIndexOf('/')) +
+    '/manifest.webapp';
 // alert(manifestUrl);
-if( navigator.mozApps != undefined ){
-var app_stat = navigator.mozApps.getSelf();
-app_stat.onsuccess = function() {
+if (navigator.mozApps != undefined) {
+  var app_stat = navigator.mozApps.getSelf();
+  app_stat.onsuccess = function() {
   if (app_stat.result) {
         //instsalled
   } else {
@@ -16,6 +17,6 @@ app_stat.onsuccess = function() {
   }
 };
 app_stat.onerror = function() {
-  alert('Error checking installation status: '+ this.error.message);
+  alert('Error checking installation status: ' + this.error.message);
 };
 }
