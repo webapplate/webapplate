@@ -1,6 +1,6 @@
 ![project logo](https://raw.github.com/gasolin/webapplate/master/public/style/icons/icon128.png)
 
-# Webapplate v0.4
+# Webapplate v0.5 [![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate)
 
 A Mobile First WebApp fromework that help you quickly start the mobile web app development. 
 
