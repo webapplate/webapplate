@@ -1,4 +1,4 @@
-![project logo](https://raw.github.com/gasolin/webapplate/master/public/img/icon128.png)
+![project logo](https://raw.github.com/gasolin/webapplate/master/public/style/icons/icon128.png)
 
 # Webapplate v0.4
 
