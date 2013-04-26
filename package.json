@@ -7,6 +7,8 @@
     "swig": ">=0.13.5"
   },
   "devDependencies": {
-    "grunt-manifest": ">=0.4.0"
+    "grunt-manifest": ">=0.4.0",
+    "mocha": "*",
+    "chai": "*"
   }
 }
