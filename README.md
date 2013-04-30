@@ -22,7 +22,7 @@ Webapplate denotes "webapp template". Provide templates that suit for both offli
 
 2. Firefox Marketplace ready: provide every elements that needs to apply your webapp to [Marketplace](http://marketplace.firefox.com/)
 
-3. Server-side support: Provide Support grade A speed in [yslow](http://developer.yahoo.com/yslow/) measurement with elegant server/client configuration.
+3. Server-side support: Provide grade A speed web server/client configuration in [yslow](http://developer.yahoo.com/yslow/) measurement.
 
 4. *Support offline appcache generator* via [grunt.js](https://github.com/gunta/grunt-manifest)
 
