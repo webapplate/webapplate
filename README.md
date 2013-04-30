@@ -20,7 +20,7 @@ Webapplate denotes "webapp template". Provide templates that suit for both offli
 
 1. *HTML5 Mobile Web App support in mind*: Support mobile friendly templates, MIME types, favicons and webapp menifest (Firefox OS).
 
-2. Marketplace-ready: provide every elements that needs to apply your webapp to [Marketplace](http://marketplace.firefox.com/)
+2. Firefox Marketplace ready: provide every elements that needs to apply your webapp to [Marketplace](http://marketplace.firefox.com/)
 
 3. Server-side support: Provide Support grade A speed in [yslow](http://developer.yahoo.com/yslow/) measurement with elegant server/client configuration.
 
