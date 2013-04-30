@@ -4,11 +4,9 @@
 
 A Mobile First WebApp fromework that help you quickly start the mobile web app development. 
 
-Webapplate provide a familiar project bootstrap settings like Django/TurboGears/Play! framework but based on [node.js](http://nodejs.org/).
+Webapplate provide a familiar project bootstrap settings.
 
-Webapplate is prepared for static and dynamic mobile web app development. Support grade A speed in [yslow](http://developer.yahoo.com/yslow/) measurement with elegant server/client configuration.
-
-Can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
+Website developed by Webapplate can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
 
 
 Webapplate denotes "webapp template". Provide templates that suit for both offline and server hosting webapp development.
