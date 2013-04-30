@@ -4,7 +4,7 @@
 
 A Mobile First WebApp fromework that help you quickly start the mobile web app development. 
 
-Webapplate provide a familiar project bootstrap settings.
+Webapplate provide a ready-to-deploy project bootstrap settings.
 
 Website developed by Webapplate can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
 
