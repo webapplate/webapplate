@@ -41,11 +41,9 @@ or you can use git command to get Webapplate:
 
 ## Install
 
-1. install [node.js](http://www.nodejs.org), [grunt.js](http://gruntjs.com/)
+1. install [node.js](http://www.nodejs.org)
 
-        $ npm install -g grunt-cli
-
-2. To fetch dependent packages, enter the folder, run
+2. To fetch dependent packages, enter the webapplate folder and run
 
         $ npm install
 
