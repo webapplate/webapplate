@@ -2,11 +2,13 @@
 
 # Webapplate v0.5 [![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate)
 
-A Mobile First WebApp fromework that help you quickly start the mobile web app development. 
+A Mobile First WebApp template that help you quickly start the mobile web app development. 
 
-Webapplate provide a ready-to-deploy project bootstrap settings.
+Webapplate provide a ready-to-deploy project bootstrap settings for dynamic or static website (hosted webapp).
+It provide deployable webapp manifest template and auto appcache generation script that make offline webapp support easier.
 
-Website developed by Webapplate can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
+Website inherit from Webapplate can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com),
+or static hosting like Github in minutes.
 
 
 Webapplate denotes "webapp template". Provide templates that suit for both offline and server hosting webapp development.
@@ -14,7 +16,7 @@ Webapplate denotes "webapp template". Provide templates that suit for both offli
 ## Demos
 
 * [UI Demos](https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before its officially release.
-* [FxOS BMI](http://gasolin.github.com/fxosbmi/public/index.html) , the BMI calculator demo, with offline support
+* [FxOS BMI](http://gasolin.github.io/fxosbmi/public/index.html) , the BMI calculator demo, with offline support. [Source](https://github.com/gasolin/fxosbmi) is available.
 
 ## Features
 
