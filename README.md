@@ -30,6 +30,7 @@ Webapplate denotes "webapp template". Provide templates that suit for both offli
 
 6. Dynamic page support based on [express](http://www.expressjs.com)
 
+Read [doc](https://github.com/gasolin/webapplate/wiki/Structure) for overall webapplate structure.
 
 ## Get Webapplate
 
@@ -53,8 +54,9 @@ or you can use git command to get Webapplate:
 
 Now you can open browser and see the web page at localhost:8000 
 
+## optional features
 
-## (optional) Generate offline cache manifest
+### Generate offline cache manifest
 
 To generate appcache, run
 
@@ -62,11 +64,11 @@ To generate appcache, run
 
 the manifest.appcache will be generated at public/manifest.appcache
 
-## (optional) Development without Server
+### Development without Server
 
 provide default /index.html page that redirect to public/index.html
 
-## (optional) Ablkte Development with Dynamic pages
+### Development with Dynamic pages
 
 * Default template support: use the Django-like template [swig](http://paularmstrong.github.com/swig) syntax to render templates from /views folder.
 
