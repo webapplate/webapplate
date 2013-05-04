@@ -65,16 +65,6 @@ To generate appcache, run
 the manifest.appcache will be generated at public/manifest.appcache
 
 
-## Manage Libraries (optional)
-
-Manage Javascript libraries with [bower](http://sindresorhus.com/bower-components/) .
-
-To manage libraries, config component.json and run
-
-    $ bower install
-
-bower will fetch proper libraries to components/ folder, which will be hosted as /public/lib folder.
-
 ## Development without Server (optional)
 
 provide default page that redirect to public/index.html
