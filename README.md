@@ -4,11 +4,9 @@
 
 A Mobile First WebApp fromework that help you quickly start the mobile web app development. 
 
-Webapplate provide a familiar project bootstrap settings like Django/TurboGears/Play! framework but based on [node.js](http://nodejs.org/).
+Webapplate provide a ready-to-deploy project bootstrap settings.
 
-Webapplate is prepared for static and dynamic mobile web app development. Support grade A speed in [yslow](http://developer.yahoo.com/yslow/) measurement with elegant server/client configuration.
-
-Can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
+Website developed by Webapplate can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com) in minutes.
 
 
 Webapplate denotes "webapp template". Provide templates that suit for both offline and server hosting webapp development.
@@ -20,20 +18,22 @@ Webapplate denotes "webapp template". Provide templates that suit for both offli
 
 ## Features
 
-1. *HTML5 Mobile Web App support in mind*: Support mobile friendly templates, MIME types, favicons and webapp menifest (Firefox OS).
+1. *HTML5 Mobile Web App support in mind*: Support mobile friendly templates, MIME types, favicons and webapp manifest (Firefox OS).
 
-2. Marketplace-ready: provide every elements that needs to apply your webapp to [Marketplace](http://marketplace.firefox.com/)
+2. Firefox Marketplace ready: provide every elements that needs to apply your webapp to [Marketplace](http://marketplace.firefox.com/)
 
-3. Server-side support: Provide Dynamic Routes and underlying functions based on [express](http://www.expressjs.com).
-with Dynamic page and host static files in /public folder.
+3. Server-side support: Provide grade A speed web server/client configuration in [yslow](http://developer.yahoo.com/yslow/) measurement.
 
-4. *Support appcache/manifest generator* via [grunt.js](https://github.com/gunta/grunt-manifest)
+4. *Support offline appcache generator* via [grunt.js](https://github.com/gunta/grunt-manifest)
 
+5. Test with browser via [mocha](http://visionmedia.github.io/mocha/) JS test framework
+
+6. Dynamic page support based on [express](http://www.expressjs.com)
 
 
 ## Get Webapplate
 
-Go to https://github.com/gasolin/Webapplate, press 'ZIP' button to download nodera template.
+Go to https://github.com/gasolin/Webapplate website, click 'ZIP' button to download nodera template.
 
 or you can use git command to get Webapplate:
 
@@ -41,9 +41,9 @@ or you can use git command to get Webapplate:
 
 ## Install
 
-1. install [node.js](http://www.nodejs.org), [grunt.js](http://gruntjs.com/) and [bower](http://twitter.github.com/bower/)
+1. install [node.js](http://www.nodejs.org), [grunt.js](http://gruntjs.com/)
 
-        $ npm install -g grunt bower
+        $ npm install -g grunt-cli
 
 2. To fetch dependent packages, enter the folder, run
 
