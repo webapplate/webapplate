@@ -9,6 +9,7 @@
   "devDependencies": {
     "grunt-manifest": ">=0.4.0",
     "mocha": "*",
-    "chai": "*"
+    "chai": "*",
+    "sinon": "*"
   }
 }
