@@ -11,8 +11,6 @@ Website inherit from Webapplate can be deployed to PaaS Provider like [appfog](h
 or static hosting like Github in minutes.
 
 
-Webapplate denotes "webapp template". Provide templates that suit for both offline and server hosting webapp development.
-
 ## Demos
 
 * [UI Demos](https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before its officially release.
