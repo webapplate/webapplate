@@ -12,11 +12,8 @@ module.exports = function(grunt) {
         dest: 'build/<%= pkg.name %>.min.js'
       }
     },
-    mocha: {
-      all: {
-        index: ['public/test/index.html'],
-        run: true
-      }
+    mocha_phantomjs: {
+      all: ['public/test/index.html']
     },
     manifest: {
       generate: {
@@ -47,12 +44,12 @@ module.exports = function(grunt) {
 
   // Load the plugin that provides the "uglify" task.
   // grunt.loadNpmTasks('grunt-contrib-uglify');
-  // https://github.com/kmiyashiro/grunt-mocha
-  grunt.loadNpmTasks('grunt-mocha');
+  // https://github.com/jdcataldo/grunt-mocha-phantomjs
+  grunt.loadNpmTasks('grunt-mocha-phantomjs');
   // https://npmjs.org/package/grunt-manifest
   grunt.loadNpmTasks('grunt-manifest');
 
   // Default task(s).
-  grunt.registerTask('default', ['mocha', 'manifest']);
+  grunt.registerTask('default', ['mocha_phantomjs', 'manifest']);
 
 };

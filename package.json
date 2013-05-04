@@ -9,7 +9,7 @@
   "devDependencies": {
     "grunt-cli": "*",
     "grunt-manifest": "*",
-    "grunt-mocha":"*",
+    "grunt-mocha-phantomjs":"*",
     "mocha": "*",
     "chai": "*",
     "sinon": "*"
