@@ -54,7 +54,7 @@ or you can use git command to get Webapplate:
 Now you can open browser and see the web page at localhost:8000 
 
 
-## Generate offline cache manifest (optional)
+## (optional) Generate offline cache manifest
 
 To generate appcache, run
 
@@ -62,12 +62,11 @@ To generate appcache, run
 
 the manifest.appcache will be generated at public/manifest.appcache
 
-
-## Development without Server (optional)
+## (optional) Development without Server
 
 provide default /index.html page that redirect to public/index.html
 
-## Development with Dynamic pages (optional)
+## (optional) Ablkte Development with Dynamic pages
 
 * Default template support: use the Django-like template [swig](http://paularmstrong.github.com/swig) syntax to render templates from /views folder.
 
