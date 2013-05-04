@@ -30,7 +30,7 @@ or static hosting like Github in minutes.
 
 6. Dynamic page support based on [express](http://www.expressjs.com)
 
-Read [Documentation](https://github.com/gasolin/webapplate/wiki/Structure) for overall webapplate structure and [Howto deploy for production](https://github.com/gasolin/webapplate/wiki/Deployment).
+Read Documentation for [Overall webapplate structure]((https://github.com/gasolin/webapplate/wiki/Structure)) and [Howto deploy for production](https://github.com/gasolin/webapplate/wiki/Deployment).
 
 ## Get Webapplate
 
