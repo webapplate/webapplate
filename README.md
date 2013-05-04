@@ -67,7 +67,7 @@ the manifest.appcache will be generated at public/manifest.appcache
 
 ## Development without Server (optional)
 
-provide default page that redirect to public/index.html
+provide default /index.html page that redirect to public/index.html
 
 ## Development with Dynamic pages (optional)
 
