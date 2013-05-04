@@ -8,7 +8,8 @@
   },
   "devDependencies": {
     "grunt-cli": "*",
-    "grunt-manifest": ">=0.4.0",
+    "grunt-manifest": "*",
+    "grunt-mocha":"*",
     "mocha": "*",
     "chai": "*",
     "sinon": "*"

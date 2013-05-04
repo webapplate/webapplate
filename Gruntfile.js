@@ -12,6 +12,12 @@ module.exports = function(grunt) {
         dest: 'build/<%= pkg.name %>.min.js'
       }
     },
+    mocha: {
+      all: {
+        index: ['public/test/index.html'],
+        run: true
+      }
+    },
     manifest: {
       generate: {
         options: {
@@ -41,10 +47,12 @@ module.exports = function(grunt) {
 
   // Load the plugin that provides the "uglify" task.
   // grunt.loadNpmTasks('grunt-contrib-uglify');
+  // https://github.com/kmiyashiro/grunt-mocha
+  grunt.loadNpmTasks('grunt-mocha');
   // https://npmjs.org/package/grunt-manifest
   grunt.loadNpmTasks('grunt-manifest');
 
   // Default task(s).
-  grunt.registerTask('default', ['manifest']);
+  grunt.registerTask('default', ['mocha', 'manifest']);
 
 };
