@@ -30,7 +30,7 @@ Webapplate denotes "webapp template". Provide templates that suit for both offli
 
 6. Dynamic page support based on [express](http://www.expressjs.com)
 
-Read [doc](https://github.com/gasolin/webapplate/wiki/Structure) for overall webapplate structure.
+Read [Documentation](https://github.com/gasolin/webapplate/wiki/Structure) for overall webapplate structure.
 
 ## Get Webapplate
 
