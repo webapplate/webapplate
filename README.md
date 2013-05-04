@@ -56,7 +56,7 @@ or you can use git command to get Webapplate:
 
 Now you can open browser and see the web page at localhost:8000 
 
-## optional features
+## Optional features
 
 ### Generate offline cache manifest
 
