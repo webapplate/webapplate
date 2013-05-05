@@ -30,7 +30,7 @@ or static hosting like Github in minutes.
 
 6. Dynamic page support based on [express](http://www.expressjs.com)
 
-Read Documentation for [Overall webapplate structure]((https://github.com/gasolin/webapplate/wiki/Structure)) and [Howto deploy for production](https://github.com/gasolin/webapplate/wiki/Deployment).
+Read Documentation for [Overall webapplate structure]((https://github.com/gasolin/webapplate/wiki/Structure) and [Howto deploy for production](https://github.com/gasolin/webapplate/wiki/Deployment).
 
 ## Get Webapplate
 
@@ -40,7 +40,15 @@ or you can use git command to get Webapplate:
 
     git clone https://github.com/gasolin/Webapplate.git
 
-## Install
+## Usage
+
+### No Server
+
+just drag index.html into browser. 
+
+The page will redirect to /public/index.html. Read [[Syntax]] doc to learn plenty of sensible defaults.
+
+### With Server (dynamic/static web)
 
 1. install [node.js](http://www.nodejs.org)
 
@@ -53,6 +61,7 @@ or you can use git command to get Webapplate:
         $ node app.js
 
 Now you can open browser and see the web page at localhost:8000 
+
 
 ## Optional features
 
