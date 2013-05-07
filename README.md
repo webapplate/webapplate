@@ -4,7 +4,7 @@
 
 A Mobile First WebApp template that help you quickly start the mobile web app development. 
 
-Webapplate provide a ready-to-deploy project bootstrap settings for dynamic/static website (hosted webapp) or packaged (no server) webapp.
+Webapplate provide a ready-to-deploy project bootstrap settings for both hosted (dynamic/static website) and packaged (no server) webapp.
 It provide deployable webapp manifest template and auto appcache generation script that make offline webapp support easier.
 
 Website inherit from Webapplate can be [deployed in minutes](https://github.com/gasolin/webapplate/wiki/Deployment).
@@ -39,15 +39,16 @@ or you can use git command to get Webapplate:
 
     git clone https://github.com/gasolin/Webapplate.git
 
+
 ## Usage
 
-### No Server
+### No Server (Packaged webapp)
 
 just drag index.html into browser. 
 
 The page will redirect to /public/index.html. Read [[Syntax]] doc to learn plenty of sensible defaults.
 
-### With Server (dynamic/static web)
+### With dynamic/static web Server (Hosted webapp)
 
 1. install [node.js](http://www.nodejs.org)
 
