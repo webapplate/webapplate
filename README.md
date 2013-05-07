@@ -18,7 +18,7 @@ or static hosting like Github in minutes.
 
 ## Features
 
-1. *HTML5 Mobile Web App support in mind*: Support mobile friendly templates, MIME types, favicons and webapp manifest (Firefox OS).
+1. *HTML5 Mobile Web App support in mind*: Mobile friendly templates based on [Mobile Boilerplate](https://github.com/h5bp/mobile-boilerplate), MIME types, favicons and webapp manifest (Firefox OS).
 
 2. Firefox Marketplace ready: provide every elements that needs to apply your webapp to [Marketplace](http://marketplace.firefox.com/)
 
