@@ -7,8 +7,7 @@ A Mobile First WebApp template that help you quickly start the mobile web app de
 Webapplate provide a ready-to-deploy project bootstrap settings for dynamic or static website (hosted webapp).
 It provide deployable webapp manifest template and auto appcache generation script that make offline webapp support easier.
 
-Website inherit from Webapplate can be deployed to PaaS Provider like [appfog](https://www.appfog.com) or [heroku](http://www.heroku.com),
-or static hosting like Github in minutes.
+Website inherit from Webapplate can be [deployed in minutes](https://github.com/gasolin/webapplate/wiki/Deployment).
 
 
 ## Demos
@@ -30,7 +29,7 @@ or static hosting like Github in minutes.
 
 6. Dynamic page support based on [express](http://www.expressjs.com)
 
-Read Documentation for [Overall webapplate structure]((https://github.com/gasolin/webapplate/wiki/Structure) and [Howto deploy for production](https://github.com/gasolin/webapplate/wiki/Deployment).
+Read Documentation at [https://github.com/gasolin/webapplate/wiki](https://github.com/gasolin/webapplate/wiki).
 
 ## Get Webapplate
 
