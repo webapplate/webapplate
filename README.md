@@ -4,7 +4,7 @@
 
 A Mobile First WebApp template that help you quickly start the mobile web app development. 
 
-Webapplate provide a ready-to-deploy project bootstrap settings for dynamic or static website (hosted webapp).
+Webapplate provide a ready-to-deploy project bootstrap settings for dynamic/static website (hosted webapp) or packaged (no server) webapp.
 It provide deployable webapp manifest template and auto appcache generation script that make offline webapp support easier.
 
 Website inherit from Webapplate can be [deployed in minutes](https://github.com/gasolin/webapplate/wiki/Deployment).
