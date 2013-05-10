@@ -6,11 +6,11 @@
         "name": "Your Name",
         "url": "https://github.com/gasolin/webapplate"
     },
-    "launch_path": "/public/index.html",
-    "appcache_path": "/public/manifest.appcache", 
+    "launch_path": "/index.html",
+    "appcache_path": "/manifest.appcache",
     "default_locale": "en",
     "icons":{
-        "128": "/public/style/icons/icon128.png"
+        "128": "/style/icons/icon128.png"
     },
     "installs_allowed_from": ["*"]
 }

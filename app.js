@@ -17,8 +17,10 @@ app.configure(function(){
 
     // gzip
     app.use(express.compress());
+
     // static files, cached and expire in 30 days
-    app.use("/public", express.static(__dirname+'/public', {maxAge:2592000000}));
+    // change path / to /public if need dynamic web
+    app.use("/", express.static(__dirname+'/public', {maxAge:2592000000}));
     // link to bower components
     // app.use("/public/lib", express.static(__dirname+'/components'));
 
@@ -37,10 +39,13 @@ app.configure(function(){
 });
 
 // routes
+// enable route if need dynamic web
+/*
 app.get('/', function(req, res) {
     // res.send('Hello from <a href="http://appfog.com">AppFog.com</a>');
     res.render('index.html', {foo:'bar'});
 });
+*/
 
 // port
 var app_port = process.env.VCAP_APP_PORT || 8000;
