@@ -60,11 +60,6 @@ module.exports = function(grunt) {
         expand: true,
         src: "public/**",
         dest: "dist/application.zip"
-      },
-      {
-        expand: true,
-        src: 'public/manifest.appcache',
-        dest: 'dist'
       }
     }
   });
