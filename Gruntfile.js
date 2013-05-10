@@ -47,6 +47,14 @@ module.exports = function(grunt) {
           src: 'public/manifest.webapp',
           dest: 'dist/manifest.webapp'
         }]
+      },
+      static_web: {
+        files: [{
+          expand: true,
+          cwd: 'public/',
+          src: '**',
+          dest: 'dist/'
+        }]
       }
     },
     rename: {
@@ -69,11 +77,16 @@ module.exports = function(grunt) {
         src: "public/**",
         dest: "dist/application.zip"
       }
+    },
+    clean: {
+      dist: ['dist/'],
+      test: ['dist/test']
     }
   });
 
   // Load the plugin that provides the "uglify" task.
   // grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   // https://github.com/jdcataldo/grunt-mocha-phantomjs
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
   // https://npmjs.org/package/grunt-manifest
@@ -86,8 +99,13 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['mocha_phantomjs', 'manifest']);
+  
+  // generate static web
+  grunt.registerTask('static', ['clean:dist', 'mocha_phantomjs', 'manifest',
+          /*copy public folder*/'copy:static_web', 'clean:test']);
+
   // generate package app
-  grunt.registerTask('pack', ['mocha_phantomjs', 'manifest',
+  grunt.registerTask('pack', ['clean:dist', 'mocha_phantomjs', 'manifest',
               /*copy .webapp*/'copy:webapp', 'rename:webapp',
       /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore']);
 };
