@@ -39,6 +39,33 @@ module.exports = function(grunt) {
         ],
         dest: "public/manifest.appcache"
       }
+    },
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          src: 'public/manifest.webapp',
+          dest: 'dist'
+        }]
+      }
+    },
+    rename: {
+      webapp: {
+        src: 'dist/manifest.webapp',
+        dest: 'dist/update.webapp'
+      }
+    },
+    zip: {
+      dist: {
+        expand: true,
+        src: "public/**",
+        dest: "dist/application.zip"
+      },
+      {
+        expand: true,
+        src: 'public/manifest.appcache',
+        dest: 'dist'
+      }
     }
   });
 
@@ -49,7 +76,14 @@ module.exports = function(grunt) {
   // https://npmjs.org/package/grunt-manifest
   grunt.loadNpmTasks('grunt-manifest');
 
+  // used to generate package app
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-rename');
+  grunt.loadNpmTasks('grunt-zip');
+
   // Default task(s).
   grunt.registerTask('default', ['mocha_phantomjs', 'manifest']);
+  // generate package app
+  grunt.registerTask('pack', ['mocha_phantomjs', 'manifest', 'copy:dist', 'rename:webapp', 'zip:dist']);
 
 };
