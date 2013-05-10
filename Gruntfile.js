@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  'use strict';
 
   // Project configuration.
   grunt.initConfig({
@@ -99,7 +100,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['mocha_phantomjs', 'manifest']);
-  
+
   // generate static web
   grunt.registerTask('static', ['clean:dist', 'mocha_phantomjs', 'manifest',
           /*copy public folder*/'copy:static_web', 'clean:test']);
