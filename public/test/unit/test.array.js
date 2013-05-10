@@ -1,3 +1,4 @@
+'use strict';
 // TDD test example
 suite('Array', function(){
   setup(function(){

@@ -1,3 +1,4 @@
+'use strict';
 // BDD test example
 var foobar = {
   sayHello: function() {
