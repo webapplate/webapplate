@@ -41,11 +41,11 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      dist: {
+      webapp: {
         files: [{
-          expand: true,
+          expand: false,
           src: 'public/manifest.webapp',
-          dest: 'dist'
+          dest: 'dist/manifest.webapp'
         }]
       }
     },
@@ -53,6 +53,14 @@ module.exports = function(grunt) {
       webapp: {
         src: 'dist/manifest.webapp',
         dest: 'dist/update.webapp'
+      },
+      backup: {
+        src: 'public/test',
+        dest: 'dist/test'
+      },
+      restore: {
+        src: 'dist/test',
+        dest: 'public/test'
       }
     },
     zip: {
@@ -79,6 +87,7 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', ['mocha_phantomjs', 'manifest']);
   // generate package app
-  grunt.registerTask('pack', ['mocha_phantomjs', 'manifest', 'copy:dist', 'rename:webapp', 'zip:dist']);
-
+  grunt.registerTask('pack', ['mocha_phantomjs', 'manifest',
+              /*copy .webapp*/'copy:webapp', 'rename:webapp',
+      /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore']);
 };
