@@ -46,7 +46,7 @@ or you can use git command to get Webapplate:
 
 just drag index.html into browser. 
 
-The page will redirect to /public/index.html. Read [[Syntax]] doc to learn plenty of sensible defaults.
+The page will redirect to /public/index.html. Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults.
 
 ### With dynamic/static web Server (Hosted webapp)
 
