@@ -48,6 +48,10 @@ just drag index.html into browser.
 
 The page will redirect to /public/index.html. Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults.
 
+webapplate enable you to genergate the packaged webapp via command:
+
+    $ grunt pack
+
 ### With dynamic/static web Server (Hosted webapp)
 
 1. install [node.js](http://www.nodejs.org)
