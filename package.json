@@ -13,9 +13,6 @@
     "grunt-contrib-copy": "*",
     "grunt-rename": "*",
     "grunt-zip": "*",
-    "grunt-contrib-clean":"*",
-    "mocha": "*",
-    "chai": "*",
-    "sinon": "*"
+    "grunt-contrib-clean":"*"
   }
 }
