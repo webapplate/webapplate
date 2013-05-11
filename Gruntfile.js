@@ -59,10 +59,6 @@ module.exports = function(grunt) {
       }
     },
     rename: {
-      webapp: {
-        src: 'dist/manifest.webapp',
-        dest: 'dist/update.webapp'
-      },
       backup: {
         src: 'public/test',
         dest: 'dist/test'
@@ -107,6 +103,6 @@ module.exports = function(grunt) {
 
   // generate package app
   grunt.registerTask('pack', ['clean:dist', 'mocha_phantomjs', 'manifest',
-              /*copy .webapp*/'copy:webapp', 'rename:webapp',
+              /*copy .webapp*/'copy:webapp',
       /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore']);
 };
