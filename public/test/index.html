@@ -18,7 +18,8 @@
 <script src="vendor/mocha/mocha.js"></script>
 <script src="vendor/chai/chai.js"></script>
 <script src="vendor/sinon/sinon.js"></script>
-
+<!-- coverage test, need start server first -->
+<!--<script src="vendor/blanket/blanket.min.js" data-cover-adapter="vendor/blanket/mocha-blanket.js"></script>-->
 <script type="text/javascript" charset="utf-8">
   mocha.setup({ui:'tdd'})
   var assert = chai.assert;
@@ -28,6 +29,9 @@
 </script>
 
 <!-- Include anything you want to test -->
+<script src="../js/custom.js" data-cover></script>
+<script src="../js/app_installer.js" data-cover></script>
+
 <script src="unit/test.basic.js"></script>
 <script src="unit/test.array.js"></script>
 <script src="unit/test.sinon.js"></script>
