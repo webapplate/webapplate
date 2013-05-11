@@ -59,6 +59,18 @@ sinon.xhr = { XMLHttpRequest: this.XMLHttpRequest };
         this.status = 0;
         this.statusText = "";
 
+        var xhr = this;
+
+        ["loadstart", "load", "abort", "loadend"].forEach(function (eventName) {
+            xhr.addEventListener(eventName, function (event) {
+                var listener = xhr["on" + eventName];
+
+                if (listener && typeof listener == "function") {
+                    listener(event);
+                }
+            });
+        });
+
         if (typeof FakeXMLHttpRequest.onCreate == "function") {
             FakeXMLHttpRequest.onCreate(this);
         }
@@ -212,6 +224,13 @@ sinon.xhr = { XMLHttpRequest: this.XMLHttpRequest };
             }
 
             this.dispatchEvent(new sinon.Event("readystatechange"));
+
+            switch (this.readyState) {
+                case FakeXMLHttpRequest.DONE:
+                    this.dispatchEvent(new sinon.Event("load", false, false, this));
+                    this.dispatchEvent(new sinon.Event("loadend", false, false, this));
+                    break;
+            }
         },
 
         setRequestHeader: function setRequestHeader(header, value) {
@@ -267,6 +286,8 @@ sinon.xhr = { XMLHttpRequest: this.XMLHttpRequest };
             if (typeof this.onSend == "function") {
                 this.onSend(this);
             }
+
+            this.dispatchEvent(new sinon.Event("loadstart", false, false, this));
         },
 
         abort: function abort() {
@@ -281,6 +302,11 @@ sinon.xhr = { XMLHttpRequest: this.XMLHttpRequest };
             }
 
             this.readyState = sinon.FakeXMLHttpRequest.UNSENT;
+
+            this.dispatchEvent(new sinon.Event("abort", false, false, this));
+            if (typeof this.onerror === "function") {
+                this.onerror();
+            }
         },
 
         getResponseHeader: function getResponseHeader(header) {
@@ -361,6 +387,10 @@ sinon.xhr = { XMLHttpRequest: this.XMLHttpRequest };
             this.status = typeof status == "number" ? status : 200;
             this.statusText = FakeXMLHttpRequest.statusCodes[this.status];
             this.setResponseBody(body || "");
+            if (typeof this.onload === "function"){
+                this.onload();
+            }
+            
         }
     });
 
