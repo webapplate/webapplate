@@ -70,9 +70,9 @@ module.exports = function(grunt) {
     },
     zip: {
       dist: {
-        expand: true,
+        cwd: "public/",
         src: "public/**",
-        dest: "dist/application.zip"
+        dest: "dist/package.zip"
       }
     },
     clean: {
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
           /*copy public folder*/'copy:static_web', 'clean:test']);
 
   // generate package app
-  grunt.registerTask('pack', ['clean:dist', 'mocha_phantomjs', 'manifest',
+  grunt.registerTask('pack', ['clean:dist', 'mocha_phantomjs',
               /*copy .webapp*/'copy:webapp',
       /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore']);
 };
