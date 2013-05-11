@@ -56,6 +56,14 @@ module.exports = function(grunt) {
           src: '**',
           dest: 'dist/'
         }]
+      },
+      install_page: {
+        files: [{
+          expand: true,
+          cwd: 'helper/',
+          src: 'install.html',
+          dest: 'dist/'
+        }]
       }
     },
     rename: {
@@ -103,6 +111,6 @@ module.exports = function(grunt) {
 
   // generate package app
   grunt.registerTask('pack', ['clean:dist', 'mocha_phantomjs',
-              /*copy .webapp*/'copy:webapp',
+                /*copy files*/'copy:webapp', 'copy:install_page',
       /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore']);
 };
