@@ -21,11 +21,11 @@ Website inherit from Webapplate can be [deployed in minutes](https://github.com/
 
 2. Firefox Marketplace ready: provide every elements that needs to apply your webapp to [Marketplace](http://marketplace.firefox.com/)
 
-3. Server-side support: Provide grade A speed web server/client configuration in [yslow](http://developer.yahoo.com/yslow/) measurement.
+3. Server-side support: Provide `grade A` speed web server/client configuration in [yslow](http://developer.yahoo.com/yslow/) measurement.
 
-4. *Support offline appcache generator* via [grunt.js](https://github.com/gunta/grunt-manifest)
+4. Support `offline appcache` and `packaged webapp` generator via [grunt.js](https://github.com/gunta/grunt-manifest)
 
-5. Test with browser via [mocha](http://visionmedia.github.io/mocha/) JS test framework
+5. Integrate unittest with browser via [mocha](http://visionmedia.github.io/mocha/) JS test framework
 
 6. Dynamic page support based on [express](http://www.expressjs.com)
 
