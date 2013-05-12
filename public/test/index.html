@@ -19,7 +19,8 @@
 <script src="vendor/chai/chai.js"></script>
 <script src="vendor/sinon/sinon.js"></script>
 <!-- coverage test, need start server first -->
-<!--<script src="vendor/blanket/blanket.min.js" data-cover-adapter="vendor/blanket/mocha-blanket.js"></script>-->
+<!--<script src="vendor/blanket/blanket.min.js" data-cover-adapter="vendor/blanket/mocha-blanket.js" data-cover-only="js/" data-cover-never="test/"></script>-->
+
 <script type="text/javascript" charset="utf-8">
   mocha.setup({ui:'tdd'})
   var assert = chai.assert;
@@ -28,7 +29,7 @@
   var should = chai.should();
 </script>
 
-<!-- Include anything you want to test -->
+<!-- Include anything you want to test, add data-cover attr if you want jscoverage -->
 <script src="../js/custom.js" data-cover></script>
 <script src="../js/app_installer.js" data-cover></script>
 
