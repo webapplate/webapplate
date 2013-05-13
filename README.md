@@ -51,6 +51,7 @@ Plus webapplate enable you to genergate the packaged webapp via command:
 
     $ grunt pack
 
+Read [Deployment](https://github.com/gasolin/webapplate/wiki/Deployment#3-packaged-webapp) doc for further configurations.
 
 ## Demos
 
