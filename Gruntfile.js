@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           // cache: ["js/app.js", "css/style.css"],
           // cachePrefix: "/",
           // network: ["http://*", "https://*"],
-          // fallback: ["/ /offline.html"],
+          fallback: ["/ fallback.html"],
           // exclude: ["js/jquery.min.js"],
           preferOnline: true,
           verbose: false,
