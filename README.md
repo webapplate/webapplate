@@ -12,7 +12,7 @@ Website inherit from Webapplate can be [deployed in minutes](https://github.com/
 
 ## Usage
 
-### Hosted webapp (With dynamic/static web Server)
+### Develop Hosted webapp(With dynamic/static web Server)
 
 1. install [node.js](http://www.nodejs.org)
 
@@ -36,11 +36,11 @@ Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn pl
 All magics are well integrated and configurable in webapplate.
 
 
-### Packaged webapp (No Server)
+### Develop Packaged webapp (No Server)
 
-just drag `/public/index.html` into browser. 
+just drag `/public/index.html` into browser. Or select `/public/manifest.webapp` in [Firefox OS Simulator](https://developer.mozilla.org/en-US/docs/Tools/Firefox_OS_Simulator).
 
-webapplate enable you to genergate the packaged webapp via command:
+Plus webapplate enable you to genergate the packaged webapp via command:
 
     $ grunt pack
 
