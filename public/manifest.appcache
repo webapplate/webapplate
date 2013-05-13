@@ -5,5 +5,8 @@ CACHE:
 NETWORK:
 *
 
+FALLBACK:
+/ fallback.html
+
 SETTINGS:
 prefer-online
