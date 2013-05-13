@@ -29,12 +29,16 @@ Now you can open browser and see the web page at localhost:8000 .
 The default page is stored in `/publish/index.html`.
 Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults.
 
+4. To autotest and generate appcache for offline usage, run
+
+    $ grunt
+
+All magics are well integrated and configurable in webapplate.
+
 
 ### Packaged webapp (No Server)
 
-just drag `/index.html` into browser. 
-
-The page will redirect to `/public/index.html`.
+just drag `/public/index.html` into browser. 
 
 webapplate enable you to genergate the packaged webapp via command:
 
