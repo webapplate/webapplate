@@ -9,6 +9,14 @@ for both hosted (dynamic/static website) and packaged (no server) webapp.
 
 Website inherit from Webapplate can be [deployed in minutes](https://github.com/gasolin/webapplate/wiki/Deployment).
 
+## Get Webapplate
+
+Go to https://github.com/gasolin/Webapplate website, click 'ZIP' button to download nodera template.
+
+or you can use git command to clone Webapplate:
+
+    git clone https://github.com/gasolin/Webapplate.git
+
 
 ## Usage
 
@@ -24,14 +32,13 @@ Website inherit from Webapplate can be [deployed in minutes](https://github.com/
 
         $ node app.js
 
-Now you can open browser and see the web page at localhost:8000 .
+  Now you can open browser and see the web page at localhost:8000 .
 
-The default page is stored in `/publish/index.html`.
-Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults.
+  The default page is stored in `/publish/index.html`. Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults.
 
 4. To autotest and generate appcache for offline usage, run
 
-    $ grunt
+        $ grunt
 
 All magics are well integrated and configurable in webapplate.
 
@@ -66,15 +73,6 @@ Plus webapplate enable you to genergate the packaged webapp via command:
 
 
 Read Documentation at [https://github.com/gasolin/webapplate/wiki](https://github.com/gasolin/webapplate/wiki).
-
-## Get Webapplate
-
-Go to https://github.com/gasolin/Webapplate website, click 'ZIP' button to download nodera template.
-
-or you can use git command to get Webapplate:
-
-    git clone https://github.com/gasolin/Webapplate.git
-
 
 
 ## License
