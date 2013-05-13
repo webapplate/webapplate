@@ -1,6 +1,6 @@
 ![project logo](https://raw.github.com/gasolin/webapplate/master/public/style/icons/icon128.png)
 
-# Webapplate v0.6 [![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate)
+# Webapplate [v0.6](https://github.com/gasolin/webapplate/wiki/Changelog#06--20135) [![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate)
 
 A Mobile First WebApp template that help you quickly start the mobile web app development. 
 
