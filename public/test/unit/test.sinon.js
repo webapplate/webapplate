@@ -1,6 +1,6 @@
 'use strict';
 
-if ('undefined' != typeof require) {
+if ('undefined' !== typeof require) {
   // Require server-side-specific modules
   var sinon = require('sinon');
   var chai = require('chai');
@@ -8,8 +8,9 @@ if ('undefined' != typeof require) {
 }
 
 // sinon test samples http://sinonjs.org/docs/
-suite('As a developer, I want to use Sinon in test, so I can write test with spies, mocks.. easily', function(){
-	test('Sinon should be defined', function() {
-    	assert.notStrictEqual(sinon, undefined);
-    });
+suite('As a developer, I want to use Sinon in test,' +
+      ' so I can write test with spies, mocks.. easily', function() {
+  test('Sinon should be defined', function() {
+    assert.notStrictEqual(sinon, undefined);
+  });
 });
