@@ -21,5 +21,5 @@ if (navigator.mozApps != undefined) {
     alert('Error checking installation status: ' + this.error.message);
   };
 } else {
-    console.log('WebApp not supported');
+    // console.log('WebApp not supported');
 }
