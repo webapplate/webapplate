@@ -15,10 +15,12 @@ module.exports = function(grunt) {
       }
     },
     mochacov: {
-      all: ['public/test/unit/test.*'],
-      options: {
-        ui: 'tdd',
-        reporter: 'spec'
+      test: {
+        options: {
+          files: ['public/test/unit/test.**'],
+          ui: 'tdd',
+          reporter: 'spec'
+        }
       }
     },
     mocha_phantomjs: {
@@ -110,7 +112,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-zip');
 
   // Default task(s).
-  grunt.registerTask('default', ['mochacov', 'manifest']);
+  grunt.registerTask('default', ['mochacov:test', 'manifest']);
 
   // generate static web
   grunt.registerTask('static', ['clean:dist', 'mocha_phantomjs', 'manifest',
