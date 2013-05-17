@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       all: ['public/test/unit/test.*'],
       options: {
         ui: 'tdd',
-        reporter: 'nyan'
+        reporter: 'spec'
       }
     },
     mocha_phantomjs: {
