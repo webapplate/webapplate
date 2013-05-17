@@ -9,12 +9,12 @@
   "devDependencies": {
     "grunt-cli": "*",
     "grunt-manifest": "*",
+    "grunt-mocha-cov": "*",
     "grunt-mocha-phantomjs":"*",
     "grunt-contrib-copy": "*",
     "grunt-rename": "*",
     "grunt-zip": "*",
     "grunt-contrib-clean":"*",
-    "blanket": "*",
     "chai":"*",
     "sinon":"*"
   }

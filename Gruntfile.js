@@ -6,11 +6,19 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '/*! <%= pkg.name %> ' +
+                '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
         src: 'src/<%= pkg.name %>.js',
         dest: 'build/<%= pkg.name %>.min.js'
+      }
+    },
+    mochacov: {
+      all: ['public/test/unit/test.*'],
+      options: {
+        ui: 'tdd',
+        reporter: 'nyan'
       }
     },
     mocha_phantomjs: {
@@ -19,26 +27,26 @@ module.exports = function(grunt) {
     manifest: {
       generate: {
         options: {
-          basePath: "./public/",
-          // cache: ["js/app.js", "css/style.css"],
-          // cachePrefix: "/",
-          // network: ["http://*", "https://*"],
-          fallback: ["/ fallback.html"],
-          // exclude: ["js/jquery.min.js"],
+          basePath: './public/',
+          // cache: ['js/app.js', 'css/style.css'],
+          // cachePrefix: '/',
+          // network: ['http://*', 'https://*'],
+          fallback: ['/ fallback.html'],
+          // exclude: ['js/jquery.min.js'],
           preferOnline: true,
           verbose: false,
           timestamp: true
         },
         src: [
-            "*.html",
-            "js/*.js",
-            "style/*.css",
-            "style/images/*.png",
-            "style/images/*.jpg",
-            "style/icons/*.ico",
-            "style/icons/*.png"
+            '*.html',
+            'js/*.js',
+            'style/*.css',
+            'style/images/*.png',
+            'style/images/*.jpg',
+            'style/icons/*.ico',
+            'style/icons/*.png'
         ],
-        dest: "public/manifest.appcache"
+        dest: 'public/manifest.appcache'
       }
     },
     copy: {
@@ -78,9 +86,9 @@ module.exports = function(grunt) {
     },
     zip: {
       dist: {
-        cwd: "public/",
-        src: "public/**",
-        dest: "dist/package.zip"
+        cwd: 'public/',
+        src: 'public/**',
+        dest: 'dist/package.zip'
       }
     },
     clean: {
@@ -92,9 +100,8 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "uglify" task.
   // grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  // https://github.com/jdcataldo/grunt-mocha-phantomjs
+  grunt.loadNpmTasks('grunt-mocha-cov');
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
-  // https://npmjs.org/package/grunt-manifest
   grunt.loadNpmTasks('grunt-manifest');
 
   // used to generate package app
@@ -103,7 +110,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-zip');
 
   // Default task(s).
-  grunt.registerTask('default', ['mocha_phantomjs', 'manifest']);
+  grunt.registerTask('default', ['mochacov', 'manifest']);
 
   // generate static web
   grunt.registerTask('static', ['clean:dist', 'mocha_phantomjs', 'manifest',
