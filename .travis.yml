@@ -6,3 +6,4 @@ script:
   - grunt
   - grunt static
   - grunt pack
+  - grunt mochacov:travis

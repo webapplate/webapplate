@@ -21,6 +21,22 @@ module.exports = function(grunt) {
           ui: 'tdd',
           reporter: 'spec'
         }
+      },
+      coverage: {
+        options: {
+          files: ['public/test/unit/test.**'],
+          ui: 'tdd',
+          reporter: 'html-cov'
+        }
+      },
+      travis: {
+        options: {
+          files: ['public/test/unit/test.**'],
+          ui: 'tdd',
+          coveralls: {
+            serviceName: 'travis-ci'
+          }
+        }
       }
     },
     mocha_phantomjs: {
