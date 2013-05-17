@@ -26,7 +26,8 @@ module.exports = function(grunt) {
         options: {
           files: ['public/test/unit/test.**'],
           ui: 'tdd',
-          reporter: 'html-cov'
+          reporter: 'html-cov',
+          output: 'coverage.html'
         }
       },
       travis: {
@@ -34,7 +35,9 @@ module.exports = function(grunt) {
           files: ['public/test/unit/test.**'],
           ui: 'tdd',
           coveralls: {
-            serviceName: 'travis-ci'
+            serviceName: 'travis-ci',
+            serviceJobId: process.env.TRAVIS_JOB_ID,
+            repoToken: 'zbam4NOrmc9Wo8RkQXGfI9htPdlLRc2V6'
           }
         }
       }

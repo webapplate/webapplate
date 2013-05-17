@@ -11,18 +11,18 @@
     "grunt-manifest": "*",
     "grunt-mocha-cov": "*",
     "mocha-lcov-reporter": "*",
-    "grunt-mocha-phantomjs":"*",
+    "grunt-mocha-phantomjs": "*",
     "grunt-contrib-copy": "*",
     "grunt-rename": "*",
     "grunt-zip": "*",
-    "grunt-contrib-clean":"*",
-    "chai":"*",
-    "sinon":"*"
+    "grunt-contrib-clean": "*",
+    "chai": "*",
+    "sinon": "*"
   },
   "scripts": {
     "blanket": {
       "pattern": [
-        "public/js"
+        "public"
       ]
     }
   }
