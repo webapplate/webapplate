@@ -41,8 +41,11 @@
 <script type="text/javascript" charset="utf-8">
   console.log('testing...');
   mocha.checkLeaks();
-  if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
-  else { mocha.run(); }
+  if (window.mochaPhantomJS) {
+    mochaPhantomJS.run();
+  } else {
+    mocha.run();
+  }
   console.log('done');
 </script>
 
