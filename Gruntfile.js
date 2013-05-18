@@ -17,29 +17,27 @@ module.exports = function(grunt) {
     mochacov: {
       test: {
         options: {
-          files: ['public/test/unit/test.**'],
-          ui: 'tdd',
           reporter: 'spec'
         }
       },
       coverage: {
         options: {
-          files: ['public/test/unit/test.**'],
-          ui: 'tdd',
           reporter: 'html-cov',
           output: 'coverage.html'
         }
       },
       travis: {
         options: {
-          files: ['public/test/unit/test.**'],
-          ui: 'tdd',
           coveralls: {
             serviceName: 'travis-ci',
             serviceJobId: process.env.TRAVIS_JOB_ID,
             repoToken: 'zbam4NOrmc9Wo8RkQXGfI9htPdlLRc2V6'
           }
         }
+      },
+      options: {
+        files: ['public/test/unit/test.**'],
+        ui: 'tdd'
       }
     },
     mocha_phantomjs: {
