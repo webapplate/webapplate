@@ -1,9 +1,18 @@
 //check if app is installed
-if (navigator.mozApps != undefined) {
+if (navigator.mozApps !== undefined) {
   var app_stat = navigator.mozApps.getSelf();
   app_stat.onsuccess = function() {
   if (app_stat.result) {
     //instsalled
+    var installed = navigator.mozApps.getInstalled();
+    installed.onsuccess = function() {
+      if (installed.result.manifest.version !==
+          app_stat.result.manifest.version) {
+        navigator.mozApps.install();
+      }
+    };
+    installed.onerror = function() {
+    };
   } else {
     // not installed
     var manifestUrl = location.href.substring(0,
