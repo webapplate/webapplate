@@ -11,6 +11,7 @@
     "grunt-manifest": "*",
     "grunt-mocha-cov": "*",
     "grunt-mocha-phantomjs": "*",
+    "grunt-plato": "*",
     "grunt-contrib-copy": "*",
     "grunt-rename": "*",
     "grunt-zip": "*",

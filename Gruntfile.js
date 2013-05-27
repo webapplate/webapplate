@@ -68,6 +68,13 @@ module.exports = function(grunt) {
         dest: 'public/manifest.appcache'
       }
     },
+    plato: {
+      all: {
+        files: {
+          'reports': ['public/js/*.js']
+        }
+      }
+    },
     copy: {
       webapp: {
         files: [{
@@ -122,6 +129,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-cov');
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
   grunt.loadNpmTasks('grunt-manifest');
+  grunt.loadNpmTasks('grunt-plato');
 
   // used to generate package app
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -129,14 +137,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-zip');
 
   // Default task(s).
-  grunt.registerTask('default', ['mochacov:test', 'manifest']);
+  grunt.registerTask('default', ['mochacov:test', 'manifest', 'plato']);
 
   // generate static web
   grunt.registerTask('static', ['clean:dist', 'mocha_phantomjs', 'manifest',
-          /*copy public folder*/'copy:static_web', 'clean:test']);
+          /*copy public folder*/'copy:static_web', 'clean:test', 'plato']);
 
   // generate package app
   grunt.registerTask('pack', ['clean:dist', 'mocha_phantomjs',
                 /*copy files*/'copy:webapp', 'copy:install_page',
-      /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore']);
+      /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore', 'plato']);
 };
