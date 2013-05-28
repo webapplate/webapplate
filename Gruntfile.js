@@ -23,7 +23,7 @@ module.exports = function(grunt) {
       coverage: {
         options: {
           reporter: 'html-cov',
-          output: 'coverage.html'
+          output: 'public/test/coverage.html'
         }
       },
       travis: {
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
     plato: {
       all: {
         files: {
-          'reports': ['public/js/*.js']
+          'public/test/reports': ['public/js/*.js']
         }
       }
     },
@@ -137,7 +137,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-zip');
 
   // Default task(s).
-  grunt.registerTask('default', ['mochacov:test', 'manifest', 'plato']);
+  grunt.registerTask('default', ['mochacov:test', 'manifest', 'plato', 'mochacov:coverage']);
 
   // generate static web
   grunt.registerTask('static', ['clean:dist', 'mocha_phantomjs', 'manifest',
