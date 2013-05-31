@@ -137,7 +137,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-zip');
 
   // Default task(s).
-  grunt.registerTask('default', ['mochacov:test', 'manifest', 'plato', 'mochacov:coverage']);
+  grunt.registerTask('default', ['mochacov:test', 'manifest', 'plato']);
 
   // generate static web
   grunt.registerTask('static', ['clean:dist', 'mocha_phantomjs', 'manifest',
