@@ -13,3 +13,8 @@ logs
 results
 
 npm-debug.log
+node_modules/
+components/
+
+public/test/reports/
+public/test/coverage.html
