@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         }
       },
       options: {
-        files: ['public/test/unit/test.**'],
+        files: ['public/test/unit/**_test.js'],
         ui: 'tdd'
       }
     },
