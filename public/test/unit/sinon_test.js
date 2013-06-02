@@ -7,6 +7,15 @@ if ('undefined' !== typeof require) {
   var assert = chai.assert;
 }
 
+var PubSub = {
+  subscribe: function subscribe(msg, callback) {
+    callback();
+  },
+  publishSync: function publishSync(msg) {
+
+  }
+};
+
 // sinon test samples http://sinonjs.org/docs/
 suite('As a developer, I want to use Sinon in test,' +
       ' so I can write test with spies, mocks.. easily', function() {
@@ -14,17 +23,34 @@ suite('As a developer, I want to use Sinon in test,' +
     assert.notStrictEqual(sinon, undefined);
   });
 
-  /*test('Sinon should able to be used as FakeTimers', function() {
-  	// setup
-  	var clock = sinon.UseFakeTimers();
-  	
-  	var now = new Date();
-    
-    // clock.tick(2000);
+  test('Sinon should able to be used as spy', function() {
+    var callback = sinon.spy();
+    PubSub.subscribe("message", callback);
 
-    // assert.Equal(elapsedTime(now), 2);
+    // PubSub.publishSync("message");
+    assert.equal(callback.called, true);
+  });
 
-    // teardown
-    clock.restore();
-  });*/
+});
+
+// sinon test samples http://sinonjs.org/docs/
+suite('As a developer, I want to use Sinon as Spy,' +
+      ' so I can records arguments, return value easily', function() {
+  setup(function() {
+    // sinon = sinon.sandbox.create();
+    sinon.spy(PubSub, "publishSync");
+  });
+
+  teardown(function() {
+    // sinon.restore();
+    PubSub.publishSync.restore(); // Unwraps the spy
+  });
+
+  test('spy should able to be used on existing methods', function() {
+    var callback = sinon.spy();
+
+    PubSub.publishSync("message");
+    assert(PubSub.publishSync.calledOnce);
+  });
+
 });
