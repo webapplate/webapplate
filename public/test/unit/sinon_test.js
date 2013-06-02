@@ -16,6 +16,17 @@ var PubSub = {
   }
 };
 
+function once(fn) {
+    var returnValue, called = false;
+    return function () {
+        if (!called) {
+            called = true;
+            returnValue = fn.apply(this, arguments);
+        }
+        return returnValue;
+    };
+}
+
 // sinon test samples http://sinonjs.org/docs/
 suite('As a developer, I want to use Sinon in test,' +
       ' so I can write test with spies, mocks.. easily', function() {
@@ -31,6 +42,37 @@ suite('As a developer, I want to use Sinon in test,' +
     assert.equal(callback.called, true);
   });
 
+  test("calls the original function", function () {
+      var callback = sinon.spy();
+      var proxy = once(callback);
+
+      proxy();
+
+      assert(callback.called);
+  });
+
+  test("calls the original function only once", function () {
+    var callback = sinon.spy();
+    var proxy = once(callback);
+
+    proxy();
+    proxy();
+
+    assert(callback.calledOnce);
+    // ...or:
+    // assert.equals(callback.callCount, 1);
+  });
+
+  test("calls original function with right this and args", function () {
+    var callback = sinon.spy();
+    var proxy = once(callback);
+    var obj = {};
+
+    proxy.call(obj, 1, 2, 3);
+
+    assert(callback.calledOn(obj));
+    assert(callback.calledWith(1, 2, 3));
+  });
 });
 
 // sinon test samples http://sinonjs.org/docs/
@@ -51,6 +93,19 @@ suite('As a developer, I want to use Sinon as Spy,' +
 
     PubSub.publishSync("message");
     assert(PubSub.publishSync.calledOnce);
+    // or ...
+    assert.equal(PubSub.publishSync.callCount, 1);
+  });
+
+});
+
+suite('As a developer, I want to use Sinon as Stub,' +
+      ' so I can return whatever the original function returns', function() {
+  test("returns the return value from the original function", function () {
+    var callback = sinon.stub().returns(42);
+    var proxy = once(callback);
+
+    assert.equal(proxy(), 42);
   });
 
 });
