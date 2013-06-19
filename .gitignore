@@ -16,5 +16,6 @@ npm-debug.log
 node_modules/
 components/
 
+dist/
 public/test/reports/
 public/test/coverage.html
