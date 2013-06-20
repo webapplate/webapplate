@@ -6,13 +6,15 @@ current version: v0.8
 
 A Mobile First WebApp template that help you quickly start the mobile web app development. 
 
-Webapplate provide a ready-to-deploy project bootstrap settings, and deployable `webapp manifest template` 
-for both hosted (dynamic/static website) and packaged (no server) webapp.
+Webapplate provide a ready-to-deploy project bootstrap settings, and deployable `webapp manifest template and installer`
+for both `hosted` (dynamic/static website) and `packaged` (no server) webapp.
 
 Website inherit from Webapplate can be [deployed in minutes](https://github.com/gasolin/webapplate/wiki/Deployment).
 
 
 ## Demos
+
+Here are some example that start the development by webapplate:
 
 * [UI Demos](https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before its officially release.
 * [FxOS BMI](http://gasolin.github.io/fxosbmi/public/index.html) , the BMI calculator demo, with offline support. [Source](https://github.com/gasolin/fxosbmi) is available.
