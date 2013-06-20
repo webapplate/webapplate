@@ -4,16 +4,6 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> ' +
-                '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
-      }
-    },
     mochacov: {
       test: {
         options: {
@@ -42,6 +32,60 @@ module.exports = function(grunt) {
     },
     mocha_phantomjs: {
       all: ['public/test/index.html']
+    },
+    dom_munger: {
+      readcss: {
+        options: {
+            read: {selector: 'link', attribute: 'href', writeto: 'cssRefs', isPath: true},
+        },
+        src: 'public/index.html' //read from source index.html
+      },
+      readjs: {
+        options: {
+          read: {selector: 'script', attribute: 'src', writeto: 'jsRefs', isPath: true},
+        },
+        src: 'public/index.html'
+      },
+      cleancss: {
+        options: {
+            remove: 'link[href]'
+        },
+        src: 'dist/index.html' //read from source index.html
+      },
+      cleanjs: {
+        options: {
+          remove: 'script[src]'
+        },
+        src: 'dist/index.html'
+      },
+      updatecss: {
+        options: {
+          append: {selector:'head',html:'<link rel="stylesheet" href="style/app.min.css">'}
+        },
+        src:'dist/index.html'  //update the dist/index.html (the src index.html is copied there)
+      },
+      updatejs: {
+        options: {
+          append: {selector:'body',html:'<script src="js/app.min.js"></script>'}
+        },
+        src: 'dist/index.html'
+      }
+    },
+    cssmin: {
+      main: {
+        src:'<%= dom_munger.data.cssRefs %>',
+        dest:'dist/style/app.min.css'
+      }
+    },
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> ' +
+                '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      main: {
+        src: '<%= dom_munger.data.jsRefs %>',
+        dest: 'dist/js/app.min.js'
+      }
     },
     manifest: {
       generate: {
@@ -123,12 +167,14 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
-  // grunt.loadNpmTasks('grunt-contrib-uglify');
+  // Load the plugin that provides tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-mocha-cov');
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
   grunt.loadNpmTasks('grunt-manifest');
+  grunt.loadNpmTasks('grunt-dom-munger');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-plato');
 
   // used to generate package app
@@ -141,7 +187,14 @@ module.exports = function(grunt) {
 
   // generate static web
   grunt.registerTask('static', ['clean:dist', 'mocha_phantomjs', 'manifest',
-          /*copy public folder*/'copy:static_web', 'clean:test', 'plato']);
+          /*copy public folder*/'copy:static_web',
+          /*parse css/js for minify*/
+                                'dom_munger:readcss', 'dom_munger:readjs',
+                                'dom_munger:cleancss', 'dom_munger:cleanjs',
+                                'cssmin:main', 'uglify:main',
+                                'dom_munger:updatecss', 'dom_munger:updatejs',
+          /*append minified css/js*/
+                                'clean:test', 'plato']);
 
   // generate package app
   grunt.registerTask('pack', ['clean:dist', 'mocha_phantomjs',
