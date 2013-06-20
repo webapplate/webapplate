@@ -11,6 +11,14 @@ for both hosted (dynamic/static website) and packaged (no server) webapp.
 
 Website inherit from Webapplate can be [deployed in minutes](https://github.com/gasolin/webapplate/wiki/Deployment).
 
+
+## Demos
+
+* [UI Demos](https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before its officially release.
+* [FxOS BMI](http://gasolin.github.io/fxosbmi/public/index.html) , the BMI calculator demo, with offline support. [Source](https://github.com/gasolin/fxosbmi) is available.
+* [bgzla] (http://gasolin.github.io/bgzla/), Bugzilla monitor for Gaia project
+
+
 ## Get Webapplate
 
 Go to https://github.com/gasolin/Webapplate website, click 'ZIP' button to download nodera template.
@@ -55,11 +63,6 @@ Plus webapplate enable you to genergate the packaged webapp via command:
 
 Read [Deployment](https://github.com/gasolin/webapplate/wiki/Deployment#3-packaged-webapp) doc for further configurations.
 
-## Demos
-
-* [UI Demos](https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before its officially release.
-* [FxOS BMI](http://gasolin.github.io/fxosbmi/public/index.html) , the BMI calculator demo, with offline support. [Source](https://github.com/gasolin/fxosbmi) is available.
-* [bgzla] (http://gasolin.github.io/bgzla/), Bugzilla monitor for Gaia project
 
 ## Features
 
