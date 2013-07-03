@@ -6,17 +6,19 @@ current version: v0.8
 
 A Mobile First WebApp template that help you quickly start the mobile web app development. 
 
-Webapplate provide a ready-to-deploy project bootstrap settings, and deployable `webapp manifest template and installer`
-for both `hosted` (dynamic/static website) and `packaged` (no server) webapp.
+Webapplate is the webapp template to write hosted/packaged web app based on Firefox OS gaia file structure,
+with preconfigured help tools like appcache generator and testframework.
 
-Website inherit from Webapplate can be [deployed in minutes](https://github.com/gasolin/webapplate/wiki/Deployment).
+Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) webapp.
+
+Website inherit from Webapplate can be [deployed to any host provider](https://github.com/gasolin/webapplate/wiki/Deployment).
 
 
 ## Demos
 
-Here are some example that start the development by webapplate:
+Here are some examples that start the development by webapplate:
 
-* [UI Demos](https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before its officially release.
+* [UI Demos](https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before Firefox OS device officially release.
 * [FxOS BMI](http://gasolin.github.io/fxosbmi/public/index.html) , the BMI calculator demo, with offline support. [Source](https://github.com/gasolin/fxosbmi) is available.
 * [bgzla] (http://gasolin.github.io/bgzla/), Bugzilla monitor for Gaia project
 
