@@ -31,6 +31,9 @@ or you can use git command to clone Webapplate:
 
     git clone https://github.com/gasolin/Webapplate.git
 
+Or you can use bower to get webapplate:
+
+    bower install webapplate
 
 ## Usage
 
@@ -40,6 +43,7 @@ or you can use git command to clone Webapplate:
 
 2. To fetch dependent packages, enter the webapplate folder and run
 
+        $ npm -g grunt-cli bower
         $ npm install
 
 3. To start the server, run
