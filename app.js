@@ -21,8 +21,6 @@ app.configure(function(){
     // static files, cached and expire in 30 days
     // change path / to /public if need dynamic web
     app.use("/", express.static(__dirname+'/public', {maxAge:2592000000}));
-    // link to bower components
-    // app.use("/public/lib", express.static(__dirname+'/bower_components'));
 
     // mime
     express.static.mime.define({'application/x-web-app-manifest+json': ['webapp']});
