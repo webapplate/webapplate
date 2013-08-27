@@ -1,0 +1,17 @@
+{
+  "name": "webapplate",
+  "version": "0.8.0",
+  "homepage": "https://github.com/gasolin/webapplate",
+  "authors": [
+    "gasolin <gasolin@gmail.com>"
+  ],
+  "description": "webapplate",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
