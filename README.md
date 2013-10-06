@@ -25,11 +25,11 @@ Here are some examples that start the development by webapplate:
 
 ## Get Webapplate
 
-Go to https://github.com/gasolin/Webapplate website, click 'ZIP' button to download nodera template.
+Go to https://github.com/gasolin/webapplate website, click 'ZIP' button to download nodera template.
 
 or you can use git command to clone Webapplate:
 
-    git clone https://github.com/gasolin/Webapplate.git
+    git clone https://github.com/gasolin/webapplate.git
 
 Or you can use bower to get webapplate:
 
