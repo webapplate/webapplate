@@ -1,5 +1,6 @@
 {
   "name": "Webapplate",
+  "description": "webapp template",
   "version": "0.8.0",
   "dependencies": {
     "express": ">=3.2.0",
@@ -28,5 +29,15 @@
         "public"
       ]
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gasolin/webapplate.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT License",
+      "url": "http://opensource.org/licenses/mit-license.html"
+    }
+  ]
 }
