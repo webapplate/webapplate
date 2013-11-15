@@ -43,7 +43,7 @@ Or you can use bower to get webapplate:
 
 2. To fetch dependent packages, enter the webapplate folder and run
 
-        $ npm -g grunt-cli bower
+        $ npm install -g grunt-cli bower
         $ npm install
 
 3. To start the server, run
