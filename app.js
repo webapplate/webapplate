@@ -1,11 +1,10 @@
 var express = require('express');
-var cons = require('consolidate');
 var swig = require('swig');
 var app = express();
 
 app.configure(function(){
     // template
-    app.engine('.html', cons.swig);
+    app.engine('.html', swig.renderFile);
     app.set('view engine', 'html');
     swig.init({
 	  root: __dirname + '/views',
