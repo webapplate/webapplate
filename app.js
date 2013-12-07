@@ -6,10 +6,6 @@ app.configure(function(){
     // template
     app.engine('.html', swig.renderFile);
     app.set('view engine', 'html');
-    swig.init({
-	  root: __dirname + '/views',
-	  allowErrors: true
-	});
     app.set('views', __dirname + '/views');
     app.set('view options', { layout: false });
     // Swig will cache templates for you, but you can disable
