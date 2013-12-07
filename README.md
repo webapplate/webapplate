@@ -2,12 +2,12 @@
 
 # Webapplate [![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate) [![Coverage Status](https://coveralls.io/repos/gasolin/webapplate/badge.png?branch=master)](https://coveralls.io/r/gasolin/webapplate?branch=master)
 
-current version: v0.8
+current version: v0.9
 
 A Mobile First WebApp template that help you quickly start the mobile web app development. 
 
 Webapplate is the webapp template to write hosted/packaged web app based on Firefox OS gaia file structure,
-with preconfigured help tools like appcache generator and testframework.
+with preconfigured helper tools like appcache generator, multi-locales and testframework.
 
 Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) webapp.
 
@@ -82,9 +82,11 @@ Read [Deployment](https://github.com/gasolin/webapplate/wiki/Deployment#3-packag
 
 4. Support `offline appcache` and `packaged webapp` generator via [grunt.js](https://github.com/gunta/grunt-manifest) that make `offline webapp` support easier.
 
-5. Integrate unittest with browser via [mocha](http://visionmedia.github.io/mocha/) JS test framework
+5. multi-locales support via [l20n](https://github.com/l20n/l20n.js/blob/master/docs/html.md)
 
-6. Dynamic page support based on [express](http://www.expressjs.com)
+6. Integrate unittest with browser via [mocha](http://visionmedia.github.io/mocha/) JS test framework
+
+7. Dynamic page support based on [express](http://www.expressjs.com)
 
 
 Read Documentation at [https://github.com/gasolin/webapplate/wiki](https://github.com/gasolin/webapplate/wiki).

@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
-    "name": "My App",
-    "description": "My App Description",
+    "name": "Web App",
+    "description": "Web App Description",
     "developer": {
         "name": "Your Name",
         "url": "https://github.com/gasolin/webapplate"
