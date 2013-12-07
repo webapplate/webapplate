@@ -4,12 +4,11 @@
 
 current version: v0.9
 
-A Mobile First WebApp template that help you quickly start the mobile web app development. 
+A Mobile First, full stack WebApp template that help you quickly start the mobile web app development. 
 
-Webapplate is the webapp template to write hosted/packaged web app based on Firefox OS gaia file structure,
-with preconfigured helper tools like appcache generator, multi-locales and testframework.
-
-Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) webapp.
+Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) webapp
+, with convention of file structure, [express](http://expressjs.com/) server-side support,
+and preconfigured helper tools like appcache generator, multi-locales and testframework.
 
 Website inherit from Webapplate can be [deployed to any host provider](https://github.com/gasolin/webapplate/wiki/Deployment).
 
@@ -20,7 +19,7 @@ Here are some examples that start the development by webapplate:
 
 * [UI Demos](https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before Firefox OS device officially release.
 * [FxOS BMI](http://gasolin.github.io/fxosbmi/public/index.html) , the BMI calculator demo, with offline support. [Source](https://github.com/gasolin/fxosbmi) is available.
-* [bgzla] (http://gasolin.github.io/bgzla/), Bugzilla monitor for Gaia project
+* [bgzla](http://gasolin.github.io/bgzla/), Bugzilla monitor for Gaia project
 
 
 ## Get Webapplate
@@ -78,15 +77,13 @@ Read [Deployment](https://github.com/gasolin/webapplate/wiki/Deployment#3-packag
 
 2. Firefox OS ready: provide every elements that needs to apply your webapp to [Marketplace](http://marketplace.firefox.com/), and `webapp install detection script` for self hosting.
 
-3. Server-side support: Provide `grade A` speed web server/client configuration in [yslow](http://developer.yahoo.com/yslow/) measurement.
+3. Dynamic Server-side support based on [express](http://www.expressjs.com): Provide `grade A` speed web server/client configuration in [yslow](http://developer.yahoo.com/yslow/) measurement.
 
 4. Support `offline appcache` and `packaged webapp` generator via [grunt.js](https://github.com/gunta/grunt-manifest) that make `offline webapp` support easier.
 
-5. multi-locales support via [l20n](https://github.com/l20n/l20n.js/blob/master/docs/html.md)
+5. `multi-locales` support via [l20n](https://github.com/l20n/l20n.js/blob/master/docs/html.md)
 
 6. Integrate unittest with browser via [mocha](http://visionmedia.github.io/mocha/) JS test framework
-
-7. Dynamic page support based on [express](http://www.expressjs.com)
 
 
 Read Documentation at [https://github.com/gasolin/webapplate/wiki](https://github.com/gasolin/webapplate/wiki).
