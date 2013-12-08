@@ -30,9 +30,6 @@ or you can use git command to clone Webapplate:
 
     git clone https://github.com/gasolin/webapplate.git
 
-Or you can use bower to get webapplate:
-
-    bower install webapplate
 
 ## Usage
 
