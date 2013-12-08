@@ -1,1 +1,2 @@
-<hello "Hello WebApplate">
+<projectName "WebApplate">
+<hello "Hello {{ projectName }}">
