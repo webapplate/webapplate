@@ -5,6 +5,6 @@
   ],
   "default_locale": "en",
   "resources": [
-    "{{locale}}/messages.l20n"
+    "locales.{{locale}}.l20n"
   ]
 }
