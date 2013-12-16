@@ -162,8 +162,19 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      dist: ['dist/'],
-      test: ['dist/test']
+      pack: {
+        dist: ['dist/'],
+        test: ['dist/test']
+      },
+      docs: {
+        dist: ['docs/'],
+      }
+    },
+    jsdoc: {
+      src: ['public/js/*.js'],
+      options: {
+        destination: 'docs'
+      }
     }
   });
 
@@ -181,6 +192,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-rename');
   grunt.loadNpmTasks('grunt-zip');
+
+  grunt.loadNpmTasks('grunt-jsdoc');
 
   // Default task(s).
   grunt.registerTask('default', ['mochacov:test', 'manifest', 'plato']);
@@ -200,4 +213,7 @@ module.exports = function(grunt) {
   grunt.registerTask('pack', ['clean:dist', 'mocha_phantomjs',
                 /*copy files*/'copy:webapp', 'copy:install_page',
       /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore', 'plato']);
+
+  // generate docs
+  grunt.registerTask('docs', ['clean:docs', 'jsdoc']);
 };

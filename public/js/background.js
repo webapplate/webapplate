@@ -1,4 +1,9 @@
-/* Only used in Chrome Apps */
+'use strict';
+/**
+ * Only used in Chrome Apps
+ *
+ * @class Background
+ */
 chrome.app.runtime.onLaunched.addListener(function() {
   chrome.app.window.create('../index.html', {
     'bounds': {

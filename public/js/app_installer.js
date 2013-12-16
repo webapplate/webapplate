@@ -1,4 +1,9 @@
-//check if app is installed
+'use strict';
+/**
+ * check if Firefox webapp is installed
+ *
+ * @class Installer
+ */
 if (navigator.mozApps !== undefined) {
   var app_stat = navigator.mozApps.getSelf();
   app_stat.onsuccess = function() {

@@ -17,5 +17,6 @@ node_modules/
 public/vendor/
 
 dist/
+docs/
 public/test/reports/
 public/test/coverage.html
