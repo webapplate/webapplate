@@ -162,13 +162,9 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      pack: {
-        dist: ['dist/'],
-        test: ['dist/test']
-      },
-      docs: {
-        dist: ['docs/'],
-      }
+      dist: ['dist/'],
+      test: ['dist/test'],
+      docs: ['docs/']
     },
     jsdoc: {
       src: ['public/js/*.js'],
