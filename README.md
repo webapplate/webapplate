@@ -33,7 +33,7 @@ or you can use git command to clone Webapplate:
 
 ## Usage
 
-### Develop Hosted webapp(With dynamic/static web Server)
+### Setup
 
 1. install [node.js](http://www.nodejs.org)
 
@@ -42,7 +42,9 @@ or you can use git command to clone Webapplate:
         $ npm install -g grunt-cli bower
         $ npm install
 
-3. To start the server, run
+### Develop Hosted webapp(With dynamic/static web Server)
+
+1. To start the server, run
 
         $ node app.js
 
@@ -50,7 +52,7 @@ or you can use git command to clone Webapplate:
 
   The default page is stored in `/publish/index.html`. Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults.
 
-4. To autotest and generate appcache for offline usage, run
+2. To autotest and generate appcache for offline usage, run
 
         $ grunt
 
@@ -67,6 +69,15 @@ Plus webapplate enable you to genergate the packaged webapp via command:
 
 Read [Deployment](https://github.com/gasolin/webapplate/wiki/Deployment#3-packaged-webapp) doc for further configurations.
 
+### Generate static webapp (Server independent - experimental)
+
+Generate minimized static web app
+
+    $ grunt static
+
+### Generate JS document
+
+    $ grunt docs
 
 ## Features
 
