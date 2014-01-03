@@ -1,4 +1,6 @@
 'use strict';
+
+(function() {
 /**
  * check if Firefox webapp is installed
  *
@@ -37,3 +39,4 @@ if (navigator.mozApps !== undefined) {
 } else {
     // console.log('WebApp not supported');
 }
+}());
