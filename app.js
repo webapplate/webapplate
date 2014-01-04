@@ -1,8 +1,10 @@
+'use strict';
+
 var express = require('express');
 var swig = require('swig');
 var app = express();
 
-app.configure(function(){
+app.configure(function () {
     // template
     app.engine('.html', swig.renderFile);
     app.set('view engine', 'html');
@@ -21,7 +23,7 @@ app.configure(function(){
 
     // static files, cached and expire in 30 days
     // change path / to /public if need dynamic web
-    app.use("/", express.static(__dirname+'/public', {maxAge:2592000000}));
+    app.use("/", express.static(__dirname + '/public', {maxAge: 2592000000}));
 
     // mime
     express.static.mime.define({'application/x-web-app-manifest+json': ['webapp']});
@@ -32,8 +34,8 @@ app.configure(function(){
 
     // error
     app.use(express.errorHandler({
-      dumpExceptions: true,
-      showStack: true
+        dumpExceptions: true,
+        showStack: true
     }));
 });
 
@@ -48,6 +50,6 @@ app.get('/', function(req, res) {
 
 // port
 var app_port = process.env.VCAP_APP_PORT || 8000;
-app.listen(app_port, function() {
-  console.log("Listening on " + app_port);
+app.listen(app_port, function () {
+    console.log("Listening on " + app_port);
 });
