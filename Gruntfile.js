@@ -171,6 +171,55 @@ module.exports = function(grunt) {
       options: {
         destination: 'docs'
       }
+    },
+    jslint: {
+      server: {
+        src: [
+          'app.js'
+        ],
+        directives: {
+          node: true,
+          unused: true,
+          todo: true,
+          indent: 4,
+          nomen: true,
+          plusplus: true,
+          regexp: true,
+          vars: true,
+        },
+        options: {
+          failOnError: false
+        }
+      },
+      client: {
+        src: [
+          'public/**/*.js',
+        ],
+        exclude: [
+          'public/vendor/*.js',
+          'public/test/**/*.js',
+          'public/locales/l20n.min.js'
+        ],
+        directives: {
+          browser: true,
+          unused: true,
+          todo: true,
+          indent: 2,
+          nomen: true,
+          plusplus: true,
+          regexp: true,
+          vars: true,
+          predef: [
+            'alert',
+            'confirm',
+            'chrome',
+            'jQuery'
+          ]
+        },
+        options: {
+          failOnError: false
+        }
+      }
     }
   });
 
@@ -190,6 +239,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-zip');
 
   grunt.loadNpmTasks('grunt-jsdoc');
+  grunt.loadNpmTasks('grunt-jslint');
 
   // Default task(s).
   grunt.registerTask('default', ['mochacov:test', 'manifest', 'plato']);
@@ -211,5 +261,5 @@ module.exports = function(grunt) {
       /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore', 'plato']);
 
   // generate docs
-  grunt.registerTask('docs', ['clean:docs', 'jsdoc']);
+  grunt.registerTask('docs', ['clean:docs', 'jslint', 'jsdoc']);
 };

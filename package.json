@@ -19,6 +19,7 @@
     "grunt-zip": "*",
     "grunt-contrib-clean": "*",
     "grunt-jsdoc": "*",
+    "grunt-jslint": "*",
     "chai": "*",
     "sinon": "*"
   },
