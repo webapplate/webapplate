@@ -14,21 +14,21 @@
         installed.onsuccess = function () {
           if (installed.result.manifest.version !==
               app_stat.result.manifest.version) {
+            console.log('install update version');
             navigator.mozApps.install();
           }
-        };
-        installed.onerror = function () {
         };
       } else {
         // not installed
         var manifestUrl = location.href.substring(0,
           location.href.lastIndexOf('/')) + '/manifest.webapp';
-        // alert(manifestUrl);
 
         var app_install = navigator.mozApps.install(manifestUrl);
         app_install.onsuccess = function () {
+          console.log('successful installed');
         };
         app_install.onerror = function () {
+          console.log('not installed');
         };
       }
     };
@@ -36,6 +36,6 @@
       alert('Error checking installation status: ' + this.error.message);
     };
   } else {
-      // console.log('WebApp not supported');
+    console.log('WebApp is not supported');
   }
 }());

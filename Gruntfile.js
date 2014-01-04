@@ -185,7 +185,7 @@ module.exports = function(grunt) {
           nomen: true,
           plusplus: true,
           regexp: true,
-          vars: true,
+          vars: true
         },
         options: {
           failOnError: false
@@ -196,7 +196,7 @@ module.exports = function(grunt) {
           'public/**/*.js',
         ],
         exclude: [
-          'public/vendor/*.js',
+          'public/vendor/**/*.js',
           'public/test/**/*.js',
           'public/locales/l20n.min.js'
         ],
@@ -210,6 +210,7 @@ module.exports = function(grunt) {
           regexp: true,
           vars: true,
           predef: [
+            'console',
             'alert',
             'confirm',
             'chrome',
