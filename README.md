@@ -2,7 +2,7 @@
 
 # Webapplate [![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate) [![Coverage Status](https://coveralls.io/repos/gasolin/webapplate/badge.png?branch=master)](https://coveralls.io/r/gasolin/webapplate?branch=master)
 
-current version: v0.9
+current version: v1.0.0
 
 A Mobile First, full stack WebApp template that help you quickly start the mobile web app development. 
 
@@ -75,7 +75,7 @@ Generate minimized static web app
 
     $ grunt static
 
-### Generate JS document
+### Do JavaScript lint check and generate document
 
     $ grunt docs
 
