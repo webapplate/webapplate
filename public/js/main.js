@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Main entry point.
  *
@@ -7,7 +5,9 @@
  *
  * @class Main
  */
-document.addEventListener('DocumentLocalized', function() {
-	document.body.classList.remove('hidden');
-	// YourApp.init();
+document.addEventListener('DocumentLocalized', function () {
+  'use strict';
+
+  document.body.classList.remove('hidden');
+  // YourApp.init();
 });
