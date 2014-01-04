@@ -83,7 +83,9 @@ Generate minimized static web app
 
 1. *HTML5 Mobile Web App support in mind*: Mobile friendly templates based on [Mobile Boilerplate](https://github.com/h5bp/mobile-boilerplate), MIME types, favicons and webapp manifest (Firefox OS).
 
-2. Firefox OS ready: provide every elements that needs to apply your webapp to [Marketplace](http://marketplace.firefox.com/), and `webapp install detection script` for self hosting.
+2. WebApp ready: provide every elements that needs to apply your webapp to [Firefox Marketplace](http://marketplace.firefox.com/), and provide `Firefox webapp install detection script` for self hosting. 
+  * Support add WebApp to Homescreen from Chrome and Saffari mobile.
+  * Also provide the manifest file for Chrome App to [Chrome Store](https://chrome.google.com/webstore).
 
 3. Dynamic Server-side support based on [express](http://www.expressjs.com): Provide `grade A` speed web server/client configuration in [yslow](http://developer.yahoo.com/yslow/) measurement.
 
