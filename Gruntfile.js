@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
   'use strict';
 
+  // Load the plugin that provides tasks.
+  require('load-grunt-tasks')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -223,24 +226,6 @@ module.exports = function(grunt) {
       }
     }
   });
-
-  // Load the plugin that provides tasks.
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-mocha-cov');
-  grunt.loadNpmTasks('grunt-mocha-phantomjs');
-  grunt.loadNpmTasks('grunt-manifest');
-  grunt.loadNpmTasks('grunt-dom-munger');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-plato');
-
-  // used to generate package app
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-rename');
-  grunt.loadNpmTasks('grunt-zip');
-
-  grunt.loadNpmTasks('grunt-jsdoc');
-  grunt.loadNpmTasks('grunt-jslint');
 
   // Default task(s).
   grunt.registerTask('default', ['mochacov:test', 'manifest', 'plato']);
