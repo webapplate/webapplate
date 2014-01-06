@@ -2,9 +2,18 @@
 
 # Webapplate [![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate) [![Coverage Status](https://coveralls.io/repos/gasolin/webapplate/badge.png?branch=master)](https://coveralls.io/r/gasolin/webapplate?branch=master)
 
+A Mobile First, full stack WebApp template that help you quickly start the mobile web app development. 
+
+~~~
+                __                      __      __
+ _      _____  / /_  ____ _____  ____  / /___ _/ /____
+| | /| / / _ \/ __ \/ __ `/ __ \/ __ \/ / __ `/ __/ _ \
+| |/ |/ /  __/ /_/ / /_/ / /_/ / /_/ / / /_/ / /_/  __/
+|__/|__/\___/_.___/\__,_/ .___/ .___/_/\__,_/\__/\___/
+                       /_/   /_/
+~~~
 current version: v1.0.0
 
-A Mobile First, full stack WebApp template that help you quickly start the mobile web app development. 
 
 Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) webapp
 , with convention of file structure, [express](http://expressjs.com/) server-side support,
