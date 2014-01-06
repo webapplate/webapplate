@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 
   // Load the plugin that provides tasks.
   require('load-grunt-tasks')(grunt);
+  grunt.loadTasks('tasks');
 
   // Project configuration.
   grunt.initConfig({
@@ -228,10 +229,10 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
-  grunt.registerTask('default', ['mochacov:test', 'manifest', 'plato']);
+  grunt.registerTask('default', ['welcome', 'mochacov:test', 'manifest', 'plato']);
 
   // generate static web
-  grunt.registerTask('static', ['clean:dist', 'mocha_phantomjs', 'manifest',
+  grunt.registerTask('static', ['welcome', 'clean:dist', 'mocha_phantomjs', 'manifest',
           /*copy public folder*/'copy:static_web',
           /*parse css/js for minify*/
                                 'dom_munger:readcss', 'dom_munger:readjs',
@@ -242,10 +243,10 @@ module.exports = function(grunt) {
                                 'clean:test', 'plato']);
 
   // generate package app
-  grunt.registerTask('pack', ['clean:dist', 'mocha_phantomjs',
+  grunt.registerTask('pack', ['welcome', 'clean:dist', 'mocha_phantomjs',
                 /*copy files*/'copy:webapp', 'copy:install_page',
       /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore', 'plato']);
 
   // generate docs
-  grunt.registerTask('docs', ['clean:docs', 'jslint', 'jsdoc']);
+  grunt.registerTask('docs', ['welcome', 'clean:docs', 'jslint', 'jsdoc']);
 };
