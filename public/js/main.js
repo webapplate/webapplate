@@ -5,7 +5,7 @@
  *
  * @class Main
  */
-document.addEventListener('DocumentLocalized', function () {
+document.addEventListener('DocumentLocalized', function() {
   'use strict';
 
   document.body.classList.remove('hidden');

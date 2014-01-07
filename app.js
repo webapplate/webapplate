@@ -4,7 +4,7 @@ var express = require('express');
 var swig = require('swig');
 var app = express();
 
-app.configure(function () {
+app.configure(function() {
     // template
     app.engine('.html', swig.renderFile);
     app.set('view engine', 'html');
@@ -50,6 +50,6 @@ app.get('/', function(req, res) {
 
 // port
 var app_port = process.env.VCAP_APP_PORT || 8000;
-app.listen(app_port, function () {
+app.listen(app_port, function() {
     console.log("Listening on " + app_port);
 });

@@ -40,13 +40,13 @@ module.exports = function(grunt) {
     dom_munger: {
       readcss: {
         options: {
-            read: {selector: 'link', attribute: 'href', writeto: 'cssRefs', isPath: true},
+            read: {selector: 'link', attribute: 'href', writeto: 'cssRefs', isPath: true}
         },
         src: 'public/index.html' //read from source index.html
       },
       readjs: {
         options: {
-          read: {selector: 'script', attribute: 'src', writeto: 'jsRefs', isPath: true},
+          read: {selector: 'script', attribute: 'src', writeto: 'jsRefs', isPath: true}
         },
         src: 'public/index.html'
       },
@@ -177,6 +177,23 @@ module.exports = function(grunt) {
       }
     },
     jslint: {
+      utils: {
+        src: [
+          '*.js',
+          'tasks/**/*.js'
+        ],
+        directives: {
+          node: true,
+          unused: true,
+          todo: true,
+          indent: 4,
+          nomen: true,
+          plusplus: true,
+          regexp: true,
+          vars: true,
+          white: true
+        }
+      },
       server: {
         src: [
           'app.js'
@@ -189,7 +206,8 @@ module.exports = function(grunt) {
           nomen: true,
           plusplus: true,
           regexp: true,
-          vars: true
+          vars: true,
+          white: true
         },
         options: {
           failOnError: false
@@ -197,7 +215,7 @@ module.exports = function(grunt) {
       },
       client: {
         src: [
-          'public/**/*.js',
+          'public/**/*.js'
         ],
         exclude: [
           'public/vendor/**/*.js',
@@ -213,6 +231,7 @@ module.exports = function(grunt) {
           plusplus: true,
           regexp: true,
           vars: true,
+          white: true,
           predef: [
             'console',
             'alert',

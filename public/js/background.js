@@ -3,7 +3,7 @@
  *
  * @class Background
  */
-chrome.app.runtime.onLaunched.addListener(function () {
+chrome.app.runtime.onLaunched.addListener(function() {
   'use strict';
   chrome.app.window.create('../index.html', {
     'bounds': {
