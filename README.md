@@ -2,7 +2,7 @@
 
 # Webapplate [![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate) [![Coverage Status](https://coveralls.io/repos/gasolin/webapplate/badge.png?branch=master)](https://coveralls.io/r/gasolin/webapplate?branch=master)
 
-A Mobile First, full stack WebApp template that help you quickly start the mobile web app development. 
+A Mobile First, full stack WebApp template that help you quickly start the maintainable mobile web app development. 
 
 ~~~
                 __                      __      __
