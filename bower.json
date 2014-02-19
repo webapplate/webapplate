@@ -13,6 +13,7 @@
     "bower_components"
   ],
   "dependencies": {
-    "localforage": "*"
+    "localforage": "*",
+    "building-blocks": "*"
   }
 }
