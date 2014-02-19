@@ -21,6 +21,7 @@
     "grunt-contrib-clean": "*",
     "grunt-jsdoc": "*",
     "grunt-jslint": "*",
+    "time-grunt": "*",
     "chai": "*",
     "sinon": "*"
   },

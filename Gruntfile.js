@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
   'use strict';
 
+  // measures the time each task takes
+  require('time-grunt')(grunt);
+
   // Load the plugin that provides tasks.
   require('load-grunt-tasks')(grunt);
   grunt.loadTasks('tasks');
