@@ -48,7 +48,6 @@ app.configure(function() {
 // enable route if need dynamic web
 /*
 app.get('/', function(req, res) {
-    // res.send('Hello from <a href="http://appfog.com">AppFog.com</a>');
     res.render('index.html', {foo:'bar'});
 });
 */
