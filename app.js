@@ -18,6 +18,11 @@ app.configure(function() {
     // NOTE: You should always cache templates in a production environment.
     // Don't leave both of these to `false` in production!
 
+    // support POST: {"name":"foo","color":"red"}
+    app.use(express.json());
+    // support POST: name=foo&color=red
+    app.use(express.urlencoded());
+
     // gzip
     app.use(express.compress());
 
