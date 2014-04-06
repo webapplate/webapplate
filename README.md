@@ -46,9 +46,12 @@ or you can use git command to clone Webapplate:
 
 1. install [node.js](http://www.nodejs.org)
 
-2. To fetch dependent packages, enter the webapplate folder and run
+2. Install the grunt command-line interface globally:
 
         $ npm install -g grunt-cli bower
+
+To fetch dependent packages, enter the webapplate folder and run
+
         $ npm install
 
 ### Develop Hosted webapp(With dynamic/static web Server)
