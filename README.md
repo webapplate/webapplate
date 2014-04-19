@@ -12,7 +12,7 @@ A Mobile First, full stack WebApp template that help you quickly start the maint
 |__/|__/\___/_.___/\__,_/ .___/ .___/_/\__,_/\__/\___/
                        /_/   /_/
 ~~~
-current version: v1.0.0
+current version: v1.1.0
 
 
 Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) webapp
