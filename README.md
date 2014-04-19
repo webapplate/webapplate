@@ -56,6 +56,10 @@ To fetch dependent packages, enter the webapplate folder and run
 
 ### Develop Hosted webapp(With dynamic/static web Server)
 
+Note: to only install required library for production, run
+
+        $ npm install --production
+
 1. To start the server, run
 
         $ node app.js
