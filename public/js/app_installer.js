@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
   /**
    * check if Firefox webapp is installed
