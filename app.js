@@ -1,4 +1,3 @@
-/* global require, __dirname, process, console */
 (function() {
   'use strict';
 
@@ -34,10 +33,11 @@
 
   // static files, cached and expire in 30 days
   // change path / to /public if need dynamic web
-  app.use("/", serveStatic(__dirname + '/public', {maxAge: 2592000000}));
+  app.use('/', serveStatic(__dirname + '/public', {maxAge: 2592000000}));
 
   // mime
-  express.static.mime.define({'application/x-web-app-manifest+json': ['webapp']});
+  express.static.mime.define(
+    {'application/x-web-app-manifest+json': ['webapp']});
   express.static.mime.define({'text/cache-manifest': ['appcache']});
   express.static.mime.define({'image/x-icon': ['ico']});
   // express.static.mime.define({'audio/ogg': ['ogg']});
@@ -45,12 +45,12 @@
 
   // error
   app.use(errorHandler({
-      dumpExceptions: true,
-      showStack: true
+    dumpExceptions: true,
+    showStack: true
   }));
 
-  var router = express.Router();
   // routes
+  var router = express.Router();
   // enable route if need dynamic web
   /*
   router.get('/', function(req, res) {
@@ -63,6 +63,6 @@
   // port
   var app_port = process.env.VCAP_APP_PORT || 8000;
   app.listen(app_port, function() {
-      console.log("Listening on " + app_port);
+    console.log('Listening on ' + app_port);
   });
-})();
+}());
