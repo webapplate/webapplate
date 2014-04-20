@@ -62,7 +62,7 @@ Note: to only install required library for production, run
 
 1. To start the server, run
 
-        $ node app.js
+        $ node server.js
 
   Now you can open browser and see the web page at localhost:8000 .
 
