@@ -27,7 +27,8 @@
     "grunt-jslint": "~1.1.8",
     "time-grunt": "~0.3.1",
     "chai": "~1.9.1",
-    "sinon": "~1.9.1"
+    "sinon": "~1.9.1",
+    "grunt-express-server": "~0.4.13"
   },
   "scripts": {
     "blanket": {

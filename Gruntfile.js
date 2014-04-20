@@ -11,6 +11,28 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    express: {
+      options: {
+        port: 8000,
+        background: false
+      },
+      dev: {
+        options: {
+          script: 'server.js'
+        }
+      },
+      prod: {
+        options: {
+          script: 'server.js',
+          node_env: 'production'
+        }
+      },
+      test: {
+        options: {
+          script: 'server.js'
+        }
+      },
+    },
     mochacov: {
       test: {
         options: {
@@ -252,6 +274,9 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['welcome', 'mochacov:test', 'manifest', 'plato']);
+
+  // Server
+  grunt.registerTask('server', ['express:dev']);
 
   // generate static web
   grunt.registerTask('static', ['welcome', 'clean:dist', 'mocha_phantomjs', 'manifest',
