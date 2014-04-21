@@ -13,8 +13,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     express: {
       options: {
-        port: 8000,
-        background: false
+        port: 8000
       },
       dev: {
         options: {
@@ -31,7 +30,17 @@ module.exports = function(grunt) {
         options: {
           script: 'server.js'
         }
-      },
+      }
+    },
+    watch: {
+      express: {
+        files: ['server.js', 'public/js/*.js'],
+        tasks: ['express:dev'],
+        options: {
+          livereload: true, //reloads the browser
+          spawn: false
+        }
+      }
     },
     mochacov: {
       test: {
@@ -65,13 +74,19 @@ module.exports = function(grunt) {
     dom_munger: {
       readcss: {
         options: {
-            read: {selector: 'link', attribute: 'href', writeto: 'cssRefs', isPath: true}
+          read: {selector: 'link',
+                 attribute: 'href',
+                 writeto: 'cssRefs',
+                 isPath: true}
         },
         src: 'public/index.html' //read from source index.html
       },
       readjs: {
         options: {
-          read: {selector: 'script', attribute: 'src', writeto: 'jsRefs', isPath: true}
+          read: {selector: 'script',
+                 attribute: 'src',
+                 writeto: 'jsRefs',
+                 isPath: true}
         },
         src: 'public/index.html'
       },
@@ -89,21 +104,24 @@ module.exports = function(grunt) {
       },
       updatecss: {
         options: {
-          append: {selector:'head',html:'<link rel="stylesheet" href="style/app.min.css">'}
+          append: {selector: 'head',
+                   html: '<link rel="stylesheet" href="style/app.min.css">'}
         },
-        src:'dist/index.html'  //update the dist/index.html (the src index.html is copied there)
+        src: 'dist/index.html' //update the dist/index.html
+        // (the src index.html is copied there)
       },
       updatejs: {
         options: {
-          append: {selector:'body',html:'<script src="js/app.min.js"></script>'}
+          append: {selector: 'body',
+                   html: '<script src="js/app.min.js"></script>'}
         },
         src: 'dist/index.html'
       }
     },
     cssmin: {
       main: {
-        src:'<%= dom_munger.data.cssRefs %>',
-        dest:'dist/style/app.min.css'
+        src: '<%= dom_munger.data.cssRefs %>',
+        dest: 'dist/style/app.min.css'
       }
     },
     uglify: {
@@ -273,26 +291,29 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
-  grunt.registerTask('default', ['welcome', 'mochacov:test', 'manifest', 'plato']);
+  grunt.registerTask('default',
+                     ['welcome', 'mochacov:test', 'manifest', 'plato']);
 
   // Server
-  grunt.registerTask('server', ['express:dev']);
+  grunt.registerTask('server', ['express:dev', 'watch']);
 
   // generate static web
-  grunt.registerTask('static', ['welcome', 'clean:dist', 'mocha_phantomjs', 'manifest',
-          /*copy public folder*/'copy:static_web',
-          /*parse css/js for minify*/
-                                'dom_munger:readcss', 'dom_munger:readjs',
-                                'dom_munger:cleancss', 'dom_munger:cleanjs',
-                                'cssmin:main', 'uglify:main',
-                                'dom_munger:updatecss', 'dom_munger:updatejs',
-          /*append minified css/js*/
-                                'clean:test', 'plato']);
+  grunt.registerTask('static',
+                     ['welcome', 'clean:dist', 'mocha_phantomjs', 'manifest',
+  /*copy public folder*/'copy:static_web',
+  /*parse css/js for minify*/
+                        'dom_munger:readcss', 'dom_munger:readjs',
+                        'dom_munger:cleancss', 'dom_munger:cleanjs',
+                        'cssmin:main', 'uglify:main',
+                        'dom_munger:updatecss', 'dom_munger:updatejs',
+  /*append minified css/js*/
+                        'clean:test', 'plato']);
 
   // generate package app
   grunt.registerTask('pack', ['welcome', 'clean:dist', 'mocha_phantomjs',
-                /*copy files*/'copy:webapp', 'copy:install_page',
-      /* not pack with test */'rename:backup', 'zip:dist', 'rename:restore', 'plato']);
+            /*copy files*/'copy:webapp', 'copy:install_page',
+  /* not pack with test */'rename:backup', 'zip:dist',
+                          'rename:restore', 'plato']);
 
   // generate docs
   grunt.registerTask('docs', ['welcome', 'clean:docs', 'jslint', 'jsdoc']);

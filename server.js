@@ -1,13 +1,13 @@
 (function() {
   'use strict';
 
-  var express = require('express');
-  var swig = require('swig');
-  var app = express();
-  var bodyParser = require('body-parser')();
-  var compress = require('compression')();
-  var serveStatic = require('serve-static');
-  var errorHandler = require('errorhandler');
+  var express = require('express'),
+      swig = require('swig'),
+      bodyParser = require('body-parser')(),
+      compress = require('compression')(),
+      serveStatic = require('serve-static'),
+      errorHandler = require('errorhandler'),
+      app = express();
 
   // template
   app.engine('.html', swig.renderFile);
