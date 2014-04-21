@@ -21,6 +21,8 @@ and preconfigured helper tools like appcache generator, multi-locales and testfr
 
 Website inherit from Webapplate can be [deployed to any host provider](https://github.com/gasolin/webapplate/wiki/Deployment).
 
+All magics are well integrated and configurable.
+
 
 ## Demos
 
@@ -62,18 +64,19 @@ Note: to only install required library for production, run
 
 1. To start the server, run
 
+        $ grunt server
+
+or call the `server.js` directly.
+
         $ node server.js
 
-  Now you can open browser and see the web page at localhost:8000 .
+  Now you can open browser and see the web page at localhost:8000. The server.js is a fully functional server side script based on popular [express](http://expressjs.com/) framework, you can expand it to fit your needs.
 
-  The default page is stored in `/publish/index.html`. Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults.
+  The default page is stored in `/publish/index.html`. Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults that webapplate configured for you.
 
-2. To autotest and generate appcache for offline usage, run
+2. To autotest and generate appcache for offline usage (if you plan to publish a hosted webapp), run
 
         $ grunt
-
-All magics are well integrated and configurable in webapplate.
-
 
 ### Develop Packaged webapp (No Server)
 
