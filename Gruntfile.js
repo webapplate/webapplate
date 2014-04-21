@@ -42,6 +42,9 @@ module.exports = function(grunt) {
         }
       }
     },
+    bower: {
+      install: {}
+    },
     mochacov: {
       test: {
         options: {
@@ -292,7 +295,8 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default',
-                     ['welcome', 'mochacov:test', 'manifest', 'plato']);
+                     ['welcome', 'bower',
+                      'mochacov:test', 'plato']);
 
   // Server
   grunt.registerTask('server', ['express:dev', 'watch']);
