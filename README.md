@@ -50,7 +50,7 @@ or you can use git command to clone Webapplate:
 
         $ npm install -g grunt-cli bower
 
-To fetch dependent packages, enter the webapplate folder and run
+   To fetch dependent packages, enter the webapplate folder and run
 
         $ npm install
 
