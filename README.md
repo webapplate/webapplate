@@ -66,11 +66,13 @@ Note: to only install required library for production, run
 
         $ grunt server
 
-or call the `server.js` directly.
+or call the `server.js` manually.
 
         $ node server.js
 
-  Now you can open browser and see the web page at localhost:8000. The server.js is a fully functional server side script based on popular [express](http://expressjs.com/) framework, you can expand it to fit your needs.
+Now you can open browser and see the web page at localhost:8000. The server.js is a fully functional server side script based on popular [express](http://expressjs.com/) framework, you can expand it to fit your needs.
+
+with `grunt server` command, the browser and server will auto reload when you edit any js file within webapplate so you could preview the result directly.
 
   The default page is stored in `/publish/index.html`. Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults that webapplate configured for you.
 
