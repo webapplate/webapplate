@@ -1,9 +1,11 @@
 ![project logo](https://raw.github.com/gasolin/webapplate/master/public/style/icons/icon128.png) 
 
-# Webapplate [![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate) [![david-dm](https://david-dm.org/gasolin/webapplate.png)](https://david-dm.org/gasolin/webapplate) [![Coverage Status](https://coveralls.io/repos/gasolin/webapplate/badge.png?branch=master)](https://coveralls.io/r/gasolin/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/gasolin/webapplate.png)](https://codeclimate.com/github/gasolin/webapplate)
+# Webapplate 
 
 A Mobile First, full stack WebApp template that help you quickly start the maintainable mobile web app development. 
 http://gasolin.github.io/webapplate
+
+[![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate) [![david-dm](https://david-dm.org/gasolin/webapplate.png)](https://david-dm.org/gasolin/webapplate) [![Coverage Status](https://coveralls.io/repos/gasolin/webapplate/badge.png?branch=master)](https://coveralls.io/r/gasolin/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/gasolin/webapplate.png)](https://codeclimate.com/github/gasolin/webapplate)
 
 ~~~
                 __                      __      __
