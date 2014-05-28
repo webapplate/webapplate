@@ -15,7 +15,7 @@ http://gasolin.github.io/webapplate
 |__/|__/\___/_.___/\__,_/ .___/ .___/_/\__,_/\__/\___/
                        /_/   /_/
 ~~~
-current version: v1.1.0
+current version: v1.2.0
 
 
 Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) webapp
