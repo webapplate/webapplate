@@ -21,7 +21,7 @@
     "grunt-dom-munger": "~3.4.0",
     "grunt-express-server": "~0.4.13",
     "grunt-jsdoc": "~0.5.4",
-    "grunt-jslint": "~1.1.8",
+    "grunt-contrib-jshint": "~0.10.0",
     "grunt-manifest": "~0.4.0",
     "grunt-mocha-cov": "~0.2.1",
     "grunt-mocha-phantomjs": "~0.5.0",

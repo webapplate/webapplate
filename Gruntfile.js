@@ -141,7 +141,7 @@ module.exports = function(grunt) {
       generate: {
         options: {
           basePath: './public/',
-          // cache: ['js/app.js', 'css/style.css'],
+          // cache: ['js/server.js', 'css/style.css'],
           // cachePrefix: '/',
           // network: ['http://*', 'https://*'],
           fallback: ['/ fallback.html'],
@@ -222,42 +222,17 @@ module.exports = function(grunt) {
         destination: 'docs'
       }
     },
-    jslint: {
+    jshint: {
       utils: {
         src: [
           '*.js',
           'tasks/**/*.js'
-        ],
-        directives: {
-          node: true,
-          unused: true,
-          todo: true,
-          indent: 4,
-          nomen: true,
-          plusplus: true,
-          regexp: true,
-          vars: true,
-          white: true
-        }
+        ]
       },
       server: {
         src: [
-          'app.js'
-        ],
-        directives: {
-          node: true,
-          unused: true,
-          todo: true,
-          indent: 4,
-          nomen: true,
-          plusplus: true,
-          regexp: true,
-          vars: true,
-          white: true
-        },
-        options: {
-          failOnError: false
-        }
+          'server.js'
+        ]
       },
       client: {
         src: [
@@ -265,30 +240,8 @@ module.exports = function(grunt) {
         ],
         exclude: [
           'public/vendor/**/*.js',
-          'public/test/**/*.js',
-          'public/locales/l20n.min.js'
-        ],
-        directives: {
-          browser: true,
-          unused: true,
-          todo: true,
-          indent: 2,
-          nomen: true,
-          plusplus: true,
-          regexp: true,
-          vars: true,
-          white: true,
-          predef: [
-            'console',
-            'alert',
-            'confirm',
-            'chrome',
-            'jQuery'
-          ]
-        },
-        options: {
-          failOnError: false
-        }
+          'public/test/**/*.js'
+        ]
       }
     }
   });
@@ -320,5 +273,5 @@ module.exports = function(grunt) {
                           'rename:restore', 'plato']);
 
   // generate docs
-  grunt.registerTask('docs', ['welcome', 'clean:docs', 'jslint', 'jsdoc']);
+  grunt.registerTask('docs', ['welcome', 'clean:docs', 'jshint', 'jsdoc']);
 };
