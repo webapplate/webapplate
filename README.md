@@ -19,9 +19,9 @@ current version: v1.2.0
 
 ## Why need webapplate?
 
-Though there are many powerful tools surround web technologies, web does not provide the SDK just like Android or iOS. Developer who want to quickly build an webapp usually consume much a longer curve to make webapp right.
+Though there are many powerful tools surround web technologies, web does not provide the SDK just like Android or iOS. Developer who want to quickly build an webapp usually consume much a longer curve to make their webapp right.
 
-Thus developer who is appraoching to the `webapp`(write web as app) concept need a bootstrap or template project to start with. That's why webapplate comes.
+Thus developer who is approaching to the `webapp`(write web as app) concept need a bootstrap or template project to start with. That's why webapplate comes.
 
 ## How webapplate do
 
