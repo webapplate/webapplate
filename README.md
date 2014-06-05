@@ -17,6 +17,13 @@ http://gasolin.github.io/webapplate
 ~~~
 current version: v1.2.0
 
+## Why need webapplate?
+
+Though there are many powerful tools surround web technologies, web does not provide the SDK just like Android or iOS. Developer who want to quickly build an webapp usually consume much a longer curve to make webapp right.
+
+Thus developer who is appraoching to the `webapp`(write web as app) concept need a bootstrap or template project to start with. That's why webapplate comes.
+
+## How webapplate do
 
 Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) webapp
 , with convention of file structure, [express](http://expressjs.com/) server-side support,
