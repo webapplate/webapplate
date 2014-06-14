@@ -2,7 +2,9 @@
 
 # Webapplate 
 
-A Mobile First, full stack WebApp template that help you quickly start the maintainable mobile web app development. 
+The template to create new web application.
+
+Webapplate is the Mobile First, full stack WebApp template that help you quickly start the maintainable mobile web app development.
 http://gasolin.github.io/webapplate
 
 [![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate) [![david-dm](https://david-dm.org/gasolin/webapplate.png)](https://david-dm.org/gasolin/webapplate) [![Coverage Status](https://coveralls.io/repos/gasolin/webapplate/badge.png?branch=master)](https://coveralls.io/r/gasolin/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/gasolin/webapplate.png)](https://codeclimate.com/github/gasolin/webapplate)
@@ -19,9 +21,10 @@ current version: v1.2.0
 
 ## Why need webapplate?
 
-Though there are many powerful tools surround web technologies, web does not provide the SDK just like Android or iOS. Developer who want to quickly build an webapp usually consume much a longer curve to make their webapp right.
+Though there are many powerful tools surround web technologies, web does not provide the `SDK` or ready to use `template` that just like Android or iOS. Web is simple to write but hard to done right. Developer who want to quickly build an webapp usually consume much longer time to make their webapp right.
 
 Thus developer who is approaching to the `webapp`(write web as app) concept need a bootstrap or template project to start with. That's why webapplate comes.
+
 
 ## How webapplate do
 
@@ -134,4 +137,4 @@ Read Documentation at [https://github.com/gasolin/webapplate/wiki](https://githu
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Credit: developers and designers from node.js, express, grunt.js, Firefox OS, font-awesome, bower, and people who involved in improving Web technologies.
+Credit: developers and designers from node.js, express, grunt.js, Firefox OS, bower, and people who involved in improving Web technologies.
