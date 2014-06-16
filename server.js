@@ -43,23 +43,32 @@
   // express.static.mime.define({'audio/ogg': ['ogg']});
   // express.static.mime.define({'audio/mp4': ['m4a']});
 
+  // routes
+  var main = express.Router();
+  // enable route if need dynamic web
+  /*
+  main.get('/', function(req, res) {
+      res.render('index.html', {foo:'bar'});
+  });
+  */
+  // REGISTER OUR ROUTES
+  app.use('/', main);
+
+  // Handle 404
+  /*app.use(function(req, res) {
+     res.send('404: Page not Found', 404);
+  });
+
+  // Handle 500
+  app.use(function(error, req, res, next) {
+     res.send('500: Internal Server Error', 500);
+  });*/
+
   // error
   app.use(errorHandler({
     dumpExceptions: true,
     showStack: true
   }));
-
-  // routes
-  var router = express.Router();
-  // enable route if need dynamic web
-  /*
-  router.get('/', function(req, res) {
-      res.render('index.html', {foo:'bar'});
-  });
-  */
-  // REGISTER OUR ROUTES
-  app.use('/', router);
-
 
   /**
    *  terminator === the termination handler
