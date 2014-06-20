@@ -64,7 +64,7 @@
      res.send('500: Internal Server Error', 500);
   });*/
 
-  // error
+  // error, enable for debugging
   app.use(errorHandler({
     dumpExceptions: true,
     showStack: true

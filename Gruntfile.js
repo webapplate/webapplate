@@ -45,6 +45,11 @@ module.exports = function(grunt) {
     bower: {
       install: {}
     },
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
+      }
+    },
     mochacov: {
       test: {
         options: {

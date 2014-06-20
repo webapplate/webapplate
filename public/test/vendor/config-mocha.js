@@ -1,5 +1,5 @@
 mocha.setup({ui:'tdd'})
-var assert = chai.assert;
-var expect = chai.expect;
+var window.assert = window.chai.assert;
+var window.expect = window.chai.expect;
 // Note that should has to be executed
-var should = chai.should();
+var window.should = window.chai.should();
