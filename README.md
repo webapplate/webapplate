@@ -7,7 +7,7 @@ The template to create new web application.
 Webapplate is the Mobile First, full stack WebApp template that help you quickly start the maintainable mobile web app development.
 http://gasolin.github.io/webapplate
 
-[![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate) [![david-dm](https://david-dm.org/gasolin/webapplate.png)](https://david-dm.org/gasolin/webapplate) [![Coverage Status](https://coveralls.io/repos/gasolin/webapplate/badge.png?branch=master)](https://coveralls.io/r/gasolin/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/gasolin/webapplate.png)](https://codeclimate.com/github/gasolin/webapplate)
+[![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate) [![david-dm](https://david-dm.org/gasolin/webapplate.png)](https://david-dm.org/gasolin/webapplate) [![devDependency Status](https://david-dm.org/gasolin/webapplate/dev-status.svg)](https://david-dm.org/gasolin/webapplate#info=devDependencies) [![Coverage Status](https://coveralls.io/repos/gasolin/webapplate/badge.png?branch=master)](https://coveralls.io/r/gasolin/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/gasolin/webapplate.png)](https://codeclimate.com/github/gasolin/webapplate)
 
 ~~~
                 __                      __      __
