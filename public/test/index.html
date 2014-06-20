@@ -21,13 +21,7 @@
 <!-- coverage test, need start server first -->
 <!--<script src="vendor/blanket/blanket.min.js" data-cover-adapter="vendor/blanket/mocha-blanket.js" data-cover-only="js/" data-cover-never="test/"></script>-->
 
-<script type="text/javascript" charset="utf-8">
-  mocha.setup({ui:'tdd'})
-  var assert = chai.assert;
-  var expect = chai.expect;
-  // Note that should has to be executed
-  var should = chai.should();
-</script>
+<script src="vendor/mocha-config.js"></script>
 
 <!-- Sources, add 'data-cover' attr if you want jscoverage -->
 <script src="../js/main.js" data-cover></script>
