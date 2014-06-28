@@ -252,9 +252,7 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
-  grunt.registerTask('default',
-                     ['welcome', 'bower',
-                      'mochacov:test', 'plato']);
+  grunt.registerTask('default', ['welcome', 'bower', 'mochacov:test']);
 
   // Server
   grunt.registerTask('server', ['express:dev', 'watch']);
