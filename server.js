@@ -103,7 +103,7 @@
       //  allows us to run/test the app locally.
       console.warn('No IP address var, using 127.0.0.1');
       app_ipaddress = "127.0.0.1";
-  };
+  }
   app.listen(app_port, app_ipaddress, function() {
     console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), app_ipaddress, app_port);
