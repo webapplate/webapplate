@@ -17,7 +17,7 @@ http://gasolin.github.io/webapplate
 |__/|__/\___/_.___/\__,_/ .___/ .___/_/\__,_/\__/\___/
                        /_/   /_/
 ~~~
-current version: v1.2.0
+current version: v1.3.0
 
 ## Why need webapplate?
 
@@ -61,9 +61,9 @@ or you can use git command to clone Webapplate:
 
 1. install [node.js](http://www.nodejs.org)
 
-2. Install the grunt command-line interface globally:
+2. Install useful command-line tools globally:
 
-        $ npm install -g grunt-cli bower
+        $ npm install -g grunt-cli bower karma
 
    To fetch dependent packages, enter the webapplate folder and run
 
