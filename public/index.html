@@ -25,11 +25,17 @@ Exchange the line above for this to enable offline support
     <link rel="stylesheet" href="style/main.css">
     <link rel="localization" href="locales/manifest.json">
     <script defer src="vendor/l20n/l20n.min.js"></script>
+    <!-- web component
+    <script src="vendor/platform/platform.js"></script>
+    <link rel="import" href="parts/main.html">
+    -->
   </head>
   <body class="hidden">
     <!-- Add your site or application content here -->
-	  <h1 data-l10n-id="hello">Hello WebApplate</h1>
-
+    <h1 data-l10n-id="hello">Hello WebApplate</h1>
+    <!-- web component
+    <app-main></app-main>
+    -->
     <!-- Custom actions here -->
     <script defer src="js/main.js"></script>
 
