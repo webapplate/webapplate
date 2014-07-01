@@ -13,7 +13,6 @@
   "dependencies": {
     "l20n": "1.0.0-rc",
     "platform": "Polymer/platform",
-    "font-roboto": "Polymer/font-roboto",
-    "paper-elements": "Polymer/paper-elements"
+    "font-roboto": "Polymer/font-roboto"
   }
 }
