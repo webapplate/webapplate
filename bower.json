@@ -13,6 +13,12 @@
   "dependencies": {
     "l20n": "1.0.0-rc",
     "platform": "Polymer/platform",
-    "font-roboto": "Polymer/font-roboto"
+    "font-roboto": "Polymer/font-roboto",
+    "core-toolbar": "Polymer/core-toolbar",
+    "core-menu": "Polymer/core-menu",
+    "core-item": "Polymer/core-item",
+    "core-header-panel": "Polymer/core-header-panel",
+    "core-drawer-panel": "Polymer/core-drawer-panel",
+    "core-scaffold": "Polymer/core-scaffold"
   }
 }
