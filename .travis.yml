@@ -1,11 +1,15 @@
 language: node_js
 node_js:
   - "0.10"
+  - "0.11"
 script:
-  - npm install grunt-cli
-  - grunt
-  - grunt static
-  - grunt pack
-  - grunt karma
-  - grunt mochacov:travis
-
+  - npm install -g grunt-cli bower
+  - bower install
+  - $CI_ACTION
+env:
+  matrix:
+  #- CI_ACTION=grunt
+  - CI_ACTION="grunt static"
+  - CI_ACTION="grunt pack"
+  - CI_ACTION="grunt karma"
+  - CI_ACTION="grunt mochacov:travis"
