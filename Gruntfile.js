@@ -197,6 +197,34 @@ module.exports = function(grunt) {
           src: 'install.html',
           dest: 'dist/'
         }]
+      },
+      backup_firefox: {
+        files: [{
+          expand: false,
+          src: 'public/manifest.webapp',
+          dest: 'public/manifest_webapp_backup'
+        }]
+      },
+      firefox: {
+        files: [{
+          expand: false,
+          src: 'public/manifest.webapp',
+          dest: 'public/manifest.json'
+        }]
+      },
+      backup_chrome: {
+        files: [{
+          expand: false,
+          src: 'public/manifest.json',
+          dest: 'public/manifest_webapp_backup'
+        }]
+      },
+      chrome: {
+        files: [{
+          expand: false,
+          src: 'public/manifest.json',
+          dest: 'public/manifest.webapp'
+        }]
       }
     },
     rename: {
@@ -274,6 +302,11 @@ module.exports = function(grunt) {
             /*copy files*/'copy:webapp', 'copy:install_page',
   /* not pack with test */'rename:backup', 'zip:dist',
                           'rename:restore', 'plato']);
+
+  // copy firefox webapp manifest to chrome webapp json
+  grunt.registerTask('f2c', ['welcome', 'copy:backup_chrome', 'copy:firefox']);
+  // copy chrome webapp json to firefox webapp manifest
+  grunt.registerTask('c2f', ['welcome', 'copy:backup_firefox', 'copy:chrome']);
 
   // generate docs
   grunt.registerTask('docs', ['welcome', 'clean:docs', 'jshint', 'jsdoc']);
