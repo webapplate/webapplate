@@ -42,9 +42,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    bower: {
-      install: {}
-    },
     karma: {
       unit: {
         configFile: 'karma.conf.js'
@@ -280,7 +277,7 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
-  grunt.registerTask('default', ['welcome', 'bower', 'mochacov:test']);
+  grunt.registerTask('default', ['welcome', 'mochacov:test']);
 
   // Server
   grunt.registerTask('server', ['express:dev', 'watch']);
