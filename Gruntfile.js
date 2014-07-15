@@ -254,23 +254,22 @@ module.exports = function(grunt) {
     },
     jshint: {
       utils: {
+        jshintrc: true,
         src: [
           '*.js',
           'tasks/**/*.js'
         ]
       },
       server: {
+        jshintrc: true,
         src: [
           'server.js'
         ]
       },
       client: {
+        jshintrc: true,
         src: [
           'public/**/*.js'
-        ],
-        exclude: [
-          'public/vendor/**/*.js',
-          'public/test/**/*.js'
         ]
       }
     }
