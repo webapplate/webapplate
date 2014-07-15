@@ -103,13 +103,21 @@ Plus webapplate enable you to genergate the packaged webapp via command:
 
 Read [Deployment](https://github.com/gasolin/webapplate/wiki/Deployment#3-packaged-webapp) doc for further configurations.
 
+### Automatic testing during development
+
+While you are editing code, run command:
+
+    $ grunt karma
+
+To automaticly monitor and trigger all test when you change the code.
+
 ### Generate static webapp (Server independent - experimental)
 
 Generate minimized static web app
 
     $ grunt static
 
-### Do JavaScript lint check and generate document
+### JavaScript lint check and generate document
 
     $ grunt docs
 
