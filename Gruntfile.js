@@ -296,9 +296,10 @@ module.exports = function(grunt) {
 
   // generate package app
   grunt.registerTask('pack', ['welcome', 'clean:dist', 'mocha_phantomjs',
-            /*copy files*/'copy:webapp', 'copy:install_page',
-  /* not pack with test */'rename:backup', 'zip:dist',
-                          'rename:restore', 'plato']);
+          /*copy files*/'copy:webapp', 'copy:install_page',
+  /* not pack with test */
+                        'rename:backup', 'zip:dist',
+                        'rename:restore', 'plato']);
 
   // copy firefox webapp manifest to chrome webapp json
   grunt.registerTask('f2c', ['welcome', 'copy:backup_chrome', 'copy:firefox']);
