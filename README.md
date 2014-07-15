@@ -17,7 +17,7 @@ http://gasolin.github.io/webapplate
 |__/|__/\___/_.___/\__,_/ .___/ .___/_/\__,_/\__/\___/
                        /_/   /_/
 ~~~
-current version: v1.3.0
+current version: v1.4.0
 
 ## Why need webapplate?
 
