@@ -3,12 +3,11 @@ node_js:
   - "0.10"
   - "0.11"
 script:
-  - npm install -g grunt-cli bower
-  - bower install
+  - npm install -g grunt-cli bower karma
   - $CI_ACTION
 env:
   matrix:
-  #- CI_ACTION=grunt
+  - CI_ACTION="grunt"
   - CI_ACTION="grunt static"
   - CI_ACTION="grunt pack"
   - CI_ACTION="grunt karma"
