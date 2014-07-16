@@ -75,13 +75,13 @@
    *  Terminate server on receipt of the specified signal.
    *  @param {string} sig  Signal to terminate on.
    */
-  var terminator = function(sig){
-      if (typeof sig === "string") {
-         console.log('%s: Received %s - terminating sample app ...',
-                     Date(Date.now()), sig);
-         process.exit(1);
-      }
-      console.log('%s: Node server stopped.', Date(Date.now()) );
+  var terminator = function(sig) {
+    if (typeof sig === 'string') {
+      console.log('%s: Received %s - terminating sample app ...',
+        Date(Date.now()), sig);
+      process.exit(1);
+    }
+    console.log('%s: Node server stopped.', Date(Date.now()) );
   };
 
   //  Process on exit and signals.
@@ -89,23 +89,23 @@
 
   // Removed 'SIGPIPE' from the list - bugz 852598.
   ['SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 'SIGABRT',
-   'SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV', 'SIGUSR2', 'SIGTERM'
+    'SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV', 'SIGUSR2', 'SIGTERM'
   ].forEach(function(element, index, array) {
-      process.on(element, function() { terminator(element); });
+    process.on(element, function() { terminator(element); });
   });
 
   //  Set the environment variables we need.
-  var app_port = process.env.VCAP_APP_PORT ||
-      process.env.OPENSHIFT_NODEJS_PORT || 8000;
-  var app_ipaddress = process.env.OPENSHIFT_NODEJS_IP || '';
-  if (typeof app_ipaddress === "undefined") {
-      //  Log errors but continue w/ 127.0.0.1 - this
-      //  allows us to run/test the app locally.
-      console.warn('No IP address var, using 127.0.0.1');
-      app_ipaddress = "127.0.0.1";
+  var APP_PORT = process.env.VCAP_APP_PORT ||
+    process.env.OPENSHIFT_NODEJS_PORT || 8000;
+  var APP_IPADDRESS = process.env.OPENSHIFT_NODEJS_IP || '';
+  if (typeof APP_IPADDRESS === 'undefined') {
+    //  Log errors but continue w/ 127.0.0.1 - this
+    //  allows us to run/test the app locally.
+    console.warn('No IP address var, using 127.0.0.1');
+    APP_IPADDRESS = '127.0.0.1';
   }
-  app.listen(app_port, app_ipaddress, function() {
+  app.listen(APP_PORT, APP_IPADDRESS, function() {
     console.log('%s: Node server started on %s:%d ...',
-                        Date(Date.now() ), app_ipaddress, app_port);
+      Date(Date.now() ), APP_IPADDRESS, APP_PORT);
   });
 }());
