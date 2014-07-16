@@ -6,14 +6,14 @@
    * @class Installer
    */
   if (navigator.mozApps !== undefined) {
-    var app_stat = navigator.mozApps.getSelf();
-    app_stat.onsuccess = function() {
-      if (app_stat.result) {
+    var appStat = navigator.mozApps.getSelf();
+    appStat.onsuccess = function() {
+      if (appStat.result) {
         //instsalled
         var installed = navigator.mozApps.getInstalled();
         installed.onsuccess = function() {
           if (installed.result.manifest.version !==
-              app_stat.result.manifest.version) {
+              appStat.result.manifest.version) {
             console.log('install update version');
             navigator.mozApps.install();
           }
@@ -23,16 +23,16 @@
         var manifestUrl = location.href.substring(0,
           location.href.lastIndexOf('/')) + '/manifest.webapp';
 
-        var app_install = navigator.mozApps.install(manifestUrl);
-        app_install.onsuccess = function() {
+        var appInstall = navigator.mozApps.install(manifestUrl);
+        appInstall.onsuccess = function() {
           console.log('successful installed');
         };
-        app_install.onerror = function() {
+        appInstall.onerror = function() {
           console.log('not installed');
         };
       }
     };
-    app_stat.onerror = function() {
+    appStat.onerror = function() {
       alert('Error checking installation status: ' + this.error.message);
     };
   } else {
