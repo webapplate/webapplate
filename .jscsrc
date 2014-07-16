@@ -1,7 +1,5 @@
 {
-  "preset": "google",
-    "validateLineBreaks": "LF",
-
+    "preset": "google",
     "excludeFiles": [
       "public/vendor/**",
       "public/test/**"

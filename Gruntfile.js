@@ -79,25 +79,29 @@ module.exports = function(grunt) {
     dom_munger: {
       readcss: {
         options: {
-          read: {selector: 'link',
-                 attribute: 'href',
-                 writeto: 'cssRefs',
-                 isPath: true}
+          read: {
+            selector: 'link',
+            attribute: 'href',
+            writeto: 'cssRefs',
+            isPath: true
+          }
         },
         src: 'public/index.html' //read from source index.html
       },
       readjs: {
         options: {
-          read: {selector: 'script',
-                 attribute: 'src',
-                 writeto: 'jsRefs',
-                 isPath: true}
+          read: {
+            selector: 'script',
+            attribute: 'src',
+            writeto: 'jsRefs',
+            isPath: true
+          }
         },
         src: 'public/index.html'
       },
       cleancss: {
         options: {
-            remove: 'link[href]'
+          remove: 'link[href]'
         },
         src: 'dist/index.html' //read from source index.html
       },
@@ -109,16 +113,20 @@ module.exports = function(grunt) {
       },
       updatecss: {
         options: {
-          append: {selector: 'head',
-                   html: '<link rel="stylesheet" href="style/app.min.css">'}
+          append: {
+            selector: 'head',
+            html: '<link rel="stylesheet" href="style/app.min.css">'
+          }
         },
         src: 'dist/index.html' //update the dist/index.html
         // (the src index.html is copied there)
       },
       updatejs: {
         options: {
-          append: {selector: 'body',
-                   html: '<script src="js/app.min.js"></script>'}
+          append: {
+            selector: 'body',
+            html: '<script src="js/app.min.js"></script>'
+          }
         },
         src: 'dist/index.html'
       }
@@ -153,13 +161,13 @@ module.exports = function(grunt) {
           timestamp: true
         },
         src: [
-            '*.html',
-            'js/*.js',
-            'style/*.css',
-            'style/images/*.png',
-            'style/images/*.jpg',
-            'style/icons/*.ico',
-            'style/icons/*.png'
+          '*.html',
+          'js/*.js',
+          'style/*.css',
+          'style/images/*.png',
+          'style/images/*.jpg',
+          'style/icons/*.ico',
+          'style/icons/*.png'
         ],
         dest: 'public/manifest.appcache'
       }
@@ -274,36 +282,24 @@ module.exports = function(grunt) {
       }
     },
     jscs: {
+      options: {
+        config: '.jscsrc'
+      },
       utils: {
-        options: {
-          config: ".jscsrc"
-        },
-        files: {
-          src: [
-            '*.js',
-            'tasks/**/*.js'
-          ]
-        }
+        src: [
+          '*.js',
+          'tasks/**/*.js'
+        ]
       },
       server: {
-        options: {
-          config: ".jscsrc"
-        },
-        files: {
-          src: [
-            'server.js'
-          ]
-        }
+        src: [
+          'server.js'
+        ]
       },
       client: {
-        options: {
-          config: ".jscsrc"
-        },
-        files: {
-          src: [
-            'public/**/*.js'
-          ]
-        }
+        src: [
+          'public/**/*.js'
+        ]
       }
     }
   });
@@ -315,29 +311,40 @@ module.exports = function(grunt) {
   grunt.registerTask('server', ['express:dev', 'watch']);
 
   // generate static web
-  grunt.registerTask('static',
-                     ['welcome', 'clean:dist', 'mocha_phantomjs', 'manifest',
-  /*copy public folder*/'copy:static_web',
-  /*parse css/js for minify*/
-                        'dom_munger:readcss', 'dom_munger:readjs',
-                        'dom_munger:cleancss', 'dom_munger:cleanjs',
-                        'cssmin:main', 'uglify:main',
-                        'dom_munger:updatecss', 'dom_munger:updatejs',
-  /*append minified css/js*/
-                        'clean:test', 'plato']);
+  grunt.registerTask('static', [
+    'welcome', 'clean:dist', 'mocha_phantomjs', 'manifest',
+    /*copy public folder*/
+    'copy:static_web',
+    /*parse css/js for minify*/
+    'dom_munger:readcss', 'dom_munger:readjs',
+    'dom_munger:cleancss', 'dom_munger:cleanjs',
+    'cssmin:main', 'uglify:main',
+    'dom_munger:updatecss', 'dom_munger:updatejs',
+    /*append minified css/js*/
+    'clean:test', 'plato'
+  ]);
 
   // generate package app
-  grunt.registerTask('pack', ['welcome', 'clean:dist', 'mocha_phantomjs',
-          /*copy files*/'copy:webapp', 'copy:install_page',
-  /* not pack with test */
-                        'rename:backup', 'zip:dist',
-                        'rename:restore', 'plato']);
+  grunt.registerTask('pack', [
+    'welcome', 'clean:dist', 'mocha_phantomjs',
+    /*copy files*/
+    'copy:webapp', 'copy:install_page',
+    /* not pack with test */
+    'rename:backup', 'zip:dist',
+    'rename:restore', 'plato'
+  ]);
 
   // copy firefox webapp manifest to chrome webapp json
-  grunt.registerTask('f2c', ['welcome', 'copy:backup_chrome', 'copy:firefox']);
+  grunt.registerTask('f2c', [
+    'welcome', 'copy:backup_chrome', 'copy:firefox'
+  ]);
   // copy chrome webapp json to firefox webapp manifest
-  grunt.registerTask('c2f', ['welcome', 'copy:backup_firefox', 'copy:chrome']);
+  grunt.registerTask('c2f', [
+    'welcome', 'copy:backup_firefox', 'copy:chrome'
+  ]);
 
   // generate docs
-  grunt.registerTask('docs', ['welcome', 'clean:docs', 'jshint', 'jscs', 'jsdoc']);
+  grunt.registerTask('docs', [
+    'welcome', 'clean:docs', 'jshint', 'jscs', 'jsdoc'
+  ]);
 };
