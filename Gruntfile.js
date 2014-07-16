@@ -272,6 +272,39 @@ module.exports = function(grunt) {
           'public/**/*.js'
         ]
       }
+    },
+    jscs: {
+      utils: {
+        options: {
+          config: ".jscsrc"
+        },
+        files: {
+          src: [
+            '*.js',
+            'tasks/**/*.js'
+          ]
+        }
+      },
+      server: {
+        options: {
+          config: ".jscsrc"
+        },
+        files: {
+          src: [
+            'server.js'
+          ]
+        }
+      },
+      client: {
+        options: {
+          config: ".jscsrc"
+        },
+        files: {
+          src: [
+            'public/**/*.js'
+          ]
+        }
+      }
     }
   });
 
@@ -306,5 +339,5 @@ module.exports = function(grunt) {
   grunt.registerTask('c2f', ['welcome', 'copy:backup_firefox', 'copy:chrome']);
 
   // generate docs
-  grunt.registerTask('docs', ['welcome', 'clean:docs', 'jshint', 'jsdoc']);
+  grunt.registerTask('docs', ['welcome', 'clean:docs', 'jshint', 'jscs', 'jsdoc']);
 };
