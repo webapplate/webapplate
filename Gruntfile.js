@@ -175,7 +175,7 @@ module.exports = function(grunt) {
     plato: {
       all: {
         files: {
-          'public/test/reports': ['public/js/*.js']
+          'docs/report': ['public/js/*.js']
         }
       }
     },
@@ -187,7 +187,7 @@ module.exports = function(grunt) {
           dest: 'dist/manifest.webapp'
         }]
       },
-      static_web: {
+      staticWeb: {
         files: [{
           expand: true,
           cwd: 'public/',
@@ -195,7 +195,7 @@ module.exports = function(grunt) {
           dest: 'dist/'
         }]
       },
-      install_page: {
+      installPage: {
         files: [{
           expand: true,
           cwd: 'helper/',
@@ -203,7 +203,7 @@ module.exports = function(grunt) {
           dest: 'dist/'
         }]
       },
-      backup_firefox: {
+      backupFirefox: {
         files: [{
           expand: false,
           src: 'public/manifest.webapp',
@@ -217,7 +217,7 @@ module.exports = function(grunt) {
           dest: 'public/manifest.json'
         }]
       },
-      backup_chrome: {
+      backupChrome: {
         files: [{
           expand: false,
           src: 'public/manifest.json',
@@ -301,6 +301,21 @@ module.exports = function(grunt) {
           'public/**/*.js'
         ]
       }
+    },
+    sloc: {
+      client: {
+        files: {
+          './': [
+            'public/*.html',
+            'public/js/*.js',
+            'public/style/*.css',
+            'public/parts/*.html',
+            'public/parts/*.js',
+            'public/parts/*.css',
+            'public/test/unit/*.js'
+          ]
+        }
+      }
     }
   });
 
@@ -314,37 +329,37 @@ module.exports = function(grunt) {
   grunt.registerTask('static', [
     'welcome', 'clean:dist', 'mocha_phantomjs', 'manifest',
     /*copy public folder*/
-    'copy:static_web',
+    'copy:staticWeb',
     /*parse css/js for minify*/
     'dom_munger:readcss', 'dom_munger:readjs',
     'dom_munger:cleancss', 'dom_munger:cleanjs',
     'cssmin:main', 'uglify:main',
     'dom_munger:updatecss', 'dom_munger:updatejs',
     /*append minified css/js*/
-    'clean:test', 'plato'
+    'clean:test'
   ]);
 
   // generate package app
   grunt.registerTask('pack', [
     'welcome', 'clean:dist', 'mocha_phantomjs',
     /*copy files*/
-    'copy:webapp', 'copy:install_page',
+    'copy:webapp', 'copy:installPage',
     /* not pack with test */
     'rename:backup', 'zip:dist',
-    'rename:restore', 'plato'
+    'rename:restore'
   ]);
 
   // copy firefox webapp manifest to chrome webapp json
   grunt.registerTask('f2c', [
-    'welcome', 'copy:backup_chrome', 'copy:firefox'
+    'welcome', 'copy:backupChrome', 'copy:firefox'
   ]);
   // copy chrome webapp json to firefox webapp manifest
   grunt.registerTask('c2f', [
-    'welcome', 'copy:backup_firefox', 'copy:chrome'
+    'welcome', 'copy:backupFirefox', 'copy:chrome'
   ]);
 
   // generate docs
   grunt.registerTask('docs', [
-    'welcome', 'clean:docs', 'jshint', 'jscs', 'jsdoc'
+    'welcome', 'clean:docs', 'jshint', 'jscs', 'sloc', 'jsdoc', 'plato'
   ]);
 };

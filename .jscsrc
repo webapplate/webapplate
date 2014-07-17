@@ -5,6 +5,7 @@
     ],
     "jsDoc": {
     },
+    "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
     "excludeFiles": [
       "public/vendor/**",
       "public/test/**"
