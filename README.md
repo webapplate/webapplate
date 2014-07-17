@@ -30,7 +30,7 @@ Thus developer who is approaching to the `webapp`(write web as app) concept need
 
 Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) webapp
 , with convention of file structure, [express](http://expressjs.com/) server-side support,
-and preconfigured helper tools like appcache generator, multi-locales and testframework.
+and preconfigured helper tools like code style check, appcache generator, multi-locales and testframework.
 
 Website inherit from Webapplate can be [deployed to any host provider](https://github.com/gasolin/webapplate/wiki/Deployment).
 
