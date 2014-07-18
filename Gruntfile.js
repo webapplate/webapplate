@@ -64,7 +64,7 @@ module.exports = function(grunt) {
           coveralls: {
             serviceName: 'travis-ci',
             serviceJobId: process.env.TRAVIS_JOB_ID,
-            repoToken: 'zbam4NOrmc9Wo8RkQXGfI9htPdlLRc2V6'
+            repoToken: '9Lqs288pJNb4aYw10BdWnjdJ5Vbx1zZM7'
           }
         }
       },
