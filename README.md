@@ -1,13 +1,13 @@
-![project logo](https://raw.github.com/gasolin/webapplate/master/public/style/icons/icon128.png) 
+![project logo](https://raw.github.com/webapplate/webapplate/master/public/style/icons/icon128.png) 
 
 # Webapplate 
 
 The template to create new web application.
 
 Webapplate is the Mobile First, full stack WebApp template that help you quickly start the maintainable mobile web app development.
-http://gasolin.github.io/webapplate
+http://webapplate.github.io/webapplate
 
-[![Build Status](https://travis-ci.org/gasolin/webapplate.png)](https://travis-ci.org/gasolin/webapplate) [![david-dm](https://david-dm.org/gasolin/webapplate.png)](https://david-dm.org/gasolin/webapplate) [![devDependency Status](https://david-dm.org/gasolin/webapplate/dev-status.svg)](https://david-dm.org/gasolin/webapplate#info=devDependencies) [![Coverage Status](https://coveralls.io/repos/gasolin/webapplate/badge.png?branch=master)](https://coveralls.io/r/gasolin/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/gasolin/webapplate.png)](https://codeclimate.com/github/gasolin/webapplate)
+[![Build Status](https://travis-ci.org/webapplate/webapplate.png)](https://travis-ci.org/webapplate/webapplate) [![david-dm](https://david-dm.org/webapplate/webapplate.png)](https://david-dm.org/webapplate/webapplate) [![devDependency Status](https://david-dm.org/webapplate/webapplate/dev-status.svg)](https://david-dm.org/webapplate/webapplate#info=devDependencies) [![Coverage Status](https://coveralls.io/repos/webapplate/webapplate/badge.png?branch=master)](https://coveralls.io/r/webapplate/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/webapplate/webapplate.png)](https://codeclimate.com/github/webapplate/webapplate)
 
 ~~~
                 __                      __      __
@@ -32,7 +32,7 @@ Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted
 , with convention of file structure, [express](http://expressjs.com/) server-side support,
 and preconfigured helper tools like code style check, appcache generator, multi-locales and testframework.
 
-Website inherit from Webapplate can be [deployed to any host provider](https://github.com/gasolin/webapplate/wiki/Deployment).
+Website inherit from Webapplate can be [deployed to any host provider](https://github.com/webapplate/webapplate/wiki/Deployment).
 
 All magics are well integrated and configurable.
 
@@ -48,11 +48,11 @@ Here are some examples that start the development by webapplate:
 
 ## Get Webapplate
 
-Go to https://github.com/gasolin/webapplate website, click 'ZIP' button to download nodera template.
+Go to https://github.com/webapplate/webapplate website, click 'ZIP' button to download nodera template.
 
 or you can use git command to clone Webapplate:
 
-    git clone https://github.com/gasolin/webapplate.git
+    git clone https://github.com/webapplate/webapplate.git
 
 
 ## Usage
@@ -87,7 +87,7 @@ Now you can open browser and see the web page at localhost:8000. The server.js i
 
 with `grunt server` command, the browser and server will auto reload when you edit any js file within webapplate so you could preview the result directly.
 
-  The default page is stored in `/publish/index.html`. Read [Syntax](https://github.com/gasolin/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults that webapplate configured for you.
+  The default page is stored in `/publish/index.html`. Read [Syntax](https://github.com/webapplate/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults that webapplate configured for you.
 
 2. To autotest and generate appcache for offline usage (if you plan to publish a hosted webapp), run
 
@@ -101,7 +101,7 @@ Plus webapplate enable you to genergate the packaged webapp via command:
 
     $ grunt pack
 
-Read [Deployment](https://github.com/gasolin/webapplate/wiki/Deployment#3-packaged-webapp) doc for further configurations.
+Read [Deployment](https://github.com/webapplate/webapplate/wiki/Deployment#3-packaged-webapp) doc for further configurations.
 
 ### Automatic testing during development
 
@@ -138,7 +138,7 @@ Generate minimized static web app
 6. Integrate unittest with browser via [mocha](http://visionmedia.github.io/mocha/) JS test framework
 
 
-Read Documentation at [https://github.com/gasolin/webapplate/wiki](https://github.com/gasolin/webapplate/wiki).
+Read Documentation at [https://github.com/webapplate/webapplate/wiki](https://github.com/webapplate/webapplate/wiki).
 
 
 ## License
