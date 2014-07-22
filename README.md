@@ -133,9 +133,11 @@ Generate minimized static web app
 
 4. Support `offline appcache` and `packaged webapp` generator via [grunt.js](https://github.com/gunta/grunt-manifest) that make `offline webapp` support easier.
 
-5. `multi-locales` support via [l20n](https://github.com/l20n/l20n.js/blob/master/docs/html.md)
+5. Support client side localization for webapp via [l20n](https://github.com/l20n/l20n.js/blob/master/docs/html.md)
 
-6. Integrate unittest with browser via [mocha](http://visionmedia.github.io/mocha/) JS test framework
+6. Style check for js, css, json, jsdoc via [jshint](http://www.jshint.com/), [jscs](https://github.com/mdevils/node-jscs), [csslint](https://github.com/stubbornella/csslint), [jsonlint](https://www.npmjs.org/package/grunt-jsonlint).
+
+7. Integrate unittest with browser via [mocha](http://visionmedia.github.io/mocha/) JS test framework
 
 
 Read Documentation at [https://github.com/webapplate/webapplate/wiki](https://github.com/webapplate/webapplate/wiki).
