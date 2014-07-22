@@ -302,6 +302,15 @@ module.exports = function(grunt) {
         ]
       }
     },
+    jsonlint: {
+      files: {
+        src: [
+          'public/manifest.webapp',
+          'public/manifest.json',
+          'public/**..json'
+        ]
+      }
+    },
     sloc: {
       client: {
         files: {
