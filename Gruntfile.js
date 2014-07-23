@@ -221,7 +221,7 @@ module.exports = function(grunt) {
         files: [{
           expand: false,
           src: 'public/manifest.json',
-          dest: 'public/manifest_webapp_backup'
+          dest: 'public/manifest_json_backup'
         }]
       },
       chrome: {

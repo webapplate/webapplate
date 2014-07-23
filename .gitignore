@@ -20,3 +20,7 @@ dist/
 docs/
 public/test/reports/
 public/test/coverage.html
+
+public/manifest_webapp_backup
+public/manifest_json_backup
+
