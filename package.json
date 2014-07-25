@@ -26,6 +26,7 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-dom-munger": "~3.4.0",
     "grunt-express-server": "~0.4.17",
+    "grunt-gh-pages": "~0.9.1",
     "grunt-jscs": "~0.6.1",
     "grunt-jsdoc": "~0.5.4",
     "grunt-jsonlint": "~1.0.4",
