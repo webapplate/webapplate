@@ -76,75 +76,32 @@ module.exports = function(grunt) {
     mocha_phantomjs: {
       all: ['public/test/index.html']
     },
-    dom_munger: {
-      readcss: {
-        options: {
-          read: {
-            selector: 'link',
-            attribute: 'href',
-            writeto: 'cssRefs',
-            isPath: true
-          }
-        },
-        src: 'public/index.html' //read from source index.html
-      },
-      readjs: {
-        options: {
-          read: {
-            selector: 'script',
-            attribute: 'src',
-            writeto: 'jsRefs',
-            isPath: true
-          }
-        },
-        src: 'public/index.html'
-      },
-      cleancss: {
-        options: {
-          remove: 'link[href]'
-        },
-        src: 'dist/index.html' //read from source index.html
-      },
-      cleanjs: {
-        options: {
-          remove: 'script[src]'
-        },
-        src: 'dist/index.html'
-      },
-      updatecss: {
-        options: {
-          append: {
-            selector: 'head',
-            html: '<link rel="stylesheet" href="style/app.min.css">'
-          }
-        },
-        src: 'dist/index.html' //update the dist/index.html
-        // (the src index.html is copied there)
-      },
-      updatejs: {
-        options: {
-          append: {
-            selector: 'body',
-            html: '<script src="js/app.min.js"></script>'
-          }
-        },
-        src: 'dist/index.html'
+    htmlmin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'public',
+          src: ['*.html'],
+          dest: 'dist'
+        }]
       }
     },
-    cssmin: {
-      main: {
-        src: '<%= dom_munger.data.cssRefs %>',
-        dest: 'dist/style/app.min.css'
-      }
-    },
-    uglify: {
+    // Reads HTML for usemin blocks to enable smart builds
+    // that automatically concat, minify and revision files.
+    // Creates configurations in memory so additional tasks
+    // can operate on them
+    useminPrepare: {
+      html: ['public/index.html'],
       options: {
-        banner: '/*! <%= pkg.name %> ' +
-                '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      main: {
-        src: '<%= dom_munger.data.jsRefs %>',
-        dest: 'dist/js/app.min.js'
+        dest: 'dist'
+      }
+    },
+    // Performs rewrites based on rev and the useminPrepare configuration
+    usemin: {
+      html: ['dist/{,*/}*index.html'],
+      options: {
+        assetsDirs: ['dist'],
+        debugInfo: true
       }
     },
     manifest: {
@@ -180,19 +137,41 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      webapp: {
+      static: {
         files: [{
           expand: false,
           src: 'public/manifest.webapp',
           dest: 'dist/manifest.webapp'
-        }]
-      },
-      staticWeb: {
-        files: [{
+        },
+        {
+          expand: false,
+          src: 'public/manifest.json',
+          dest: 'dist/manifest.json'
+        },
+        {
           expand: true,
           cwd: 'public/',
-          src: '**',
+          src: 'style/icons/**/*',
           dest: 'dist/'
+        },
+        {
+          expand: true,
+          cwd: 'public/',
+          src: 'style/images/**/*',
+          dest: 'dist/'
+        },
+        {
+          expand: true,
+          cwd: 'public/',
+          src: 'locales/**/*',
+          dest: 'dist/'
+        }]
+      },
+      appcache: {
+        files: [{
+          expand: false,
+          src: 'public/manifest.appcache',
+          dest: 'dist/manifest.appcache'
         }]
       },
       installPage: {
@@ -200,7 +179,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'helper/',
           src: 'install.html',
-          dest: 'dist/'
+          dest: 'pack/'
         }]
       },
       backupFirefox: {
@@ -232,26 +211,15 @@ module.exports = function(grunt) {
         }]
       }
     },
-    rename: {
-      backup: {
-        src: 'public/test',
-        dest: 'dist/test'
-      },
-      restore: {
-        src: 'dist/test',
-        dest: 'public/test'
-      }
-    },
     zip: {
       dist: {
-        cwd: 'public/',
-        src: 'public/**',
-        dest: 'dist/package.zip'
+        cwd: 'dist/',
+        src: 'dist/**',
+        dest: 'pack/package.zip'
       }
     },
     clean: {
-      dist: ['dist/'],
-      test: ['dist/test'],
+      dist: ['dist/', 'pack/', '.tmp/'],
       docs: ['docs/']
     },
     jsdoc: {
@@ -340,28 +308,30 @@ module.exports = function(grunt) {
   // Server
   grunt.registerTask('server', ['express:dev', 'watch']);
 
-  // generate static web
-  grunt.registerTask('static', [
-    'welcome', 'clean:dist', 'mocha_phantomjs', 'manifest',
-    /*copy public folder*/
-    'copy:staticWeb',
-    /*parse css/js for minify*/
-    'dom_munger:readcss', 'dom_munger:readjs',
-    'dom_munger:cleancss', 'dom_munger:cleanjs',
-    'cssmin:main', 'uglify:main',
-    'dom_munger:updatecss', 'dom_munger:updatejs',
-    /*append minified css/js*/
-    'clean:test'
+  grunt.registerTask('optimize', [
+    'welcome', 'clean:dist', 'mocha_phantomjs',
+    'useminPrepare',
+    'concat:generated',
+    'cssmin:generated',
+    'uglify:generated',
+    'htmlmin',
+    'usemin'
   ]);
 
-  // generate package app
+  // generate static web to dist/
+  grunt.registerTask('static', [
+    'optimize',
+    'manifest',
+    'copy:appcache',
+    'copy:static'
+  ]);
+
+  // generate package app to pack/
   grunt.registerTask('pack', [
-    'welcome', 'clean:dist', 'mocha_phantomjs',
-    /*copy files*/
-    'copy:webapp', 'copy:installPage',
-    /* not pack with test */
-    'rename:backup', 'zip:dist',
-    'rename:restore'
+    'optimize',
+    'copy:installPage',
+    'copy:static',
+    'zip:dist'
   ]);
 
   // copy firefox webapp manifest to chrome webapp json

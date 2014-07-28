@@ -22,9 +22,14 @@ Exchange the line above for this to enable offline support
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--[if IE]><link rel="shortcut icon" href="style/icons/favicon.ico"  type="image/x-icon"><![endif]-->
 
+    <!-- build:css style/app.min.css -->
     <link rel="stylesheet" href="style/main.css">
+    <!-- endbuild -->
     <link rel="localization" href="locales/manifest.json">
+
+    <!-- build:js js/app.min.js -->
     <script defer src="vendor/l20n/l20n.min.js"></script>
+    <!-- endbuild -->
     <!-- web component
     <script defer src="vendor/platform/platform.js"></script>
     <link rel="import" href="parts/app-main.html">
@@ -36,11 +41,14 @@ Exchange the line above for this to enable offline support
     <!-- web component
     <app-main></app-main>
     -->
+
+    <!-- build:js js/body.min.js -->
     <!-- Custom actions here -->
     <script defer src="js/main.js"></script>
 
     <!-- App Install detection -->
     <!--<script defer src="js/app_installer.js"></script>-->
+    <!-- endbuild -->
 
     <!-- Debugger - remove for production -->
     <!--<script defer src="https://getfirebug.com/firebug-lite.js"></script>-->
