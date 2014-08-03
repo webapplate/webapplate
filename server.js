@@ -17,12 +17,12 @@
   app.engine('.html', swig.renderFile);
   app.set('view engine', 'html');
   app.set('views', __dirname + '/views');
-  app.set('view options', { layout: false });
+  app.set('view options', {layout: false});
   // Swig will cache templates for you, but you can disable
   // that and use Express's caching instead, if you like:
   app.set('view cache', false);
   // To disable Swig's cache, do the following:
-  swig.setDefaults({ cache: false });
+  swig.setDefaults({cache: false});
   // NOTE: You should always cache templates in a production environment.
   // Don't leave both of these to `false` in production!
 
@@ -79,7 +79,7 @@
         Date(Date.now()), sig);
       process.exit(1);
     }
-    console.log('%s: Node server stopped.', Date(Date.now()) );
+    console.log('%s: Node server stopped.', Date(Date.now()));
   };
 
   //  Process on exit and signals.
@@ -104,6 +104,6 @@
   }
   app.listen(APP_PORT, APP_IPADDRESS, function() {
     console.log('%s: Node server started on %s:%d ...',
-      Date(Date.now() ), APP_IPADDRESS, APP_PORT);
+      Date(Date.now()), APP_IPADDRESS, APP_PORT);
   });
 }());
