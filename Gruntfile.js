@@ -277,7 +277,7 @@ module.exports = function(grunt) {
         src: [
           'public/manifest.webapp',
           'public/manifest.json',
-          'public/**..json'
+          'public/**/*.json'
         ]
       }
     },
@@ -288,10 +288,19 @@ module.exports = function(grunt) {
             'public/*.html',
             'public/js/*.js',
             'public/style/*.css',
-            'public/parts/*.html',
-            'public/parts/*.js',
-            'public/parts/*.css',
+            'public/parts/**/*.html',
+            'public/parts/**/*.js',
+            'public/parts/**/*.css',
             'public/test/unit/*.js'
+          ]
+        }
+      },
+      server: {
+        files: {
+          './': [
+            'server.js',
+            'routes/**/*.js',
+            'views/**/*.html'
           ]
         }
       }
