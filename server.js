@@ -11,6 +11,8 @@
       cookiesession = require('cookie-session'),
       app = express();
 
+  var routes = require('./routes/index');
+
   // template
   app.engine('.html', swig.renderFile);
   app.set('view engine', 'html');
@@ -47,16 +49,8 @@
   // express.static.mime.define({'audio/ogg': ['ogg']});
   // express.static.mime.define({'audio/mp4': ['m4a']});
 
-  // routes
-  var main = express.Router();
-  // enable route if need dynamic web
-  /*
-  main.get('/', function(req, res) {
-      res.render('index.html', {foo:'bar'});
-  });
-  */
   // REGISTER OUR ROUTES
-  app.use('/', main);
+  app.use('/', routes);
 
   // Handle 404
   /*app.use(function(req, res) {

@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     },
     watch: {
       express: {
-        files: ['server.js', 'public/js/*.js'],
+        files: ['server.js', 'public/js/*.js', 'routes/**/*.js'],
         tasks: ['express:dev'],
         options: {
           livereload: true, //reloads the browser
@@ -130,7 +130,7 @@ module.exports = function(grunt) {
       }
     },
     plato: {
-      all: {
+      client: {
         files: {
           'docs/report': ['public/js/*.js']
         }
@@ -239,7 +239,8 @@ module.exports = function(grunt) {
       server: {
         jshintrc: true,
         src: [
-          'server.js'
+          'server.js',
+          'routes/**/*.js'
         ]
       },
       client: {
@@ -261,7 +262,8 @@ module.exports = function(grunt) {
       },
       server: {
         src: [
-          'server.js'
+          'server.js',
+          'routes/**/*.js'
         ]
       },
       client: {
