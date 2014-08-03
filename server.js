@@ -7,6 +7,8 @@
       compress = require('compression')(),
       serveStatic = require('serve-static'),
       errorHandler = require('errorhandler'),
+      cookie = require('cookie-parser'),
+      cookiesession = require('cookie-session'),
       app = express();
 
   // template
@@ -27,6 +29,8 @@
   // POST: {"name":"foo","color":"red"} or
   // POST: name=foo&color=red
   app.use(bodyParser);
+  app.use(cookie);
+  app.use(cookiesession, 'monster', 'randomsecretkey');
 
   // gzip
   app.use(compress);
