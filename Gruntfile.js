@@ -8,9 +8,18 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   grunt.loadTasks('tasks');
 
+  // Configurable paths
+  var config = {
+    src: 'public',
+    dst: 'dist',
+    tmp: '.tmp'
+  };
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    // Project settings
+    config: config,
     express: {
       options: {
         port: 8000
@@ -76,12 +85,24 @@ module.exports = function(grunt) {
     mocha_phantomjs: {
       all: ['public/test/index.html']
     },
+    vulcanize: {
+      default: {
+        options: {
+          csp: true,
+          inline: false,
+          strip: false
+        },
+        files: {
+          'dist/build.html': 'public/index.html'
+        }
+      }
+    },
     htmlmin: {
       dist: {
         files: [{
           expand: true,
           cwd: 'public',
-          src: ['*.html'],
+          src: ['{,*/}*.html'],
           dest: 'dist'
         }]
       }
@@ -91,18 +112,19 @@ module.exports = function(grunt) {
     // Creates configurations in memory so additional tasks
     // can operate on them
     useminPrepare: {
-      html: ['public/index.html'],
       options: {
         dest: 'dist'
-      }
+      },
+      html: ['public/index.html']
     },
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-      html: ['dist/{,*/}*index.html'],
       options: {
         assetsDirs: ['dist'],
         debugInfo: true
-      }
+      },
+      html: ['dist/{,*/}*.html'],
+      css: ['dist/styles/{,*/}*.css']
     },
     manifest: {
       generate: {
@@ -219,7 +241,7 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      dist: ['dist/', 'pack/', '.tmp/'],
+      dist: ['dist/', 'pack/', '.tmp/', 'public/build.html'],
       docs: ['docs/']
     },
     jsdoc: {
@@ -326,7 +348,8 @@ module.exports = function(grunt) {
     'cssmin:generated',
     'uglify:generated',
     'htmlmin',
-    'usemin'
+    'usemin',
+    'vulcanize'
   ]);
 
   // generate static web to dist/
