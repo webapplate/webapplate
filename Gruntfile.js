@@ -275,7 +275,7 @@ module.exports = function(grunt) {
       }
     },
     zip: {
-      dist: {
+      pack: {
         cwd: '<%= config.build %>/',
         src: '<%= config.build %>/**',
         dest: '<%= config.dst %>/package.zip'
@@ -419,8 +419,7 @@ module.exports = function(grunt) {
   grunt.registerTask('pack', [
     'optimize',
     'copy:installPage',
-    'copy:static',
-    'zip:dist'
+    'zip:pack'
   ]);
 
   // copy firefox webapp manifest to chrome webapp json
