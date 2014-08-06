@@ -183,18 +183,20 @@ module.exports = function(grunt) {
                 // insert it into the usemin block
                 var useminEnd = content.indexOf(useminComment) +
                   useminComment.length; // next line
-                content = content
-                  .substring(0, useminEnd) // end of useminComment
-                  .concat('\n',
-                    cspJs, // insert
-                    '\n',
-                    content.substring(useminEnd + 1) // after end of useminComment
-                  );
+                if (useminEnd > -1) {
+                  content = content
+                    .substring(0, useminEnd) // end of useminComment
+                    .concat('\n',
+                      cspJs, // insert
+                      '\n',
+                      content.substring(useminEnd + 1) // after end of useminComment
+                    );
+                }
               }
             }
             moveToUsemin('<script src="index-csp.js"></script>');
-            moveToUsemin('<script src="vendor/polymer/polymer.js"></script>');
-            moveToUsemin('<script src="vendor/platform/platform.js"></script>');
+            moveToUsemin('<script defer src="vendor/polymer/polymer.js"></script>');
+            moveToUsemin('<script defer src="vendor/platform/platform.js"></script>');
             return content;
           }*/
         },
@@ -240,6 +242,24 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%= config.src %>/',
           src: 'vendor/**/*.css',
+          dest: '<%= config.dst %>/'
+        },
+        { /* copy polymer and platform */
+          expand: true,
+          cwd: '<%= config.src %>/',
+          src: 'vendor/polymer/**/*',
+          dest: '<%= config.dst %>/'
+        },
+        {
+          expand: true,
+          cwd: '<%= config.src %>/',
+          src: 'vendor/platform/**/*',
+          dest: '<%= config.dst %>/'
+        },
+        {
+          expand: true,
+          cwd: '<%= config.src %>/',
+          src: 'parts/**/*',
           dest: '<%= config.dst %>/'
         }]
       },
