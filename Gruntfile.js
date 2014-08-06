@@ -171,33 +171,34 @@ module.exports = function(grunt) {
             function moveToUsemin(script) {
               // extract the csp js script line
               var cspStart = content.indexOf(script);
-              var cspEnd   = cspStart + script.length;
-              var cspJs = content.slice(cspStart, cspEnd); // CR
+              if (cspStart > -1) {
+                var cspEnd   = cspStart + script.length;
+                var cspJs = content.slice(cspStart, cspEnd); // CR
 
-              // cut it out
-              content = content.substring(0, cspStart - 1)
-                .concat(content.substring(cspEnd));
+                // cut it out
+                content = content.substring(0, cspStart - 1)
+                  .concat(content.substring(cspEnd));
 
-              // insert it into the usemin block
-              var useminEnd = content.indexOf(useminComment) +
-                useminComment.length; // next line
-              content = content
-                .substring(0, useminEnd) // end of useminComment
-                .concat('\n',
-                  cspJs, // insert
-                  '\n',
-                  content.substring(useminEnd + 1) // after end of useminComment
-                );
+                // insert it into the usemin block
+                var useminEnd = content.indexOf(useminComment) +
+                  useminComment.length; // next line
+                content = content
+                  .substring(0, useminEnd) // end of useminComment
+                  .concat('\n',
+                    cspJs, // insert
+                    '\n',
+                    content.substring(useminEnd + 1) // after end of useminComment
+                  );
+              }
             }
-
             moveToUsemin('<script src="index-csp.js"></script>');
             moveToUsemin('<script src="vendor/polymer/polymer.js"></script>');
             moveToUsemin('<script src="vendor/platform/platform.js"></script>');
             return content;
-          },
-          src: '<%= config.build %>/index-csp.html',
-          dest: '<%= config.build %>/index.html'
-        }
+          }
+        },
+        src: '<%= config.build %>/index-csp.html',
+        dest: '<%= config.build %>/index.html'
       },
       static: {
         files: [{
