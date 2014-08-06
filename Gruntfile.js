@@ -11,8 +11,9 @@ module.exports = function(grunt) {
   // Configurable paths
   var config = {
     src: 'public',
-    dst: 'dist',
-    tmp: '.tmp'
+    build: 'build',
+    tmp: '.tmp',
+    dst: 'dist'
   };
 
   // Project configuration.
@@ -93,7 +94,7 @@ module.exports = function(grunt) {
           strip: false
         },
         files: {
-          'dist/build.html': 'public/index.html'
+          '<%= config.build %>/index-csp.html': '<%= config.build %>/index.html'
         }
       }
     },
@@ -151,48 +152,87 @@ module.exports = function(grunt) {
         dest: 'public/manifest.appcache'
       }
     },
-    plato: {
-      client: {
-        files: {
-          'docs/report': ['public/js/*.js']
-        }
-      }
-    },
     copy: {
+      // Copies all files into build directory for vulcanization
+      build: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= config.src %>',
+          dest: '<%= config.build %>',
+          src: ['**']
+        }]
+      },
+      vulcanized: {
+        options: {
+          // move the csp js file into usemin block
+          process: function (content, srcpath) {
+            var useminComment = 'build:js js/app.min.js';
+            function moveToUsemin(script) {
+              // extract the csp js script line
+              var cspStart = content.indexOf(script);
+              var cspEnd   = cspStart + script.length;
+              var cspJs = content.slice(cspStart, cspEnd); // CR
+
+              // cut it out
+              content = content.substring(0, cspStart - 1)
+                .concat(content.substring(cspEnd));
+
+              // insert it into the usemin block
+              var useminEnd = content.indexOf(useminComment) +
+                useminComment.length; // next line
+              content = content
+                .substring(0, useminEnd) // end of useminComment
+                .concat('\n',
+                  cspJs, // insert
+                  '\n',
+                  content.substring(useminEnd + 1) // after end of useminComment
+                );
+            }
+
+            moveToUsemin('<script src="index-csp.js"></script>');
+            moveToUsemin('<script src="vendor/polymer/polymer.js"></script>');
+            moveToUsemin('<script src="vendor/platform/platform.js"></script>');
+            return content;
+          },
+          src: '<%= config.build %>/index-csp.html',
+          dest: '<%= config.build %>/index.html'
+        }
+      },
       static: {
         files: [{
           expand: false,
-          src: 'public/manifest.webapp',
-          dest: 'dist/manifest.webapp'
+          src: '<%= config.build %>/manifest.webapp',
+          dest: '<%= config.dst %>/manifest.webapp'
         },
         {
           expand: false,
-          src: 'public/manifest.json',
-          dest: 'dist/manifest.json'
+          src: '<%= config.build %>/manifest.json',
+          dest: '<%= config.dst %>/manifest.json'
         },
         {
           expand: true,
-          cwd: 'public/',
+          cwd: '<%= config.build %>/',
           src: 'style/icons/**/*',
-          dest: 'dist/'
+          dest: '<%= config.dst %>/'
         },
         {
           expand: true,
-          cwd: 'public/',
+          cwd: '<%= config.build %>/',
           src: 'style/images/**/*',
-          dest: 'dist/'
+          dest: '<%= config.dst %>/'
         },
         {
           expand: true,
-          cwd: 'public/',
+          cwd: '<%= config.build %>/',
           src: 'locales/**/*',
-          dest: 'dist/'
+          dest: '<%= config.dst %>/'
         }]
       },
       appcache: {
         files: [{
           expand: false,
-          src: 'public/manifest.appcache',
+          src: '<%= config.build %>/manifest.appcache',
           dest: 'dist/manifest.appcache'
         }]
       },
@@ -201,48 +241,58 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'helper/',
           src: 'install.html',
-          dest: 'pack/'
+          dest: '<%= config.dst %>/'
         }]
       },
       backupFirefox: {
         files: [{
           expand: false,
-          src: 'public/manifest.webapp',
-          dest: 'public/manifest_webapp_backup'
+          src: '<%= config.src %>/manifest.webapp',
+          dest: '<%= config.src %>/manifest_webapp_backup'
         }]
       },
       firefox: {
         files: [{
           expand: false,
-          src: 'public/manifest.webapp',
-          dest: 'public/manifest.json'
+          src: '<%= config.src %>/manifest.webapp',
+          dest: '<%= config.src %>/manifest.json'
         }]
       },
       backupChrome: {
         files: [{
           expand: false,
-          src: 'public/manifest.json',
-          dest: 'public/manifest_json_backup'
+          src: '<%= config.src %>/manifest.json',
+          dest: '<%= config.src %>/manifest_json_backup'
         }]
       },
       chrome: {
         files: [{
           expand: false,
-          src: 'public/manifest.json',
-          dest: 'public/manifest.webapp'
+          src: '<%= config.src %>/manifest.json',
+          dest: '<%= config.src %>/manifest.webapp'
         }]
       }
     },
     zip: {
       dist: {
-        cwd: 'dist/',
-        src: 'dist/**',
-        dest: 'pack/package.zip'
+        cwd: '<%= config.build %>/',
+        src: '<%= config.build %>/**',
+        dest: '<%= config.dst %>/package.zip'
       }
     },
     clean: {
-      dist: ['dist/', 'pack/', '.tmp/', 'public/build.html'],
+      dist: ['<%= config.dst %>/', '<%= config.tmp %>/',
+        '<%= config.build %>/'],
+      unvulcanized: ['<%= config.build %>/index.html'],
+      vulcanized: ['<%= config.build %>/index-csp.html'],
       docs: ['docs/']
+    },
+    plato: {
+      client: {
+        files: {
+          'docs/report': ['public/js/*.js']
+        }
+      }
     },
     jsdoc: {
       src: ['public/js/*.js'],
@@ -343,13 +393,17 @@ module.exports = function(grunt) {
 
   grunt.registerTask('optimize', [
     'welcome', 'clean:dist', 'mocha_phantomjs',
+    'copy:build',
+    'vulcanize', // index.html -> index-csp.html/index-csp.js
+    'clean:unvulcanized', // rm index.html
+    'copy:vulcanized', // index-csp.html -> index.html & move script element
+    'clean:vulcanized', // rm index-csp.html
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',
     'uglify:generated',
     'htmlmin',
-    'usemin',
-    'vulcanize'
+    'usemin'
   ]);
 
   // generate static web to dist/
