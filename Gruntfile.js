@@ -167,7 +167,7 @@ module.exports = function(grunt) {
       vulcanized: {
         options: {
           // move the csp js file into usemin block
-          process: function (content, srcpath) {
+          /*process: function (content, srcpath) {
             var useminComment = 'build:js js/app.min.js';
             function moveToUsemin(script) {
               // extract the csp js script line
@@ -196,38 +196,50 @@ module.exports = function(grunt) {
             moveToUsemin('<script src="vendor/polymer/polymer.js"></script>');
             moveToUsemin('<script src="vendor/platform/platform.js"></script>');
             return content;
-          }
+          }*/
         },
         src: '<%= config.build %>/index-csp.html',
         dest: '<%= config.build %>/index.html'
       },
       static: {
-        files: [{
+        files: [{ /* copy manifests */
           expand: false,
-          src: '<%= config.build %>/manifest.webapp',
+          src: '<%= config.src %>/manifest.webapp',
           dest: '<%= config.dst %>/manifest.webapp'
         },
         {
           expand: false,
-          src: '<%= config.build %>/manifest.json',
+          src: '<%= config.src %>/manifest.json',
           dest: '<%= config.dst %>/manifest.json'
         },
-        {
+        { /* copy icons */
           expand: true,
-          cwd: '<%= config.build %>/',
+          cwd: '<%= config.src %>/',
           src: 'style/icons/**/*',
           dest: '<%= config.dst %>/'
         },
-        {
+        { /* copy images */
           expand: true,
-          cwd: '<%= config.build %>/',
+          cwd: '<%= config.src %>/',
           src: 'style/images/**/*',
+          dest: '<%= config.dst %>/'
+        },
+        { /* copy locales */
+          expand: true,
+          cwd: '<%= config.src %>/',
+          src: 'locales/**/*',
+          dest: '<%= config.dst %>/'
+        },
+        { /* copy vendor html and css */
+          expand: true,
+          cwd: '<%= config.src %>/',
+          src: 'vendor/**/*.html',
           dest: '<%= config.dst %>/'
         },
         {
           expand: true,
-          cwd: '<%= config.build %>/',
-          src: 'locales/**/*',
+          cwd: '<%= config.src %>/',
+          src: 'vendor/**/*.css',
           dest: '<%= config.dst %>/'
         }]
       },
@@ -235,7 +247,7 @@ module.exports = function(grunt) {
         files: [{
           expand: false,
           src: '<%= config.build %>/manifest.appcache',
-          dest: 'dist/manifest.appcache'
+          dest: '<%= config.dst %>/manifest.appcache'
         }]
       },
       installPage: {
@@ -411,14 +423,15 @@ module.exports = function(grunt) {
   // generate static web to dist/
   grunt.registerTask('static', [
     'optimize',
+    'copy:static',
     'manifest',
-    'copy:appcache',
-    'copy:static'
+    'copy:appcache'
   ]);
 
   // generate package app to pack/
   grunt.registerTask('pack', [
     'optimize',
+    'copy:static',
     'copy:installPage',
     'zip:pack'
   ]);
