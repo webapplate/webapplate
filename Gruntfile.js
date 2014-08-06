@@ -44,7 +44,7 @@ module.exports = function(grunt) {
     },
     watch: {
       express: {
-        files: ['server.js', 'public/js/*.js', 'routes/**/*.js'],
+        files: ['server.js', '<%= config.src %>/js/**/*.js', 'routes/**/*.js'],
         tasks: ['express:dev'],
         options: {
           livereload: true, //reloads the browser
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
       coverage: {
         options: {
           reporter: 'html-cov',
-          output: 'public/test/coverage.html'
+          output: '<%= config.src %>/test/coverage.html'
         }
       },
       travis: {
@@ -79,12 +79,12 @@ module.exports = function(grunt) {
         }
       },
       options: {
-        files: ['public/test/unit/**_test.js'],
+        files: ['<%= config.src %>/test/unit/**_test.js'],
         ui: 'tdd'
       }
     },
     mocha_phantomjs: {
-      all: ['public/test/index.html']
+      all: ['<%= config.src %>/test/index.html']
     },
     vulcanize: {
       default: {
@@ -102,9 +102,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: 'public',
+          cwd: '<%= config.src %>',
           src: ['{,*/}*.html'],
-          dest: 'dist'
+          dest: '<%= config.dst %>'
         }]
       }
     },
@@ -114,23 +114,23 @@ module.exports = function(grunt) {
     // can operate on them
     useminPrepare: {
       options: {
-        dest: 'dist'
+        dest: '<%= config.dst %>'
       },
-      html: ['public/index.html']
+      html: ['<%= config.build %>/index.html']
     },
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       options: {
-        assetsDirs: ['dist'],
+        assetsDirs: ['<%= config.dst %>'],
         debugInfo: true
       },
-      html: ['dist/{,*/}*.html'],
-      css: ['dist/styles/{,*/}*.css']
+      html: ['<%= config.dst %>/{,*/}*.html'],
+      css: ['<%= config.dst %>/styles/{,*/}*.css']
     },
     manifest: {
       generate: {
         options: {
-          basePath: './public/',
+          basePath: './<%= config.dst %>/',
           // cache: ['js/server.js', 'css/style.css'],
           // cachePrefix: '/',
           // network: ['http://*', 'https://*'],
@@ -149,7 +149,7 @@ module.exports = function(grunt) {
           'style/icons/*.ico',
           'style/icons/*.png'
         ],
-        dest: 'public/manifest.appcache'
+        dest: '<%= config.dst %>/manifest.appcache'
       }
     },
     copy: {
@@ -295,7 +295,7 @@ module.exports = function(grunt) {
       }
     },
     jsdoc: {
-      src: ['public/js/*.js'],
+      src: ['<%= config.src %>/js/*.js'],
       options: {
         destination: 'docs'
       }
@@ -318,7 +318,7 @@ module.exports = function(grunt) {
       client: {
         jshintrc: true,
         src: [
-          'public/**/*.js'
+          '<%= config.src %>/**/*.js'
         ]
       }
     },
@@ -340,16 +340,16 @@ module.exports = function(grunt) {
       },
       client: {
         src: [
-          'public/**/*.js'
+          '<%= config.src %>/**/*.js'
         ]
       }
     },
     jsonlint: {
       files: {
         src: [
-          'public/manifest.webapp',
-          'public/manifest.json',
-          'public/**/*.json'
+          '<%= config.src %>/manifest.webapp',
+          '<%= config.src %>/manifest.json',
+          '<%= config.src %>/**/*.json'
         ]
       }
     },
@@ -357,13 +357,13 @@ module.exports = function(grunt) {
       client: {
         files: {
           './': [
-            'public/*.html',
-            'public/js/*.js',
-            'public/style/*.css',
-            'public/parts/**/*.html',
-            'public/parts/**/*.js',
-            'public/parts/**/*.css',
-            'public/test/unit/*.js'
+            '<%= config.src %>/*.html',
+            '<%= config.src %>/js/*.js',
+            '<%= config.src %>/style/*.css',
+            '<%= config.src %>/parts/**/*.html',
+            '<%= config.src %>/parts/**/*.js',
+            '<%= config.src %>/parts/**/*.css',
+            '<%= config.src %>/test/unit/*.js'
           ]
         }
       },
@@ -379,7 +379,7 @@ module.exports = function(grunt) {
     },
     'gh-pages': {
       options: {
-        base: 'dist'
+        base: '<%= config.dst %>'
       },
       src: ['**']
     }
