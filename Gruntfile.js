@@ -13,7 +13,8 @@ module.exports = function(grunt) {
     src: 'public',
     build: 'build',
     tmp: '.tmp',
-    dst: 'dist'
+    dst: 'dist',
+    pack: 'pack'
   };
 
   // Project configuration.
@@ -242,7 +243,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'helper/',
           src: 'install.html',
-          dest: '<%= config.dst %>/'
+          dest: '<%= config.pack %>/'
         }]
       },
       backupFirefox: {
@@ -276,14 +277,14 @@ module.exports = function(grunt) {
     },
     zip: {
       pack: {
-        cwd: '<%= config.build %>/',
-        src: '<%= config.build %>/**',
-        dest: '<%= config.dst %>/package.zip'
+        cwd: '<%= config.dst %>/',
+        src: '<%= config.dst %>/**',
+        dest: '<%= config.pack %>/package.zip'
       }
     },
     clean: {
       dist: ['<%= config.dst %>/', '<%= config.tmp %>/',
-        '<%= config.build %>/'],
+        '<%= config.build %>/', '<%= config.pack %>/'],
       unvulcanized: ['<%= config.build %>/index.html'],
       vulcanized: ['<%= config.build %>/index-csp.html'],
       docs: ['docs/']
