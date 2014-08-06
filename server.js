@@ -31,8 +31,8 @@
   // POST: {"name":"foo","color":"red"} or
   // POST: name=foo&color=red
   app.use(bodyParser);
-  app.use(cookie);
-  app.use(cookiesession, 'monster', 'randomsecretkey');
+  //app.use(cookie);
+  //app.use(cookiesession, {keys: ['randomsecretkey']});
 
   // gzip
   app.use(compress);
