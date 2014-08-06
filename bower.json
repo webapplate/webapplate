@@ -12,6 +12,7 @@
   ],
   "dependencies": {
     "l20n": "1.0.0-rc",
+    "normalize-css": "3.0.1",
     "platform": "Polymer/platform",
     "font-roboto": "Polymer/font-roboto",
     "core-toolbar": "Polymer/core-toolbar",
