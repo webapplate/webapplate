@@ -270,6 +270,14 @@ module.exports = function(grunt) {
           dest: '<%= config.dst %>/manifest.appcache'
         }]
       },
+      backgroundJs: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>/',
+          src: 'js/background.js',
+          dest: '<%= config.dst %>/'
+        }]
+      },
       installPage: {
         files: [{
           expand: true,
@@ -452,6 +460,7 @@ module.exports = function(grunt) {
   grunt.registerTask('pack', [
     'optimize',
     'copy:static',
+    'copy:backgroundJs',
     'copy:installPage',
     'zip:pack'
   ]);
