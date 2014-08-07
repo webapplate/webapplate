@@ -324,7 +324,7 @@ module.exports = function(grunt) {
     },
     clean: {
       dist: ['<%= config.dst %>/', '<%= config.tmp %>/',
-        '<%= config.build %>/', '<%= config.pack %>/'],
+      '<%= config.build %>/', '<%= config.pack %>/'],
       unvulcanized: ['<%= config.build %>/index.html'],
       vulcanized: ['<%= config.build %>/index-csp.html'],
       docs: ['docs/']
@@ -427,14 +427,11 @@ module.exports = function(grunt) {
     }
   });
 
-  // Default task(s).
-  grunt.registerTask('default', ['welcome', 'mochacov:test']);
-
   // Server
   grunt.registerTask('server', ['express:dev', 'watch']);
 
   grunt.registerTask('optimize', [
-    'welcome', 'clean:dist', 'mocha_phantomjs',
+    'welcome', 'clean:dist',
     'copy:build',
     'vulcanize', // index.html -> index-csp.html/index-csp.js
     'clean:unvulcanized', // rm index.html
@@ -474,8 +471,20 @@ module.exports = function(grunt) {
     'welcome', 'copy:backupFirefox', 'copy:chrome'
   ]);
 
+  // Default server test task.
+  grunt.registerTask('default', [
+    'welcome', 'jshint', 'jscs', 'sloc', 'mochacov:test'
+  ]);
+
+  // Default client test task.
+  grunt.registerTask('test', [
+    'welcome', 'jshint', 'jscs', 'jsonlint', 'sloc',
+    'mocha_phantomjs'
+  ]);
+
   // generate docs
   grunt.registerTask('docs', [
-    'welcome', 'clean:docs', 'jshint', 'jscs', 'sloc', 'jsdoc', 'plato'
+    'welcome', 'clean:docs', 'jshint', 'jscs', 'jsonlint',
+    'sloc', 'jsdoc', 'plato'
   ]);
 };

@@ -8,6 +8,7 @@ script:
 env:
   matrix:
   - CI_ACTION="grunt"
+  - CI_ACTION="grunt test"
   - CI_ACTION="grunt static"
   - CI_ACTION="grunt pack"
   - CI_ACTION="grunt karma"
