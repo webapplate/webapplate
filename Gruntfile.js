@@ -231,8 +231,10 @@ module.exports = function(grunt) {
           cwd: '<%= config.src %>/',
           src: 'locales/**/*',
           dest: '<%= config.dst %>/'
-        },
-        { /* copy vendor html and css */
+        }]
+      },
+      webComponent: {
+        files: [{ /* copy vendor html and css */
           expand: true,
           cwd: '<%= config.src %>/',
           src: 'vendor/**/*.html',
@@ -327,7 +329,9 @@ module.exports = function(grunt) {
       '<%= config.build %>/', '<%= config.pack %>/'],
       unvulcanized: ['<%= config.build %>/index.html'],
       vulcanized: ['<%= config.build %>/index-csp.html'],
-      docs: ['docs/']
+      docs: ['docs/'],
+      static: ['<%= config.dst %>/test'],
+      pack: ['<%= config.dst %>/test']
     },
     plato: {
       client: {
@@ -430,13 +434,20 @@ module.exports = function(grunt) {
   // Server
   grunt.registerTask('server', ['express:dev', 'watch']);
 
-  grunt.registerTask('optimize', [
-    'welcome', 'clean:dist',
-    'copy:build',
+  // intemediate task to optimize web components
+  grunt.registerTask('webcommin', [
+    'copy:webComponent',
     'vulcanize', // index.html -> index-csp.html/index-csp.js
     'clean:unvulcanized', // rm index.html
     'copy:vulcanized', // index-csp.html -> index.html & move script element
     'clean:vulcanized', // rm index-csp.html
+  ]);
+
+  // intemediate task to optimize resources
+  grunt.registerTask('optimize', [
+    'welcome', 'clean:dist',
+    'copy:build',
+    /*'webcommin',*/
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',
@@ -450,7 +461,8 @@ module.exports = function(grunt) {
     'optimize',
     'copy:static',
     'manifest',
-    'copy:appcache'
+    'copy:appcache',
+    'clean:static'
   ]);
 
   // generate package app to pack/
@@ -459,6 +471,7 @@ module.exports = function(grunt) {
     'copy:static',
     'copy:backgroundJs',
     'copy:installPage',
+    'clean:pack',
     'zip:pack'
   ]);
 
