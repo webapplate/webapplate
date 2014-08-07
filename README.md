@@ -52,8 +52,9 @@ Go to https://github.com/webapplate/webapplate website, click 'ZIP' button to do
 
 or you can use git command to clone Webapplate:
 
-    git clone https://github.com/webapplate/webapplate.git
-
+```
+$ git clone https://github.com/webapplate/webapplate.git
+```
 
 ## Usage
 
@@ -63,25 +64,35 @@ or you can use git command to clone Webapplate:
 
 2. Install useful command-line tools globally:
 
-        $ npm install -g grunt-cli bower karma
+    ```
+    $ npm install -g grunt-cli bower karma
+    ```
 
    To fetch dependent packages, enter the webapplate folder and run
 
-        $ npm install
+    ```
+    $ npm install
+    ```
 
-### Develop Hosted webapp(With dynamic/static web Server)
+### Develop Hosted webapp (With dynamic/static web Server)
 
 Note: to only install required library for production, run
 
-        $ npm install --production
+```
+$ npm install --production
+```
 
 1. To start the server, run
 
-        $ grunt server
+    ```
+    $ grunt server
+    ```
 
-or call the `server.js` manually.
+    or call the `server.js` manually.
 
-        $ node server.js
+    ```
+    $ node server.js
+    ```
 
 Now you can open browser and see the web page at localhost:8000. The server.js is a fully functional server side script based on popular [express](http://expressjs.com/) framework, you can expand it to fit your needs.
 
@@ -89,17 +100,35 @@ with `grunt server` command, the browser and server will auto reload when you ed
 
   The default page is stored in `/publish/index.html`. Read [Syntax](https://github.com/webapplate/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults that webapplate configured for you.
 
-2. To autotest and generate appcache for offline usage (if you plan to publish a hosted webapp), run
+2. To lint check, autotest the project, run
 
-        $ grunt
+```
+$ grunt
+```
+
+For server side webapp, or
+
+```
+$ grunt test
+```
+
+For client side webapp.
 
 ### Develop Packaged webapp (No Server)
 
-just drag `/public/index.html` into browser. Or select `/public/manifest.webapp` in [Firefox OS Simulator](https://developer.mozilla.org/en-US/docs/Tools/Firefox_OS_Simulator).
+Note: to only install required library for production, run
+
+        $ npm install --production
+
+Drag `/public/index.html` into browser. Or select `/public/manifest.webapp` in [Firefox WebIDE](https://developer.mozilla.org/en-US/docs/Tools/WebIDE) or Chrome Extension page.
 
 Plus webapplate enable you to genergate the packaged webapp via command:
 
-    $ grunt pack
+```
+$ grunt pack
+```
+
+Which will try to optimize the source for faster webapp.
 
 Read [Deployment](https://github.com/webapplate/webapplate/wiki/Deployment#3-packaged-webapp) doc for further configurations.
 
@@ -107,7 +136,9 @@ Read [Deployment](https://github.com/webapplate/webapplate/wiki/Deployment#3-pac
 
 While you are editing code, run command:
 
-    $ grunt karma
+```
+$ grunt karma
+```
 
 To automaticly monitor and trigger all test when you change the code.
 
@@ -115,11 +146,10 @@ To automaticly monitor and trigger all test when you change the code.
 
 Generate minimized static web app
 
-    $ grunt static
+```
+$ grunt static
+```
 
-### JavaScript lint check and generate document
-
-    $ grunt docs
 
 ## Features
 
