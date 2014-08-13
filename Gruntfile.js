@@ -486,7 +486,7 @@ module.exports = function(grunt) {
 
   // Default server test task.
   grunt.registerTask('default', [
-    'welcome', 'jshint', 'jscs', 'sloc', 'mochacov:test'
+    'welcome', 'jshint', 'jscs', 'jsonlint', 'sloc', 'mochacov:test'
   ]);
 
   // Default client test task.

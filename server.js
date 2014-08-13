@@ -6,9 +6,7 @@
       bodyParser = require('body-parser')(),
       compress = require('compression')(),
       serveStatic = require('serve-static'),
-      errorHandler = require('errorhandler'),
-      cookie = require('cookie-parser'),
-      cookiesession = require('cookie-session'),
+      errorHandler = require('errorhandler')
       app = express();
 
   var routes = require('./routes/index');
@@ -31,8 +29,6 @@
   // POST: {"name":"foo","color":"red"} or
   // POST: name=foo&color=red
   app.use(bodyParser);
-  //app.use(cookie);
-  //app.use(cookiesession, {keys: ['randomsecretkey']});
 
   // gzip
   app.use(compress);
