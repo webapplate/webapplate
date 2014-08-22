@@ -6,7 +6,7 @@
       bodyParser = require('body-parser')(),
       compress = require('compression')(),
       serveStatic = require('serve-static'),
-      errorHandler = require('errorhandler')
+      errorHandler = require('errorhandler'),
       app = express();
 
   var routes = require('./routes/index');
