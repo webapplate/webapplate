@@ -416,6 +416,11 @@ module.exports = function(grunt) {
         }
       }
     },
+    githooks: {
+      all: {
+        'pre-commit': 'lint'
+      }
+    },
     'gh-pages': {
       options: {
         base: '<%= config.dst %>'
@@ -477,20 +482,23 @@ module.exports = function(grunt) {
     'welcome', 'copy:backupFirefox', 'copy:chrome'
   ]);
 
+  // lint
+  grunt.registerTask('lint', [
+    'welcome', 'jshint', 'jscs', 'jsonlint', 'sloc'
+  ]);
+
   // Default server test task.
   grunt.registerTask('default', [
-    'welcome', 'jshint', 'jscs', 'jsonlint', 'sloc', 'mochacov:test'
+    'lint', 'mochacov:test'
   ]);
 
   // Default client test task.
   grunt.registerTask('test', [
-    'welcome', 'jshint', 'jscs', 'jsonlint', 'sloc',
-    'mocha_phantomjs'
+    'lint', 'mocha_phantomjs'
   ]);
 
   // generate docs
   grunt.registerTask('docs', [
-    'welcome', 'clean:docs', 'jshint', 'jscs', 'jsonlint',
-    'sloc', 'jsdoc'
+    'clean:docs', 'lint', 'jsdoc'
   ]);
 };
