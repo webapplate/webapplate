@@ -17,7 +17,7 @@ http://webapplate.github.io/
 |__/|__/\___/_.___/\__,_/ .___/ .___/_/\__,_/\__/\___/
                        /_/   /_/
 ~~~
-current version: v1.5.0
+current version: v1.6.0
 
 ## Why need webapplate?
 
@@ -150,6 +150,15 @@ Generate minimized static web app
 $ grunt static
 ```
 
+### Per commit lint check
+
+Run command:
+
+```
+$ grunt githooks
+```
+
+To bind the git pre-commit lint check.
 
 ## Features
 
