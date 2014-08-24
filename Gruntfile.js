@@ -333,13 +333,6 @@ module.exports = function(grunt) {
       static: ['<%= config.dst %>/test'],
       pack: ['<%= config.dst %>/test']
     },
-    plato: {
-      client: {
-        files: {
-          'docs/report': ['public/js/*.js']
-        }
-      }
-    },
     jsdoc: {
       src: ['<%= config.src %>/js/*.js'],
       options: {
@@ -498,6 +491,6 @@ module.exports = function(grunt) {
   // generate docs
   grunt.registerTask('docs', [
     'welcome', 'clean:docs', 'jshint', 'jscs', 'jsonlint',
-    'sloc', 'jsdoc', 'plato'
+    'sloc', 'jsdoc'
   ]);
 };
