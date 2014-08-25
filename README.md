@@ -74,6 +74,13 @@ $ git clone https://github.com/webapplate/webapplate.git
     $ npm install
     ```
 
+   To bind the git pre-commit code style check, run command:
+
+    ```
+    $ grunt githooks
+    ```
+
+
 ### Develop Hosted webapp (With dynamic/static web Server)
 
 Note: to only install required library for production, run
@@ -150,16 +157,6 @@ Generate minimized static web app
 $ grunt static
 ```
 
-### Per commit lint check
-
-Run command:
-
-```
-$ grunt githooks
-```
-
-To bind the git pre-commit lint check.
-
 ## Features
 
 1. *HTML5 Mobile Web App support in mind*: Mobile friendly templates based on [Mobile Boilerplate](https://github.com/h5bp/mobile-boilerplate), MIME types, favicons and webapp manifest (Firefox OS).
@@ -174,10 +171,9 @@ To bind the git pre-commit lint check.
 
 5. Support client side localization for webapp via [l20n](https://github.com/l20n/l20n.js/blob/master/docs/html.md)
 
-6. Style check for js, css, json, jsdoc via [jshint](http://www.jshint.com/), [jscs](https://github.com/mdevils/node-jscs), [csslint](https://github.com/stubbornella/csslint), [jsonlint](https://www.npmjs.org/package/grunt-jsonlint).
+6. Style check for js, css, json via [jshint](http://www.jshint.com/), [jscs](https://github.com/mdevils/node-jscs), [csslint](https://github.com/stubbornella/csslint), [jsonlint](https://www.npmjs.org/package/grunt-jsonlint).
 
-7. Integrate unittest with browser via [mocha](http://visionmedia.github.io/mocha/) JS test framework
-
+7. Integrate unittest with browser via [karma](http://karma-runner.github.io/0.12/index.html) test runner and [mocha](http://visionmedia.github.io/mocha/) JS test framework
 
 Read Documentation at [https://github.com/webapplate/webapplate/wiki](https://github.com/webapplate/webapplate/wiki).
 
