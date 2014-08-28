@@ -4,6 +4,16 @@
         "node_modules/jscs-jsdoc/lib/rules/*.js"
     ],
     "jsDoc": {
+      "checkParamNames": true,
+      "checkRedundantParams": true,
+      "requireParamTypes": true,
+      "checkReturnTypes": true,
+      "requireReturnTypes": true,
+      "checkTypes": true,
+      "checkRedundantReturns": true,
+      "checkRedundantAccess": true,
+      "leadingUnderscoreAccess": "private",
+      "enforceExistence": true
     },
     "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
     "excludeFiles": [
