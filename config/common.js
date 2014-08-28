@@ -1,3 +1,5 @@
+/*jshint node: true */
+/*global module, process */
 'use strict';
 
 module.exports.tasks = {
@@ -332,7 +334,8 @@ module.exports.tasks = {
       jshintrc: true,
       src: [
         '*.js',
-        'tasks/**/*.js'
+        'tasks/**/*.js',
+        'config/**/*.js'
       ]
     },
     server: {
@@ -356,7 +359,8 @@ module.exports.tasks = {
     utils: {
       src: [
         '*.js',
-        'tasks/**/*.js'
+        'tasks/**/*.js',
+        'config/**/*.js'
       ]
     },
     server: {
