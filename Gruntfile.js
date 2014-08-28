@@ -20,7 +20,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server', ['express:dev', 'watch']);
 
   // intemediate task to optimize web components
-  grunt.registerTask('webcommin', [
+  grunt.registerTask('polymermin', [
     'copy:webComponent',
     'vulcanize', // index.html -> index-csp.html/index-csp.js
     'clean:unvulcanized', // rm index.html
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
   grunt.registerTask('optimize', [
     'welcome', 'clean:dist',
     'copy:build',
-    /*'webcommin',*/
+    /*'polymermin',*/
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',
@@ -76,12 +76,12 @@ module.exports = function(grunt) {
 
   // Default server test task.
   grunt.registerTask('default', [
-    'lint', 'mochacov:test'
+    'mochacov:test'
   ]);
 
   // Default client test task.
   grunt.registerTask('test', [
-    'lint', 'mocha_phantomjs'
+    'mocha_phantomjs'
   ]);
 
   // generate docs
