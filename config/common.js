@@ -29,22 +29,10 @@ module.exports.tasks = {
         output: '<%= config.src %>/test/coverage.html'
       }
     },
-    travis: {
-      options: {
-        coveralls: {
-          serviceName: 'travis-ci',
-          serviceJobId: process.env.TRAVIS_JOB_ID,
-          repoToken: '9Lqs288pJNb4aYw10BdWnjdJ5Vbx1zZM7'
-        }
-      }
-    },
     options: {
       files: ['<%= config.src %>/test/unit/**_test.js'],
       ui: 'tdd'
     }
-  },
-  mocha_phantomjs: {
-    all: ['<%= config.src %>/test/index.html']
   },
   vulcanize: {
     default: {
@@ -86,31 +74,6 @@ module.exports.tasks = {
     },
     html: ['<%= config.dst %>/{,*/}*.html'],
     css: ['<%= config.dst %>/styles/{,*/}*.css']
-  },
-  manifest: {
-    generate: {
-      options: {
-        basePath: './<%= config.dst %>/',
-        // cache: ['js/server.js', 'css/style.css'],
-        // cachePrefix: '/',
-        // network: ['http://*', 'https://*'],
-        fallback: ['/ fallback.html'],
-        // exclude: ['js/jquery.min.js'],
-        preferOnline: true,
-        verbose: false,
-        timestamp: true
-      },
-      src: [
-        '*.html',
-        'js/*.js',
-        'style/*.css',
-        'style/images/*.png',
-        'style/images/*.jpg',
-        'style/icons/*.ico',
-        'style/icons/*.png'
-      ],
-      dest: '<%= config.dst %>/manifest.appcache'
-    }
   },
   copy: {
     // Copies all files into build directory for vulcanization
