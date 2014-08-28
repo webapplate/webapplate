@@ -1,5 +1,5 @@
-/*jshint node: true */
-/*global module, process */
+    /*jshint node: true */
+    /*global module, process */
 'use strict';
 
 module.exports.tasks = {
@@ -11,37 +11,6 @@ module.exports.tasks = {
     tmp: '.tmp',
     dst: 'dist',
     pack: 'pack'
-  },
-  express: {
-    options: {
-      port: 8000
-    },
-    dev: {
-      options: {
-        script: 'server.js'
-      }
-    },
-    prod: {
-      options: {
-        script: 'server.js',
-        node_env: 'production'
-      }
-    },
-    test: {
-      options: {
-        script: 'server.js'
-      }
-    }
-  },
-  watch: {
-    express: {
-      files: ['server.js', '<%= config.src %>/js/**/*.js', 'routes/**/*.js'],
-      tasks: ['express:dev'],
-      options: {
-        livereload: true, //reloads the browser
-        spawn: false
-      }
-    }
   },
   karma: {
     unit: {
@@ -307,13 +276,6 @@ module.exports.tasks = {
       }]
     }
   },
-  zip: {
-    pack: {
-      cwd: '<%= config.dst %>/',
-      src: '<%= config.dst %>/**',
-      dest: '<%= config.pack %>/package.zip'
-    }
-  },
   clean: {
     dist: ['<%= config.dst %>/', '<%= config.tmp %>/',
     '<%= config.build %>/', '<%= config.pack %>/'],
@@ -328,95 +290,5 @@ module.exports.tasks = {
     options: {
       destination: 'docs'
     }
-  },
-  jshint: {
-    utils: {
-      jshintrc: true,
-      src: [
-        '*.js',
-        'tasks/**/*.js',
-        'config/**/*.js'
-      ]
-    },
-    server: {
-      jshintrc: true,
-      src: [
-        'server.js',
-        'routes/**/*.js'
-      ]
-    },
-    client: {
-      jshintrc: true,
-      src: [
-        '<%= config.src %>/**/*.js'
-      ]
-    }
-  },
-  jscs: {
-    options: {
-      config: '.jscsrc'
-    },
-    utils: {
-      src: [
-        '*.js',
-        'tasks/**/*.js',
-        'config/**/*.js'
-      ]
-    },
-    server: {
-      src: [
-        'server.js',
-        'routes/**/*.js'
-      ]
-    },
-    client: {
-      src: [
-        '<%= config.src %>/**/*.js'
-      ]
-    }
-  },
-  jsonlint: {
-    files: {
-      src: [
-        '<%= config.src %>/manifest.webapp',
-        '<%= config.src %>/manifest.json',
-        '<%= config.src %>/**/*.json'
-      ]
-    }
-  },
-  sloc: {
-    client: {
-      files: {
-        './': [
-          '<%= config.src %>/*.html',
-          '<%= config.src %>/js/*.js',
-          '<%= config.src %>/style/*.css',
-          '<%= config.src %>/parts/**/*.html',
-          '<%= config.src %>/parts/**/*.js',
-          '<%= config.src %>/parts/**/*.css',
-          '<%= config.src %>/test/unit/*.js'
-        ]
-      }
-    },
-    server: {
-      files: {
-        './': [
-          'server.js',
-          'routes/**/*.js',
-          'views/**/*.html'
-        ]
-      }
-    }
-  },
-  githooks: {
-    all: {
-      'pre-commit': 'lint'
-    }
-  },
-  'gh-pages': {
-    options: {
-      base: '<%= config.dst %>'
-    },
-    src: ['**']
   }
 };
