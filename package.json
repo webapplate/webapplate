@@ -8,11 +8,11 @@
     "npm": ">= 1.0.0"
   },
   "dependencies": {
-    "express": "~4.8.1",
-    "compression": "~1.0.9",
-    "serve-static": "~1.5.0",
+    "express": "~4.8.6",
+    "compression": "~1.0.11",
+    "serve-static": "~1.5.3",
     "errorhandler": "~1.1.1",
-    "body-parser": "~1.6.1",
+    "body-parser": "~1.6.6",
     "swig": "~1.4.2"
   },
   "devDependencies": {
@@ -40,7 +40,7 @@
     "grunt-usemin": "~2.3.0",
     "grunt-vulcanize": "~0.4.1",
     "grunt-zip": "~0.16.0",
-    "jscs-jsdoc": "~0.0.6",
+    "jscs-jsdoc": "~0.0.9",
     "karma": "^0.12.22",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.4",
