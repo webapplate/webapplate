@@ -76,12 +76,12 @@ module.exports = function(grunt) {
 
   // Default server test task.
   grunt.registerTask('default', [
-    'mochacov:test'
+    'lint', 'mochacov:test'
   ]);
 
   // Default client test task.
   grunt.registerTask('test', [
-    'mocha_phantomjs'
+    'lint', 'mocha_phantomjs'
   ]);
 
   // generate docs

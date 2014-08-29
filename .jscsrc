@@ -1,7 +1,7 @@
 {
     "preset": "google",
-    "additionalRules": [
-        "node_modules/jscs-jsdoc/lib/rules/*.js"
+    /*"additionalRules": [
+      "node_modules/jscs-jsdoc/lib/rules/*.js"
     ],
     "jsDoc": {
       "checkParamNames": true,
@@ -14,7 +14,7 @@
       "checkRedundantAccess": true,
       "leadingUnderscoreAccess": "private",
       "enforceExistence": true
-    },
+    },*/
     "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
     "excludeFiles": [
       "public/vendor/**",
