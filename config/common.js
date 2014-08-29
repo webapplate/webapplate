@@ -18,17 +18,6 @@ module.exports.tasks = {
     }
   },
   mochacov: {
-    test: {
-      options: {
-        reporter: 'spec'
-      }
-    },
-    coverage: {
-      options: {
-        reporter: 'html-cov',
-        output: '<%= config.src %>/test/coverage.html'
-      }
-    },
     options: {
       files: ['<%= config.src %>/test/unit/**_test.js'],
       ui: 'tdd'
