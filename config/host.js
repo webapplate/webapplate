@@ -34,6 +34,7 @@ module.exports.tasks = {
       }
     }
   },
+  // server side test
   mochacov: {
     test: {
       options: {

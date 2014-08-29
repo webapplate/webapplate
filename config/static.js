@@ -28,6 +28,16 @@ module.exports.tasks = {
       dest: '<%= config.dst %>/manifest.appcache'
     }
   },
+  copy: {
+    appcache: {
+      files: [{
+        expand: false,
+        src: '<%= config.build %>/manifest.appcache',
+        dest: '<%= config.dst %>/manifest.appcache'
+      }]
+    }
+  },
+  // client side test
   mocha_phantomjs: {
     all: ['<%= config.src %>/test/index.html']
   },
