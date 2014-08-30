@@ -12,8 +12,8 @@ module.exports = function(grunt) {
 
   // Load grunt configurations
   var options = {
-    config: { //default configs are located in tasks/config/
-      src: 'tasks/config/*.js'
+    config: { // set default configs location
+      src: 'tasks/configs/*.js'
     }
   };
   var configs = require('load-grunt-configs')(grunt, options);
