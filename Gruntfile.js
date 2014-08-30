@@ -11,7 +11,12 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   // Load grunt configurations
-  var configs = require('load-grunt-configs')(grunt);
+  var options = {
+    config: { //default configs are located in tasks/config/
+      src: 'tasks/config/*.js'
+    }
+  };
+  var configs = require('load-grunt-configs')(grunt, options);
 
   // Define the configuration for all the tasks
   grunt.initConfig(configs);
