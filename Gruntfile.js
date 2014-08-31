@@ -93,4 +93,9 @@ module.exports = function(grunt) {
   grunt.registerTask('docs', [
     'clean:docs', 'lint', 'jsdoc'
   ]);
+
+  // deploy github page
+  grunt.registerTask('github', [
+    'static', 'gh-pages'
+  ]);
 };

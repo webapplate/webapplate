@@ -1,5 +1,5 @@
-    /*jshint node: true */
-    /*global module, process */
+/*jshint node: true */
+/*global module, process */
 'use strict';
 
 module.exports.tasks = {

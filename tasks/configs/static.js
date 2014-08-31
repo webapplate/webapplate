@@ -40,11 +40,5 @@ module.exports.tasks = {
   // client side test
   mocha_phantomjs: {
     all: ['<%= config.src %>/test/index.html']
-  },
-  'gh-pages': {
-    options: {
-      base: '<%= config.dst %>'
-    },
-    src: ['**']
   }
 };
