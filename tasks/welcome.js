@@ -3,7 +3,7 @@
  */
 module.exports = function(grunt) {
   'use strict';
-  grunt.registerTask('welcome', 'webapplate!', function () {
+  grunt.registerTask('welcome', 'webapplate!', function() {
     grunt.log.writeln('                _            ' +
                       '           __      _.');
     grunt.log.writeln(' _      _______  / /_  __  __' +

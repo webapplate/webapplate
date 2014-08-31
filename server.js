@@ -1,14 +1,14 @@
 (function() {
   'use strict';
 
-  var express = require('express'),
-      swig = require('swig'),
-      bodyParser = require('body-parser')(),
-      compress = require('compression')(),
-      serveStatic = require('serve-static'),
-      errorHandler = require('errorhandler'),
-      app = express();
+  var express = require('express');
+  var swig = require('swig');
+  var bodyParser = require('body-parser')();
+  var compress = require('compression')();
+  var serveStatic = require('serve-static');
+  var errorHandler = require('errorhandler');
 
+  var app = express();
   var routes = require('./routes/index');
 
   // template
