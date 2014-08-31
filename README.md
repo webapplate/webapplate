@@ -17,20 +17,18 @@ http://webapplate.github.io/
 |__/|__/\___/_.___/\__,_/ .___/ .___/_/\__,_/\__/\___/
                        /_/   /_/
 ~~~
-current version: v1.6.0
+current version: v1.7.0
 
 ## Why need webapplate?
 
-Though there are many powerful tools surround web technologies, web does not provide the `SDK` or ready to use `template` that just like Android or iOS. Web is simple to write but hard to done right. Developer who want to quickly build an webapp usually consume much longer time to make their webapp right.
+Though there are many powerful tools surround web technologies, web does not provide the `SDK` or ready to use `template` that just like Android or iOS. Web apps are simple to write but hard to get done right. Developer who wants to quickly build an web app usually consume much longer time to make their web app right.
 
-Thus developer who is approaching to the `webapp`(write web as app) concept need a bootstrap or template project to start with. That's why webapplate comes.
+Thus developer who is approaching to the `web app`(make web site behaves like mobile app) concept need a bootstrap or template project to start with. That's why webapplate comes.
 
 
 ## How webapplate do
 
-Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) webapp
-, with convention of file structure, [express](http://expressjs.com/) server-side support,
-and preconfigured helper tools like code style check, appcache generator, multi-locales and testframework.
+Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) web app, with convention of file structure, [express](http://expressjs.com/) server-side support, and preconfigured helper tools like code style check, appcache generator, multi-locales and testframework.
 
 Website inherit from Webapplate can be [deployed to any host provider](https://github.com/webapplate/webapplate/wiki/Deployment).
 
@@ -113,13 +111,13 @@ with `grunt server` command, the browser and server will auto reload when you ed
 $ grunt
 ```
 
-For server side webapp, or
+For server side web app, or
 
 ```
 $ grunt test
 ```
 
-For client side webapp.
+For client side web app.
 
 ### Develop Packaged webapp (No Server)
 
@@ -129,13 +127,13 @@ Note: to only install required library for production, run
 
 Drag `/public/index.html` into browser. Or select `/public/manifest.webapp` in [Firefox WebIDE](https://developer.mozilla.org/en-US/docs/Tools/WebIDE) or Chrome Extension page.
 
-Plus webapplate enable you to genergate the packaged webapp via command:
+Plus webapplate enable you to genergate the packaged web app via command:
 
 ```
 $ grunt pack
 ```
 
-Which will try to optimize the source for faster webapp.
+Which will try to optimize the source for faster web app.
 
 Read [Deployment](https://github.com/webapplate/webapplate/wiki/Deployment#3-packaged-webapp) doc for further configurations.
 
@@ -151,7 +149,7 @@ To automaticly monitor and trigger all test when you change the code.
 
 ### Generate static webapp (Server independent - experimental)
 
-Generate minimized static web app
+Generate minimized static web app:
 
 ```
 $ grunt static
@@ -171,7 +169,7 @@ $ grunt static
 
 5. Support client side localization for webapp via [l20n](https://github.com/l20n/l20n.js/blob/master/docs/html.md)
 
-6. Style check for js, css, json via [jshint](http://www.jshint.com/), [jscs](https://github.com/mdevils/node-jscs), [csslint](https://github.com/stubbornella/csslint), [jsonlint](https://www.npmjs.org/package/grunt-jsonlint).
+6. Per commit style checking for js, css, json via [jshint](http://www.jshint.com/), [jscs](https://github.com/mdevils/node-jscs), [csslint](https://github.com/stubbornella/csslint), [jsonlint](https://www.npmjs.org/package/grunt-jsonlint).
 
 7. Integrate unittest with browser via [karma](http://karma-runner.github.io/0.12/index.html) test runner and [mocha](http://visionmedia.github.io/mocha/) JS test framework
 
