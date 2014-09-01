@@ -12,7 +12,6 @@
   ],
   "dependencies": {
     "l20n": "1.0.0-rc",
-    "chai": "1.9.1",
     "normalize-css": "3.0.1",
     "platform": "Polymer/platform",
     "font-roboto": "Polymer/font-roboto",
