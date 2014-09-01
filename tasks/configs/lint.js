@@ -58,6 +58,14 @@ module.exports.tasks = {
       ]
     }
   },
+  csslint: {
+    options: {
+      csslintrc: '.csslintrc'
+    },
+    strict: {
+      src: ['public/style/**/*.css']
+    }
+  },
   sloc: {
     client: {
       files: {

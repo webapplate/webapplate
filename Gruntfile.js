@@ -76,7 +76,7 @@ module.exports = function(grunt) {
 
   // lint
   grunt.registerTask('lint', [
-    'welcome', 'jshint', 'jscs', 'jsonlint', 'sloc'
+    'welcome', 'jshint', 'jscs', 'jsonlint', 'csslint', 'sloc'
   ]);
 
   // Default server test task.

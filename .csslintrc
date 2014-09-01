@@ -1,0 +1,16 @@
+{
+  "floats": true,
+  "font-sizes": true,
+  "important": true,
+  "text-indent": true,
+  "star-property-hack": true,
+  "underscore-property-hack": true,
+  "selector-max-approaching": true,
+  "selector-max": true,
+  "outline": true,
+  "font-faces": true,
+  "zero-units": true,
+  "shorthand": true,
+  "errors": true,
+  "rules-count": true
+}
