@@ -58,6 +58,7 @@ module.exports = function(grunt) {
   // generate package app to pack/
   grunt.registerTask('pack', [
     'optimize',
+    'clean:parts',
     'copy:static',
     'copy:backgroundJs',
     'copy:installPage',

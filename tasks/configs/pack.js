@@ -29,6 +29,7 @@ module.exports.tasks = {
     }
   },
   clean: {
-    pack: ['<%= config.dst %>/test']
+    pack: ['<%= config.dst %>/test'],
+    parts: ['<%= config.dst %>/parts']
   }
 };
