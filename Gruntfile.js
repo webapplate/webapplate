@@ -50,6 +50,7 @@ module.exports = function(grunt) {
   grunt.registerTask('static', [
     'optimize',
     'copy:static',
+    'copy:vendor', // customize tasks/configs/vendor_copy.js
     'manifest',
     'copy:appcache',
     'clean:static'
@@ -60,6 +61,7 @@ module.exports = function(grunt) {
     'optimize',
     'clean:parts',
     'copy:static',
+    'copy:vendor', // customize tasks/configs/vendor_copy.js
     'copy:backgroundJs',
     'copy:installPage',
     'clean:pack',
