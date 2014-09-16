@@ -16,6 +16,11 @@
       "enforceExistence": true
     },*/
     "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+    "validateJSDoc": {
+      "checkParamNames": true,
+      "checkRedundantParams": true,
+      "requireParamTypes": true
+    },
     "excludeFiles": [
       "public/vendor/**",
       "public/test/**"
