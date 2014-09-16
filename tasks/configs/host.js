@@ -26,7 +26,7 @@ module.exports.tasks = {
   },
   watch: {
     express: {
-      files: ['server.js', '<%= config.src %>/js/**/*.js', 'routes/**/*.js'],
+      files: ['server.js', '<%= param.src %>/js/**/*.js', 'routes/**/*.js'],
       tasks: ['express:dev'],
       options: {
         livereload: true, //reloads the browser
@@ -44,7 +44,7 @@ module.exports.tasks = {
     coverage: {
       options: {
         reporter: 'html-cov',
-        output: '<%= config.src %>/test/coverage.html'
+        output: '<%= param.src %>/test/coverage.html'
       }
     }
   }

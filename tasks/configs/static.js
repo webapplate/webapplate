@@ -6,7 +6,7 @@ module.exports.tasks = {
   manifest: {
     generate: {
       options: {
-        basePath: './<%= config.dst %>/',
+        basePath: './<%= param.dst %>/',
         // cache: ['js/server.js', 'css/style.css'],
         // cachePrefix: '/',
         // network: ['http://*', 'https://*'],
@@ -25,20 +25,20 @@ module.exports.tasks = {
         'style/icons/*.ico',
         'style/icons/*.png'
       ],
-      dest: '<%= config.dst %>/manifest.appcache'
+      dest: '<%= param.dst %>/manifest.appcache'
     }
   },
   copy: {
     appcache: {
       files: [{
         expand: false,
-        src: '<%= config.build %>/manifest.appcache',
-        dest: '<%= config.dst %>/manifest.appcache'
+        src: '<%= param.build %>/manifest.appcache',
+        dest: '<%= param.dst %>/manifest.appcache'
       }]
     }
   },
   // client side test
   mocha_phantomjs: {
-    all: ['<%= config.src %>/test/index.html']
+    all: ['<%= param.src %>/test/index.html']
   }
 };

@@ -11,7 +11,7 @@ module.exports.tasks = {
         strip: false
       },
       files: {
-        '<%= config.build %>/index-csp.html': '<%= config.build %>/index.html'
+        '<%= param.build %>/index-csp.html': '<%= param.build %>/index.html'
       }
     }
   },
@@ -52,44 +52,44 @@ module.exports.tasks = {
           return content;
         }*/
       },
-      src: '<%= config.build %>/index-csp.html',
-      dest: '<%= config.build %>/index.html'
+      src: '<%= param.build %>/index-csp.html',
+      dest: '<%= param.build %>/index.html'
     },
     webComponent: {
       files: [{ /* copy vendor html and css */
         expand: true,
-        cwd: '<%= config.src %>/',
+        cwd: '<%= param.src %>/',
         src: 'vendor/**/*.html',
-        dest: '<%= config.dst %>/'
+        dest: '<%= param.dst %>/'
       },
       {
         expand: true,
-        cwd: '<%= config.src %>/',
+        cwd: '<%= param.src %>/',
         src: 'vendor/**/*.css',
-        dest: '<%= config.dst %>/'
+        dest: '<%= param.dst %>/'
       },
       { /* copy polymer and platform */
         expand: true,
-        cwd: '<%= config.src %>/',
+        cwd: '<%= param.src %>/',
         src: 'vendor/polymer/**/*',
-        dest: '<%= config.dst %>/'
+        dest: '<%= param.dst %>/'
       },
       {
         expand: true,
-        cwd: '<%= config.src %>/',
+        cwd: '<%= param.src %>/',
         src: 'vendor/platform/**/*',
-        dest: '<%= config.dst %>/'
+        dest: '<%= param.dst %>/'
       },
       {
         expand: true,
-        cwd: '<%= config.src %>/',
+        cwd: '<%= param.src %>/',
         src: 'parts/**/*',
-        dest: '<%= config.dst %>/'
+        dest: '<%= param.dst %>/'
       }]
     }
   },
   clean: {
-    unvulcanized: ['<%= config.build %>/index.html'],
-    vulcanized: ['<%= config.build %>/index-csp.html']
+    unvulcanized: ['<%= param.build %>/index.html'],
+    vulcanized: ['<%= param.build %>/index-csp.html']
   }
 };

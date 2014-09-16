@@ -7,9 +7,9 @@ module.exports.tasks = {
     backgroundJs: {
       files: [{
         expand: true,
-        cwd: '<%= config.src %>/',
+        cwd: '<%= param.src %>/',
         src: 'js/background.js',
-        dest: '<%= config.dst %>/'
+        dest: '<%= param.dst %>/'
       }]
     },
     installPage: {
@@ -17,19 +17,19 @@ module.exports.tasks = {
         expand: true,
         cwd: 'helper/',
         src: 'install.html',
-        dest: '<%= config.pack %>/'
+        dest: '<%= param.pack %>/'
       }]
     }
   },
   zip: {
     pack: {
-      cwd: '<%= config.dst %>/',
-      src: '<%= config.dst %>/**',
-      dest: '<%= config.pack %>/package.zip'
+      cwd: '<%= param.dst %>/',
+      src: '<%= param.dst %>/**',
+      dest: '<%= param.pack %>/package.zip'
     }
   },
   clean: {
-    pack: ['<%= config.dst %>/test'],
-    parts: ['<%= config.dst %>/parts']
+    pack: ['<%= param.dst %>/test'],
+    parts: ['<%= param.dst %>/parts']
   }
 };

@@ -3,15 +3,6 @@
 'use strict';
 
 module.exports.tasks = {
-  // pkg: grunt.file.readJSON('package.json'),
-  // Project settings
-  config: {
-    src: 'public',
-    build: 'build',
-    tmp: '.tmp',
-    dst: 'dist',
-    pack: 'pack'
-  },
   karma: {
     unit: {
       configFile: 'karma.conf.js'
@@ -19,7 +10,7 @@ module.exports.tasks = {
   },
   mochacov: {
     options: {
-      files: ['<%= config.src %>/test/unit/**_test.js'],
+      files: ['<%= param.src %>/test/unit/**_test.js'],
       ui: 'tdd'
     }
   },
@@ -27,9 +18,9 @@ module.exports.tasks = {
     dist: {
       files: [{
         expand: true,
-        cwd: '<%= config.src %>',
+        cwd: '<%= param.src %>',
         src: ['{,*/}*.html'],
-        dest: '<%= config.dst %>'
+        dest: '<%= param.dst %>'
       }]
     }
   },
@@ -39,18 +30,18 @@ module.exports.tasks = {
   // can operate on them
   useminPrepare: {
     options: {
-      dest: '<%= config.dst %>'
+      dest: '<%= param.dst %>'
     },
-    html: ['<%= config.build %>/index.html']
+    html: ['<%= param.build %>/index.html']
   },
   // Performs rewrites based on rev and the useminPrepare configuration
   usemin: {
     options: {
-      assetsDirs: ['<%= config.dst %>'],
+      assetsDirs: ['<%= param.dst %>'],
       debugInfo: true
     },
-    html: ['<%= config.dst %>/{,*/}*.html'],
-    css: ['<%= config.dst %>/styles/{,*/}*.css']
+    html: ['<%= param.dst %>/{,*/}*.html'],
+    css: ['<%= param.dst %>/styles/{,*/}*.css']
   },
   copy: {
     // Copies all files into build directory for vulcanization
@@ -58,78 +49,78 @@ module.exports.tasks = {
       files: [{
         expand: true,
         dot: true,
-        cwd: '<%= config.src %>',
-        dest: '<%= config.build %>',
+        cwd: '<%= param.src %>',
+        dest: '<%= param.build %>',
         src: ['**']
       }]
     },
     static: {
       files: [{ /* copy manifests */
         expand: false,
-        src: '<%= config.src %>/manifest.webapp',
-        dest: '<%= config.dst %>/manifest.webapp'
+        src: '<%= param.src %>/manifest.webapp',
+        dest: '<%= param.dst %>/manifest.webapp'
       },
       {
         expand: false,
-        src: '<%= config.src %>/manifest.json',
-        dest: '<%= config.dst %>/manifest.json'
+        src: '<%= param.src %>/manifest.json',
+        dest: '<%= param.dst %>/manifest.json'
       },
       { /* copy icons */
         expand: true,
-        cwd: '<%= config.src %>/',
+        cwd: '<%= param.src %>/',
         src: 'style/icons/**/*',
-        dest: '<%= config.dst %>/'
+        dest: '<%= param.dst %>/'
       },
       { /* copy images */
         expand: true,
-        cwd: '<%= config.src %>/',
+        cwd: '<%= param.src %>/',
         src: 'style/images/**/*',
-        dest: '<%= config.dst %>/'
+        dest: '<%= param.dst %>/'
       },
       { /* copy locales */
         expand: true,
-        cwd: '<%= config.src %>/',
+        cwd: '<%= param.src %>/',
         src: 'locales/**/*',
-        dest: '<%= config.dst %>/'
+        dest: '<%= param.dst %>/'
       }]
     },
     backupFirefox: {
       files: [{
         expand: false,
-        src: '<%= config.src %>/manifest.webapp',
-        dest: '<%= config.src %>/manifest_webapp_backup'
+        src: '<%= param.src %>/manifest.webapp',
+        dest: '<%= param.src %>/manifest_webapp_backup'
       }]
     },
     firefox: {
       files: [{
         expand: false,
-        src: '<%= config.src %>/manifest.webapp',
-        dest: '<%= config.src %>/manifest.json'
+        src: '<%= param.src %>/manifest.webapp',
+        dest: '<%= param.src %>/manifest.json'
       }]
     },
     backupChrome: {
       files: [{
         expand: false,
-        src: '<%= config.src %>/manifest.json',
-        dest: '<%= config.src %>/manifest_json_backup'
+        src: '<%= param.src %>/manifest.json',
+        dest: '<%= param.src %>/manifest_json_backup'
       }]
     },
     chrome: {
       files: [{
         expand: false,
-        src: '<%= config.src %>/manifest.json',
-        dest: '<%= config.src %>/manifest.webapp'
+        src: '<%= param.src %>/manifest.json',
+        dest: '<%= param.src %>/manifest.webapp'
       }]
     }
   },
   clean: {
-    dist: ['<%= config.dst %>/', '<%= config.tmp %>/',
-    '<%= config.build %>/', '<%= config.pack %>/'],
+    dist: ['<%= param.dst %>/', '<%= param.tmp %>/',
+    '<%= param.build %>/', '<%= param.pack %>/'],
     docs: ['docs/'],
-    static: ['<%= config.dst %>/test']
+    static: ['<%= param.dst %>/test']
   },
   jsdoc: {
-    src: ['<%= config.src %>/js/*.js'],
+    src: ['<%= param.src %>/js/*.js'],
     options: {
       destination: 'docs'
     }

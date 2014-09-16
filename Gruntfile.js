@@ -14,6 +14,14 @@ module.exports = function(grunt) {
   var options = {
     config: { // set default configs location
       src: 'tasks/configs/*.js'
+    },
+    pkg: grunt.file.readJSON('package.json'),
+    param: { // Project settings
+      src: 'public',
+      build: 'build',
+      tmp: '.tmp',
+      dst: 'dist',
+      pack: 'pack'
     }
   };
   var configs = require('load-grunt-configs')(grunt, options);

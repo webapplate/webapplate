@@ -8,8 +8,7 @@ module.exports.tasks = {
       jshintrc: true,
       src: [
         '*.js',
-        'tasks/**/*.js',
-        'config/**/*.js'
+        'tasks/**/*.js'
       ]
     },
     server: {
@@ -22,7 +21,7 @@ module.exports.tasks = {
     client: {
       jshintrc: true,
       src: [
-        '<%= config.src %>/**/*.js'
+        '<%= param.src %>/**/*.js'
       ]
     }
   },
@@ -33,8 +32,7 @@ module.exports.tasks = {
     utils: {
       src: [
         '*.js',
-        'tasks/**/*.js',
-        'config/**/*.js'
+        'tasks/**/*.js'
       ]
     },
     server: {
@@ -45,16 +43,16 @@ module.exports.tasks = {
     },
     client: {
       src: [
-        '<%= config.src %>/**/*.js'
+        '<%= param.src %>/**/*.js'
       ]
     }
   },
   jsonlint: {
     files: {
       src: [
-        '<%= config.src %>/manifest.webapp',
-        '<%= config.src %>/manifest.json',
-        '<%= config.src %>/**/*.json'
+        '<%= param.src %>/manifest.webapp',
+        '<%= param.src %>/manifest.json',
+        '<%= param.src %>/**/*.json'
       ]
     }
   },
@@ -70,13 +68,13 @@ module.exports.tasks = {
     client: {
       files: {
         './': [
-          '<%= config.src %>/*.html',
-          '<%= config.src %>/js/*.js',
-          '<%= config.src %>/style/*.css',
-          '<%= config.src %>/parts/**/*.html',
-          '<%= config.src %>/parts/**/*.js',
-          '<%= config.src %>/parts/**/*.css',
-          '<%= config.src %>/test/unit/*.js'
+          '<%= param.src %>/*.html',
+          '<%= param.src %>/js/*.js',
+          '<%= param.src %>/style/*.css',
+          '<%= param.src %>/parts/**/*.html',
+          '<%= param.src %>/parts/**/*.js',
+          '<%= param.src %>/parts/**/*.css',
+          '<%= param.src %>/test/unit/*.js'
         ]
       }
     },

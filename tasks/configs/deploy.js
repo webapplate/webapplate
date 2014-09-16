@@ -5,7 +5,7 @@
 module.exports.tasks = {
   'gh-pages': {
     options: {
-      base: '<%= config.dst %>'
+      base: '<%= param.dst %>'
     },
     src: ['**']
   }
