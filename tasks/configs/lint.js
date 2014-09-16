@@ -25,7 +25,7 @@ module.exports.tasks = {
       ]
     }
   },
-  jscs: {
+  jscs: { // exclude list defined in .jscsrc
     options: {
       config: '.jscsrc'
     },
@@ -60,7 +60,7 @@ module.exports.tasks = {
     options: {
       csslintrc: '.csslintrc'
     },
-    strict: {
+    strict: { // attach exclude file with prefix '!', ex: ![path]/main.css
       src: ['public/style/**/*.css']
     }
   },
