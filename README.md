@@ -41,8 +41,8 @@ Here are some examples that start the development by webapplate:
 
 * [UI Demos](https://marketplace.firefox.com/app/ui-demos/) , which is on Firefox Marketplace before Firefox OS device officially release.
 * [FxOS BMI](http://gasolin.github.io/fxosbmi/public/index.html) , the BMI calculator demo, with offline support. [Source](https://github.com/gasolin/fxosbmi) is available.
-* [bgzla](http://gasolin.github.io/bgzla/), Bugzilla monitor for Gaia project
-
+* [bgzla](http://gasolin.github.io/bgzla/), Bugzilla monitor for Gaia project.
+* [FoxQR](https://marketplace.firefox.com/app/qrcode-1/), QRCode scanner for Firefox OS, via WebRTC.
 
 ## Get Webapplate
 
