@@ -8,30 +8,30 @@
     "npm": ">= 1.0.0"
   },
   "dependencies": {
-    "express": "~4.9.0",
+    "express": "~4.9.4",
     "compression": "~1.1.0",
-    "serve-static": "~1.6.1",
+    "serve-static": "~1.6.2",
     "errorhandler": "~1.2.0",
-    "body-parser": "~1.8.1",
+    "body-parser": "~1.8.3",
     "swig": "~1.4.2"
   },
   "devDependencies": {
-    "bower": "~1.3.9",
+    "bower": "~1.3.11",
     "chai": "~1.9.1",
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-concat": "~0.5.0",
-    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-copy": "~0.6.0",
     "grunt-contrib-csslint": "^0.3.1",
     "grunt-contrib-cssmin": "~0.10.0",
     "grunt-contrib-htmlmin": "~0.3.0",
     "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-uglify": "~0.5.1",
+    "grunt-contrib-uglify": "~0.6.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-express-server": "~0.4.19",
     "grunt-gh-pages": "~0.9.1",
     "grunt-githooks": "^0.3.1",
     "grunt-jscs": "~0.7.0",
-    "grunt-jsdoc": "~0.5.7",
+    "grunt-jsdoc": "~0.6.0",
     "grunt-jsonlint": "~1.0.4",
     "grunt-karma": "^0.9.0",
     "grunt-manifest": "~0.4.0",
@@ -60,7 +60,8 @@
         "public"
       ]
     },
-    "postinstall": "node_modules/.bin/bower install"
+    "postinstall": "node_modules/.bin/bower install",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
