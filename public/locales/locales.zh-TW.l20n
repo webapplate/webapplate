@@ -1,2 +1,3 @@
 <projectName "WebApplate">
 <hello "歡迎使用 {{ projectName }}">
+<description "<mark>index.html</mark> 檔案位於 <mark>public/index.html</mark> 目錄中. 請查看 <a href='https://github.com/webapplate/webapplate/wiki'>{{ projectName }} wiki</a> 以取得更多資訊">

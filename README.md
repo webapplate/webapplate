@@ -93,7 +93,7 @@ docker build -t webapplate .
 To build image at first time, then run
 
 ```
-docker run -rm -i -t -p 8000:8000 webapplate
+docker run --rm -i -t -p 8000:8000 webapplate
 ```
 
 to execute the server.
