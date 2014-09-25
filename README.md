@@ -90,21 +90,29 @@ Run
 docker build -t webapplate .
 ```
 
-To build image at first time, then run
+To build image at first time.
+
+In linux, run
+
+```
+docker run webapplate
+```
+
+to execute the server. You could connect to `localhost:8000` on browser to see the web page.
+
+In other platform docker needs to run within `boot2docker` VM, you could get VM host ip via command
+
+```
+$ boot2docker ip
+```
+
+Then run command
 
 ```
 docker run --rm -i -t -p 8000:8000 webapplate
 ```
 
-to execute the server.
-
-In linux you could connect to localhost:8000 on browser to see the web page.
-
-In other platform you could get ip via
-
-$ boot2docker ip
-
-command, and connect to $(boot2docker ip):8000 on browser to see the web page.
+To forwarding port to your desktop. Connect to `$(boot2docker ip):8000`on browser to see the web page.
 
 
 ### Develop Hosted webapp (With dynamic/static web Server)
