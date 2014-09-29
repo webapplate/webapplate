@@ -5,15 +5,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{% block title %}My Site{% endblock %}</title>
 	{% block head %}
-	<!--link rel="stylesheet" href="/public/css/custom.css"-->
-    <!--script defer src="/public/js/custom.js"></script-->
-    <!--script defer src="/public/lib/jquery/jquery.min.js"></script-->
-    <!--link rel="stylesheet" href="/public/lib/bootstrap/doc/assets/css/bootstrap-responsive.css"-->
-	<link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome.min.css">
-<!--[if IE 7]>
-    <link rel="stylesheet" href="/public/lib/font-awesome/css/font-awesome-ie7.min.css">
-<![endif]-->
-    <link rel="stylesheet" href="/public/css/main.css">
+    <!-- remove maximum-scale for mobile web -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- installable from browser -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- icons -->
+    <link rel="icon" href="style/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" sizes="128x128" href="apple-touch-icon-precomposed.png">
+    <link rel="style/icons/apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- IE compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--[if IE]><link rel="shortcut icon" href="style/icons/favicon.ico"  type="image/x-icon"><![endif]-->
+
+    <!-- build:css style/app.min.css -->
+    <link rel="stylesheet" href="vendor/normalize-css/normalize.css">
+    <link rel="stylesheet" href="style/main.css">
+    <!-- endbuild -->
+    <link rel="localization" href="public/locales/manifest.json">
+
+    <!-- build:js js/app.min.js -->
+    <script defer src="vendor/l20n/l20n.min.js"></script>
+    <script defer src="/public/js/main.js"></script>
+    <!-- endbuild -->
     {% endblock %}
 </head>
 <body>

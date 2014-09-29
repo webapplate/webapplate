@@ -4,9 +4,12 @@
 
 {% block head %}
   {% parent %}
-  <!-- uncomment to use dynamic page -->
+  <!-- remove below to use dynamic page -->
   <meta http-equiv="Refresh" content="1; url=/public/index.html">
-  <!--link rel="stylesheet" href="/public/css/custom.css"-->
+  <!-- web component
+  <script defer src="vendor/platform/platform.js"></script>
+  <link rel="import" href="parts/app-main.html">
+  -->
 {% endblock %}
 
 {% block content %}
