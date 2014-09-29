@@ -15,6 +15,7 @@ RUN npm install -g grunt-cli bower karma
 # when we change our application's nodejs dependencies:
 ADD package.json /tmp/package.json
 ADD bower.json /tmp/bower.json
+ADD .bowerrc /tmp/.bowerrc
 RUN cd /tmp && npm install
 RUN cd /tmp && bower install --allow-root
 RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
