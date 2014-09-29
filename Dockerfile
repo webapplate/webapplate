@@ -14,7 +14,9 @@ RUN npm install -g grunt-cli bower karma
 # use changes to package.json to force Docker not to use the cache
 # when we change our application's nodejs dependencies:
 ADD package.json /tmp/package.json
+ADD bower.json /tmp/bower.json
 RUN cd /tmp && npm install
+RUN cd /tmp && bower install --allow-root
 RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
 
 # From here we load our application's code in, therefore the previous docker
