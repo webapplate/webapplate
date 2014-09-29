@@ -16,7 +16,15 @@
 <h1>Hello {{ foo }}</h1>
 redirect to static page
 
-<!--script src="/public/js/custom.js"></script-->
+<!-- web component
+<app-main></app-main>
+-->
+
+<!-- build:js js/body.min.js -->
+<!-- Custom actions here -->
+<script defer src="public/js/main.js"></script>
+
 <!-- App Install detection -->
-<!--<script src="js/app_installer.js"></script>-->
+<!--<script defer src="public/js/app_installer.js"></script>-->
+<!-- endbuild -->
 {% endblock %}

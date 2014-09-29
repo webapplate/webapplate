@@ -112,8 +112,8 @@ Then run command
 docker run --rm -i -t -p 8000:8000 webapplate
 ```
 
-To forwarding port to your desktop. Connect to `$(boot2docker ip):8000`on browser to see the web page.
-
+To forwarding port to your desktop. Connect to `$(boot2docker ip):8000` on browser to see the web page.
+(generally is `http://192.168.59.103:8000/`)
 
 ### Develop Hosted webapp (With dynamic/static web Server)
 
