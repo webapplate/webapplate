@@ -3,7 +3,7 @@
 
   var express = require('express');
   var swig = require('swig');
-  var bodyParser = require('body-parser')();
+  var bodyParser = require('body-parser');
   var compress = require('compression')();
   var serveStatic = require('serve-static');
   var errorHandler = require('errorhandler');
@@ -28,7 +28,10 @@
   // this will let us get the data from a POST via
   // POST: {"name":"foo","color":"red"} or
   // POST: name=foo&color=red
-  app.use(bodyParser);
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+  app.use(bodyParser.json());
 
   // gzip
   app.use(compress);
