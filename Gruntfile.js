@@ -43,7 +43,6 @@ module.exports = function(grunt) {
 
   // intemediate task to optimize resources
   grunt.registerTask('optimize', [
-    'welcome', 'clean:dist',
     'copy:build',
     /*'polymermin',*/
     'useminPrepare',
@@ -56,16 +55,18 @@ module.exports = function(grunt) {
 
   // generate static web to dist/
   grunt.registerTask('static', [
+    'welcome', 'clean:dist',
     'optimize',
     'copy:static',
     'copy:vendor', // customize tasks/configs/vendor_copy.js
     'manifest',
     'copy:appcache',
-    'clean:static'
+    'clean:tests'
   ]);
 
   // generate package app to pack/
   grunt.registerTask('pack', [
+    'welcome', 'clean:dist',
     'optimize',
     'clean:parts',
     'copy:static',
@@ -74,6 +75,13 @@ module.exports = function(grunt) {
     'copy:installPage',
     'clean:pack',
     'zip:pack'
+  ]);
+
+  // generate static web to dist/
+  grunt.registerTask('dynamic', [
+    'welcome', 'clean:dist',
+    'copy:dynamic',
+    'clean:tests'
   ]);
 
   // copy firefox webapp manifest to chrome webapp json

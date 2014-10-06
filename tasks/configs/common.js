@@ -117,7 +117,7 @@ module.exports.tasks = {
     dist: ['<%= param.dst %>/', '<%= param.tmp %>/',
     '<%= param.build %>/', '<%= param.pack %>/'],
     docs: ['docs/'],
-    static: ['<%= param.dst %>/test']
+    tests: ['<%= param.dst %>/test']
   },
   jsdoc: {
     src: ['<%= param.src %>/js/*.js'],
