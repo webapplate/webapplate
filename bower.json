@@ -20,6 +20,7 @@
     "core-item": "Polymer/core-item",
     "core-header-panel": "Polymer/core-header-panel",
     "core-drawer-panel": "Polymer/core-drawer-panel",
-    "core-scaffold": "Polymer/core-scaffold"
+    "core-scaffold": "Polymer/core-scaffold",
+    "gremlins.js": "~0.1.0"
   }
 }
