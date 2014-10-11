@@ -9,7 +9,6 @@
   var errorHandler = require('errorhandler');
 
   var app = express();
-  var routes = require('./routes/index');
 
   // template
   app.engine('.html', swig.renderFile);
@@ -49,7 +48,8 @@
   // express.static.mime.define({'audio/mp4': ['m4a']});
 
   // REGISTER OUR ROUTES
-  app.use('/', routes);
+  app.use('/', require('./routes/index'));
+  app.use('/api/1/', require('./routes/api'));
 
   // Handle 404
   /*app.use(function(req, res) {
