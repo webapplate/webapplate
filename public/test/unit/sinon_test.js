@@ -42,7 +42,7 @@ suite('As a developer, I want to use Sinon in test,' +
     assert.equal(callback.called, true);
   });
 
-  test("calls the original function", function () {
+  test('calls the original function', function () {
       var callback = sinon.spy();
       var proxy = once(callback);
 
@@ -51,7 +51,7 @@ suite('As a developer, I want to use Sinon in test,' +
       assert(callback.called);
   });
 
-  test("calls the original function only once", function () {
+  test('calls the original function only once', function () {
     var callback = sinon.spy();
     var proxy = once(callback);
 
@@ -63,7 +63,7 @@ suite('As a developer, I want to use Sinon in test,' +
     // assert.equals(callback.callCount, 1);
   });
 
-  test("calls original function with right this and args", function () {
+  test('calls original function with right this and args', function () {
     var callback = sinon.spy();
     var proxy = once(callback);
     var obj = {};
@@ -80,7 +80,7 @@ suite('As a developer, I want to use Sinon as Spy,' +
       ' so I can records arguments, return value easily', function() {
   setup(function() {
     // sinon = sinon.sandbox.create();
-    sinon.spy(PubSub, "publishSync");
+    sinon.spy(PubSub, 'publishSync');
   });
 
   teardown(function() {
@@ -89,8 +89,6 @@ suite('As a developer, I want to use Sinon as Spy,' +
   });
 
   test('spy should able to be used on existing methods', function() {
-    var callback = sinon.spy();
-
     PubSub.publishSync("message");
     assert(PubSub.publishSync.calledOnce);
     // or ...

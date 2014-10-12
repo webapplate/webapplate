@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+/* mocked model
 var model = {
-  tasks: []
+  task: []
 };
+*/
+
 // enable route if need dynamic web
 /*
 // create
