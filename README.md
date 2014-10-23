@@ -87,7 +87,7 @@ Webapplate come with docker support. It helps you auto configure the development
 Run
 
 ```
-docker build -t webapplate .
+docker build -t webapplate/webapplate .
 ```
 
 To build image at first time.
@@ -95,7 +95,7 @@ To build image at first time.
 In linux, run
 
 ```
-docker run webapplate
+docker run webapplate/webapplate
 ```
 
 to execute the server. You could connect to `localhost:8000` on browser to see the web page.
