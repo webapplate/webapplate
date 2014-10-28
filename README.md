@@ -109,7 +109,7 @@ $ boot2docker ip
 Then run command
 
 ```
-docker run --rm -i -t -p 8000:8000 webapplate
+docker run --rm -i -t -p 8000:8000 webapplate/webapplate
 ```
 
 To forwarding port to your desktop. Connect to `$(boot2docker ip):8000` on browser to see the web page.

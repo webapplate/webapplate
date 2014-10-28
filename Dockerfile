@@ -1,31 +1,25 @@
-FROM ubuntu:14.04
-MAINTAINER Author <name@mail.com>
+# Pull base image.
+FROM dockerfile/nodejs-bower-grunt
 
-# install our dependencies and nodejs
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install software-properties-common git build-essential -y
-RUN add-apt-repository ppa:chris-lea/node.js -y
-RUN apt-get update
-RUN apt-get install -y nodejs
-# install the dependencies
-RUN npm install -g grunt-cli bower karma
+# modify from
+# https://registry.hub.docker.com/u/dockerfile/nodejs-bower-grunt-runtime/
 
-# use changes to package.json to force Docker not to use the cache
-# when we change our application's nodejs dependencies:
-ADD package.json /tmp/package.json
-ADD bower.json /tmp/bower.json
-ADD .bowerrc /tmp/.bowerrc
-RUN cd /tmp && npm install
-RUN cd /tmp && bower install --allow-root
-RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
+# install global command
+#RUN npm install -g karma
 
-# From here we load our application's code in, therefore the previous docker
-# "layer" thats been cached will be used if possible
-WORKDIR /opt/app
-ADD . /opt/app
+# Define working directory.
+WORKDIR /app
 
-# replace this with your application's default port
-EXPOSE 8000
+# Set instructions on build.
+ADD package.json /app/
+RUN npm install --production
+ADD bower.json /app/
+ADD .bowerrc /app/
+RUN bower install --allow-root
+ADD . /app
 
+# Define default command.
 CMD ["node", "server.js"]
+
+# Expose ports.
+EXPOSE 8000
