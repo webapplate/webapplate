@@ -1,14 +1,14 @@
 {
   "name": "Webapplate",
   "description": "webapp template",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "main": "server.js",
   "engines": {
     "node": ">= 0.10.0",
     "npm": ">= 1.0.0"
   },
   "dependencies": {
-    "express": "~4.9.8",
+    "express": "~4.10.0",
     "compression": "~1.2.0",
     "serve-static": "~1.7.1",
     "errorhandler": "~1.2.2",
@@ -38,7 +38,7 @@
     "grunt-mocha-cov": "~0.3.0",
     "grunt-mocha-phantomjs": "~0.6.0",
     "grunt-sloc": "~0.5.2",
-    "grunt-usemin": "~2.4.0",
+    "grunt-usemin": "~2.5.1",
     "grunt-vulcanize": "~0.4.1",
     "grunt-zip": "~0.16.2",
     "karma": "^0.12.24",
@@ -51,7 +51,7 @@
     "load-grunt-configs": "^0.4.0",
     "load-grunt-tasks": "^1.0.0",
     "mocha": "^2.0.0",
-    "sinon": "~1.10.3",
+    "sinon": "~1.11.1",
     "time-grunt": "~1.0.0"
   },
   "scripts": {

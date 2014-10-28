@@ -17,7 +17,7 @@ http://webapplate.github.io/
 |__/|__/\___/_.___/\__,_/ .___/ .___/_/\__,_/\__/\___/
                        /_/   /_/
 ~~~
-current version: v1.8.0
+current version: v1.9.0
 
 ## Why need webapplate?
 
