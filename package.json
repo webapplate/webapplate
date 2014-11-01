@@ -40,7 +40,6 @@
     "grunt-mocha-phantomjs": "~0.6.0",
     "grunt-sloc": "~0.5.2",
     "grunt-usemin": "~2.5.1",
-    "grunt-vulcanize": "~0.4.1",
     "grunt-zip": "~0.16.2",
     "karma": "^0.12.24",
     "karma-chai": "^0.1.0",
