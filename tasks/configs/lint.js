@@ -50,6 +50,8 @@ module.exports.tasks = {
   jsonlint: {
     files: {
       src: [
+        'package.json',
+        'bower.json',
         '<%= param.src %>/manifest.webapp',
         '<%= param.src %>/manifest.json',
         '<%= param.src %>/**/*.json'
