@@ -42,7 +42,7 @@ module.exports.tasks = {
     all: ['<%= param.src %>/test/index.html']
   },
   fileExists: {
-    pack: [
+    static: [
       '<%= param.dst %>/manifest.json',
       '<%= param.dst %>/manifest.webapp',
       '<%= param.dst %>/js/app.min.js',
