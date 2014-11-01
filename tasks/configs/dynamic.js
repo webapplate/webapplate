@@ -31,5 +31,16 @@ module.exports.tasks = {
         dest: '<%= param.dst %>/'
       }]
     }
+  },
+  clean: {
+    dynamic: ['<%= param.dst %>/public/test']
+  },
+  fileExists: {
+    dynamic: [
+      '<%= param.dst %>/public/manifest.json',
+      '<%= param.dst %>/public/manifest.webapp',
+      '<%= param.dst %>/public/style/icons/icon128.png',
+      '<%= param.dst %>/public/locales/manifest.json'
+    ]
   }
 };

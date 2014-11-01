@@ -30,5 +30,17 @@ module.exports.tasks = {
   },
   clean: {
     pack: ['<%= param.dst %>/test']
+  },
+  fileExists: {
+    pack: [
+      '<%= param.dst %>/manifest.json',
+      '<%= param.dst %>/manifest.webapp',
+      '<%= param.dst %>/js/app.min.js',
+      '<%= param.dst %>/js/body.min.js',
+      '<%= param.dst %>/js/background.js',
+      '<%= param.dst %>/style/app.min.css',
+      '<%= param.dst %>/style/icons/icon128.png',
+      '<%= param.dst %>/locales/manifest.json'
+    ]
   }
 };

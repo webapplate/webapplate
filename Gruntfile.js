@@ -51,7 +51,8 @@ module.exports = function(grunt) {
     'copy:vendor', // customize tasks/configs/vendor_copy.js
     'manifest',
     'copy:appcache',
-    'clean:tests'
+    'clean:tests',
+    'fileExists:static' // test result
   ]);
 
   // generate package app to pack/
@@ -63,14 +64,16 @@ module.exports = function(grunt) {
     'copy:backgroundJs',
     'copy:installPage',
     'clean:pack',
-    'zip:pack'
+    'zip:pack',
+    'fileExists:pack' // test result
   ]);
 
   // generate dynamic web to dist/
   grunt.registerTask('dynamic', [
     'welcome', 'clean:dist',
     'copy:dynamic',
-    'clean:tests'
+    'clean:dynamic',
+    'fileExists:dynamic' // test result
   ]);
 
   // copy firefox webapp manifest to chrome webapp json
