@@ -12,15 +12,8 @@
   ],
   "dependencies": {
     "l20n": "1.0.0-rc",
-    "normalize-css": "3.0.1",
-    "platform": "Polymer/platform",
-    "font-roboto": "Polymer/font-roboto",
-    "core-toolbar": "Polymer/core-toolbar",
-    "core-menu": "Polymer/core-menu",
-    "core-item": "Polymer/core-item",
-    "core-header-panel": "Polymer/core-header-panel",
-    "core-drawer-panel": "Polymer/core-drawer-panel",
-    "core-scaffold": "Polymer/core-scaffold",
-    "gremlins.js": "~0.1.0"
+    "bootstrap": "~3.3.0",
+    "bootstrap-material-design": "~0.1.4",
+    "gremlins.js": "~0.1.0",
   }
 }

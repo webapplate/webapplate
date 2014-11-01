@@ -77,7 +77,7 @@ module.exports = function(grunt) {
     'zip:pack'
   ]);
 
-  // generate static web to dist/
+  // generate dynamic web to dist/
   grunt.registerTask('dynamic', [
     'welcome', 'clean:dist',
     'copy:dynamic',

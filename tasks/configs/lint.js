@@ -71,9 +71,6 @@ module.exports.tasks = {
           '<%= param.src %>/*.html',
           '<%= param.src %>/js/*.js',
           '<%= param.src %>/style/*.css',
-          '<%= param.src %>/parts/**/*.html',
-          '<%= param.src %>/parts/**/*.js',
-          '<%= param.src %>/parts/**/*.css',
           '<%= param.src %>/test/unit/*.js'
         ]
       }

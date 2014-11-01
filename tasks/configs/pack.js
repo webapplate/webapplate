@@ -29,7 +29,6 @@ module.exports.tasks = {
     }
   },
   clean: {
-    pack: ['<%= param.dst %>/test'],
-    parts: ['<%= param.dst %>/parts']
+    pack: ['<%= param.dst %>/test']
   }
 };

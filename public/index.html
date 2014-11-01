@@ -24,7 +24,9 @@ Exchange the line above for this to enable offline support
     <!--[if IE]><link rel="shortcut icon" href="style/icons/favicon.ico"  type="image/x-icon"><![endif]-->
 
     <!-- build:css style/app.min.css -->
-    <link rel="stylesheet" href="vendor/normalize-css/normalize.css">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-material-design/dist/css/ripples.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-material-design/dist/css/material-wfont.min.css">
     <link rel="stylesheet" href="style/main.css">
     <!-- endbuild -->
     <link rel="localization" href="locales/manifest.json">
@@ -44,15 +46,23 @@ Exchange the line above for this to enable offline support
     -->
   </head>
   <body fullbleed unresolved class="hidden">
-    <!-- Add your site or application content here -->
-    <h1 data-l10n-id="hello">Hello WebApplate</h1>
-    <p data-l10n-id="description">The <mark>index.html</mark> file is located in <mark>public/index.html</mark>. Check <a href="https://github.com/webapplate/webapplate/wiki">Webapplate wiki</a> for more information</p>
-    <!-- web component
-    <app-main></app-main>
-    -->
+    <header id="header" class="navbar">
+      <a class="navbar-brand" href="#">Webapplate</a>
+      <ul class="nav navbar-nav pull-left">
+      </ul>
+    </header>
+    <section id="content" class="well">
+      <!-- Add your site or application content here -->
+      <h3 data-l10n-id="hello">Hello WebApplate</h3>
+      <p data-l10n-id="description">The <mark>index.html</mark> file is located in <mark>public/index.html</mark>. Check <a href="https://github.com/webapplate/webapplate/wiki">Webapplate wiki</a> for more information</p>
+    </section>
 
     <!-- build:js js/body.min.js -->
     <!-- Custom actions here -->
+    <script defer src="vendor/jquery/dist/jquery.min.js"></script>
+    <script defer src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script defer src="vendor/bootstrap-material-design/dist/js/ripples.min.js"></script>
+    <script defer src="vendor/bootstrap-material-design/dist/js/material.min.js"></script>
     <script defer src="js/main.js"></script>
 
     <!-- App Install detection -->

@@ -2,6 +2,8 @@ mark { background-color:#ff9; color:#000; font-style:normal; font-weight:bold; }
 
 .hidden { display: none; }
 
+.navbar { margin-bottom: 0; }
+
 /* app default style */
 /*html, body {
   margin: 0;

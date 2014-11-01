@@ -4,16 +4,27 @@
 
 {% block head %}
   {% parent %}
-  <script defer src="public/vendor/platform/platform.js"></script>
-  <link rel="import" href="public/parts/app-main.html">
 {% endblock %}
 
 {% block content %}
 
-<app-main></app-main>
+<header id="header" class="navbar">
+  <a class="navbar-brand" href="#">Webapplate</a>
+  <ul class="nav navbar-nav pull-left">
+  </ul>
+</header>
+<section id="content" class="well">
+  <!-- Add your site or application content here -->
+  <h3 data-l10n-id="hello">Hello WebApplate</h3>
+  <p data-l10n-id="description">The <mark>index.html</mark> file is located in <mark>public/index.html</mark>. Check <a href="https://github.com/webapplate/webapplate/wiki">Webapplate wiki</a> for more information</p>
+</section>
 
 <!-- build:js js/body.min.js -->
 <!-- Custom actions here -->
+<script defer src="public/vendor/jquery/dist/jquery.min.js"></script>
+<script defer src="public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script defer src="public/vendor/bootstrap-material-design/dist/js/ripples.min.js"></script>
+<script defer src="public/vendor/bootstrap-material-design/dist/js/material.min.js"></script>
 <script defer src="public/js/main.js"></script>
 
 <!-- App Install detection -->

@@ -9,6 +9,7 @@
   'use strict';
   document.addEventListener('DocumentLocalized', function() {
     document.body.classList.remove('hidden');
+    $.material.ripples();
     // YourApp.init();
   });
 }());
