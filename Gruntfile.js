@@ -32,19 +32,9 @@ module.exports = function(grunt) {
   // Server
   grunt.registerTask('server', ['express:dev', 'watch']);
 
-  // intemediate task to optimize web components
-  grunt.registerTask('polymermin', [
-    'copy:webComponent',
-    'vulcanize', // index.html -> index-csp.html/index-csp.js
-    'clean:unvulcanized', // rm index.html
-    'copy:vulcanized', // index-csp.html -> index.html & move script element
-    'clean:vulcanized', // rm index-csp.html
-  ]);
-
   // intemediate task to optimize resources
   grunt.registerTask('optimize', [
     'copy:build',
-    /*'polymermin',*/
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',
@@ -68,7 +58,6 @@ module.exports = function(grunt) {
   grunt.registerTask('pack', [
     'welcome', 'clean:dist',
     'optimize',
-    'clean:parts',
     'copy:static',
     'copy:vendor', // customize tasks/configs/vendor_copy.js
     'copy:backgroundJs',
