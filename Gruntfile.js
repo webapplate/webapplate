@@ -21,7 +21,8 @@ module.exports = function(grunt) {
       build: 'build',
       tmp: '.tmp',
       dst: 'dist',
-      pack: 'pack'
+      pack: 'pack',
+      www: 'www'
     }
   };
   var configs = require('load-grunt-configs')(grunt, options);
@@ -53,6 +54,18 @@ module.exports = function(grunt) {
     'copy:appcache',
     'clean:tests',
     'fileExists:static' // test result
+  ]);
+
+  // generate cordova/phonegap package to www/
+  grunt.registerTask('cordova', [
+    'welcome', 'clean:dist',
+    'optimize',
+    'copy:static',
+    'copy:vendor', // customize tasks/configs/vendor_copy.js
+    'clean:tests',
+    'copy:cordova',
+    'clean:cordova',
+    'fileExists:cordova'
   ]);
 
   // generate package app to pack/

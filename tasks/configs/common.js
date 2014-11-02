@@ -115,7 +115,7 @@ module.exports.tasks = {
   },
   clean: {
     dist: ['<%= param.dst %>/', '<%= param.tmp %>/',
-    '<%= param.build %>/', '<%= param.pack %>/'],
+    '<%= param.build %>/', '<%= param.pack %>/', '<%= param.www %>'],
     docs: ['docs/'],
     tests: ['<%= param.dst %>/test']
   },
