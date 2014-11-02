@@ -9,6 +9,7 @@ env:
   - CI_ACTION="grunt"
   - CI_ACTION="grunt test"
   - CI_ACTION="grunt static"
+  - CI_ACTION="grunt cordova"
   - CI_ACTION="grunt pack"
   - CI_ACTION="grunt karma"
   - CI_ACTION="grunt mochacov:travis"
