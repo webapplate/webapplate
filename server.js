@@ -27,9 +27,7 @@
   // this will let us get the data from a POST via
   // POST: {"name":"foo","color":"red"} or
   // POST: name=foo&color=red
-  app.use(bodyParser.urlencoded({
-    extended: true
-  }));
+  app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());
 
   // gzip

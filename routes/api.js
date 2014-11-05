@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+//var model = require('../models/model');
 /* mocked model
 var model = {
   task: []
@@ -9,35 +9,36 @@ var model = {
 
 // enable route if need dynamic web
 /*
-// create
-router.post('/', function(req, res) {
-  res.render('index.html', {foo: 'bar'});
+// middleware to use for all requests
+router.use(function(req, res, next) {
+  // do something first before every request
+  console.log('Something is happening.');
+  next(); // make sure we go to the next routes and don't stop here
 });
 
-// retrieve all
-router.get('/', function(req, res) {
-  res.render('index.html', {foo: 'bar'});
-});
+router.route('/')
+  // create
+  .post(function(req, res) {
+    res.json({ code: 200, message: 'create!' });
+  })
+  // retrieve all
+  .get(function(req, res) {
+    res.json({ code: 200, message: 'get all!' });
+  });
 
-// retrieve
-router.get('/:id?', function(req, res) {
-  res.render('index.html', {foo: 'bar'});
-});
-
-// replace
-router.put('/:id?', function(req, res) {
-  res.render('index.html', {foo: 'bar'});
-});
-
-// update
-router.patch('/:id?', function(req, res) {
-  res.render('index.html', {foo: 'bar'});
-});
-
-// delete
-router.delete('/:id?', function(req, res) {
-  res.render('index.html', {foo: 'bar'});
-});
+router.route('/:id?')
+  // retrieve
+  router.get(function(req, res) {
+    res.json({ code: 200, message: 'get!' });
+  })
+  // update
+  router.put(function(req, res) {
+    res.json({ code: 200, message: 'update!' });
+  })
+  // delete
+  .delete(function(req, res) {
+    res.json({ code: 200, message: 'delete!' });
+  });
 */
 
 module.exports = router;
