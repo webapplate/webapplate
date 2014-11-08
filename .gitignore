@@ -19,6 +19,7 @@ public/vendor/
 dist/
 pack/
 build/
+www/
 .tmp/
 docs/
 public/test/reports/
