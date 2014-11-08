@@ -7,6 +7,7 @@
   var compress = require('compression')();
   var serveStatic = require('serve-static');
   var errorHandler = require('errorhandler');
+  var configs = require('./config');
 
   var app = express();
 
@@ -49,21 +50,21 @@
   app.use('/', require('./routes/index'));
   app.use('/api/1/', require('./routes/api'));
 
-  // Handle 404
-  /*app.use(function(req, res) {
-     res.send('404: Page not Found', 404);
-  });
+  if (configs.debug) {
+    app.use(errorHandler({dumpExceptions: true, showStack: true}));
+  } else {
+    // Handle 404
+    app.use(function(req, res) {
+      res.send('404: Page not Found', 404);
+    });
 
-  // Handle 500
-  app.use(function(error, req, res, next) {
-     res.send('500: Internal Server Error', 500);
-  });*/
+    // Handle 500
+    app.use(function(error, req, res, next) {
+      res.send('500: Internal Server Error', 500);
+    });
 
-  // error, enable for debugging
-  app.use(errorHandler({
-    dumpExceptions: true,
-    showStack: true
-  }));
+    app.use(errorHandler());
+  }
 
   /**
    *  terminator === the termination handler
@@ -91,7 +92,7 @@
 
   //  Set the environment variables we need.
   var APP_PORT = process.env.VCAP_APP_PORT ||
-    process.env.OPENSHIFT_NODEJS_PORT || 8000;
+    process.env.OPENSHIFT_NODEJS_PORT || configs.port;
   var APP_IPADDRESS = process.env.OPENSHIFT_NODEJS_IP || '';
   if (typeof APP_IPADDRESS === 'undefined') {
     //  Log errors but continue w/ 127.0.0.1 - this
