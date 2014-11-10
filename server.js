@@ -46,9 +46,7 @@
   // express.static.mime.define({'audio/ogg': ['ogg']});
   // express.static.mime.define({'audio/mp4': ['m4a']});
 
-  // REGISTER OUR ROUTES
-  app.use('/', require('./routes/index'));
-  app.use('/api/1/', require('./routes/api'));
+  require('./routes/urls')(app);
 
   if (configs.debug) {
     app.use(errorHandler({dumpExceptions: true, showStack: true}));
