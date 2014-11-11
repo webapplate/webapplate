@@ -17,7 +17,7 @@ http://webapplate.github.io/
 |__/|__/\___/_.___/\__,_/ .___/ .___/_/\__,_/\__/\___/
                        /_/   /_/
 ~~~
-current version: v1.9.0
+current version: v2.0.0
 
 ## Why need webapplate?
 
@@ -34,6 +34,7 @@ Website inherit from Webapplate can be [deployed to any host provider](https://g
 
 All magics are well integrated and configurable.
 
+![Webapplate Functionality](http://i.imgur.com/r069BsG.png)
 
 ## Demos
 
