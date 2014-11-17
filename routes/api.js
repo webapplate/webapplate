@@ -8,7 +8,6 @@ var model = {
 */
 
 // enable route if need dynamic web
-/*
 // middleware to use for all requests
 router.use(function(req, res, next) {
   // do something first before every request
@@ -19,26 +18,25 @@ router.use(function(req, res, next) {
 router.route('/')
   // create
   .post(function(req, res) {
-    res.json({ code: 200, message: 'create!' });
+    res.json({code: 200, message: 'create!'});
   })
   // retrieve all
   .get(function(req, res) {
-    res.json({ code: 200, message: 'get all!' });
+    res.json({code: 200, message: 'get all!'});
   });
 
 router.route('/:id?')
   // retrieve
-  router.get(function(req, res) {
-    res.json({ code: 200, message: 'get!' });
+  .get(function(req, res) {
+    res.json({code: 200, message: 'get!'});
   })
   // update
-  router.put(function(req, res) {
-    res.json({ code: 200, message: 'update!' });
+  .put(function(req, res) {
+    res.json({code: 200, message: 'update!'});
   })
   // delete
   .delete(function(req, res) {
-    res.json({ code: 200, message: 'delete!' });
+    res.json({code: 200, message: 'delete!'});
   });
-*/
 
 module.exports = router;

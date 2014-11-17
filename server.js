@@ -47,7 +47,8 @@
 
   // static files, cached and expire in 30 days
   // change path / to /public if need dynamic web
-  app.use('/', serveStatic(__dirname + '/public', {maxAge: 2592000000}));
+  var staticPath = configs.isDynamic ? '/public' : '/';
+  app.use(staticPath, serveStatic(__dirname + '/public', {maxAge: 2592000000}));
 
   // mime
   express.static.mime.define(
@@ -57,7 +58,9 @@
   // express.static.mime.define({'audio/ogg': ['ogg']});
   // express.static.mime.define({'audio/mp4': ['m4a']});
 
-  require('./routes/urls')(app);
+  if (configs.isDynamic) {
+    require('./routes/urls')(app);
+  }
 
   if (configs.debug) {
     app.use(errorHandler({dumpExceptions: true, showStack: true}));
