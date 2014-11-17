@@ -4,7 +4,8 @@ var router = express.Router();
 // enable route if need dynamic web
 /*
 router.get('/', function(req, res) {
-  res.render('index.html', {foo: 'bar'});
+  req.flash('info', 'welcome!');
+  res.render('index.html', {'message': req.flash('info')});
 });
 */
 

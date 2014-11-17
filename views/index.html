@@ -7,16 +7,16 @@
 {% endblock %}
 
 {% block content %}
-
 <header id="header" class="navbar">
   <a class="navbar-brand" href="#">Webapplate</a>
   <ul class="nav navbar-nav pull-left">
   </ul>
 </header>
+{% parent %}
 <section id="content" class="well">
   <!-- Add your site or application content here -->
-  <h3 data-l10n-id="hello">Hello WebApplate</h3>
-  <p data-l10n-id="info_dynamic">The <mark>index.html</mark> file is located in <mark>views/index.html</mark>. Check <a href="https://github.com/webapplate/webapplate/wiki">Webapplate wiki</a> for more information</p>
+  <h3 data-l10n-id="hello"></h3>
+  <p data-l10n-id="info_dynamic"></p>
 </section>
 
 <!-- build:js js/body.min.js -->

@@ -7,6 +7,9 @@
   var compress = require('compression')();
   var serveStatic = require('serve-static');
   var errorHandler = require('errorhandler');
+  var cookieParser = require('cookie-parser');
+  var session = require('express-session');
+  var flash = require('connect-flash');
   var configs = require('./config');
 
   var app = express();
@@ -30,6 +33,14 @@
   // POST: name=foo&color=red
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());
+  app.use(cookieParser(configs.secret));
+  app.use(session({
+    secret: configs.secret,
+    resave: true,
+    saveUninitialized: true,
+    cookie: {maxAge: 60000}
+  }));
+  app.use(flash());
 
   // gzip
   app.use(compress);

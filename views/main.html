@@ -35,7 +35,12 @@
 </head>
 <body>
 	{% block content %}
-	<h1>Hello World</h1>
+      {% if message %}
+        <div class="alert alert-dismissable alert-warning">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ message }} {{ message.info }}
+        </div>
+      {% endif %}
     {% endblock %}
 </body>
 </html>
