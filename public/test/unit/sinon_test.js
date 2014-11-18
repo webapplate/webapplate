@@ -36,7 +36,7 @@ suite('As a developer, I want to use Sinon in test,' +
 
   test('Sinon should able to be used as spy', function() {
     var callback = sinon.spy();
-    PubSub.subscribe("message", callback);
+    PubSub.subscribe('message', callback);
 
     // PubSub.publishSync("message");
     assert.equal(callback.called, true);
@@ -89,7 +89,7 @@ suite('As a developer, I want to use Sinon as Spy,' +
   });
 
   test('spy should able to be used on existing methods', function() {
-    PubSub.publishSync("message");
+    PubSub.publishSync('message');
     assert(PubSub.publishSync.calledOnce);
     // or ...
     assert.equal(PubSub.publishSync.callCount, 1);
@@ -99,7 +99,7 @@ suite('As a developer, I want to use Sinon as Spy,' +
 
 suite('As a developer, I want to use Sinon as Stub,' +
       ' so I can return whatever the original function returns', function() {
-  test("returns the return value from the original function", function () {
+  test('returns the return value from the original function', function () {
     var callback = sinon.stub().returns(42);
     var proxy = once(callback);
 
