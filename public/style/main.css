@@ -2,8 +2,6 @@ mark { background-color:#ff9; color:#000; font-style:normal; font-weight:bold; }
 
 .hidden { display: none; }
 
-.navbar { margin-bottom: 0; }
-
 /* app default style */
 /*html, body {
   margin: 0;
@@ -18,3 +16,9 @@ section[role="region"] {
   margin-bottom: 1.5rem;
   position: relative;
 }*/
+
+.navbar { margin-bottom: 0; }
+
+.navbar-raised {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
