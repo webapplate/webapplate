@@ -80,6 +80,16 @@ Note: If you use docker, just skip `Setup` section and check `With docker` secti
     ```
     $ grunt githooks
     ```
+    
+   Now you are all set.
+
+3. While you are editing code, run command:
+
+    ```
+    $ grunt karma
+    ```
+
+   To automaticly monitor and trigger all test when you change the code.
 
 ### With docker
 
@@ -116,87 +126,10 @@ docker run --rm -i -t -p 8000:8000 webapplate/webapplate
 To forwarding port to your desktop. Connect to `$(boot2docker ip):8000` on browser to see the web page.
 (generally is `http://192.168.59.103:8000/`)
 
-### Develop Hosted webapp (With dynamic/static web Server)
-
-Note: to only install required library for production, run
-
-```
-$ npm install --production
-```
-
-1. To start the server, run
-
-    ```
-    $ grunt server
-    ```
-
-    or call the `server.js` manually.
-
-    ```
-    $ node server.js
-    ```
-
-Now you can open browser and see the web page at localhost:8000. The server.js is a fully functional server side script based on popular [express](http://expressjs.com/) framework, you can expand it to fit your needs.
-
-with `grunt server` command, the browser and server will auto reload when you edit any js file within webapplate so you could preview the result directly.
-
-  The default page is stored in `/publish/index.html`. Read [Syntax](https://github.com/webapplate/webapplate/wiki/Syntax) doc to learn plenty of sensible defaults that webapplate configured for you.
-
-2. To lint check, autotest the project, run
-
-```
-$ grunt
-```
-
-For server side web app, or
-
-```
-$ grunt test
-```
-
-For client side web app.
-
-### Develop Packaged webapp (No Server)
-
-Note: to only install required library for production, run
-
-        $ npm install --production
-
-Drag `/public/index.html` into browser. Or select `/public/manifest.webapp` in [Firefox WebIDE](https://developer.mozilla.org/en-US/docs/Tools/WebIDE) or Chrome Extension page.
-
-Plus webapplate enable you to genergate the packaged web app via command:
-
-```
-$ grunt pack
-```
-
-Which will try to optimize the source for faster web app.
-
-Read [Deployment](https://github.com/webapplate/webapplate/wiki/Deployment#3-packaged-webapp) doc for further configurations.
-
-### Automatic testing during development
-
-While you are editing code, run command:
-
-```
-$ grunt karma
-```
-
-To automaticly monitor and trigger all test when you change the code.
-
-### Generate static webapp (Server independent - experimental)
-
-Generate minimized static web app:
-
-```
-$ grunt static
-```
 
 ## Features
 
-Check [Feature Set](https://github.com/webapplate/webapplate/wiki/FeatureSet) here.
-
-Or read document at [https://github.com/webapplate/webapplate/wiki](https://github.com/webapplate/webapplate/wiki).
+Learn more from [webapplate document](https://github.com/webapplate/webapplate/wiki).
 
 ## License
 
