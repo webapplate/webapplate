@@ -4,19 +4,14 @@
 
 The template to create new web application.
 
-Webapplate is the Mobile First, full stack WebApp template that help you quickly start the maintainable mobile web app development.
+Webapplate is the Mobile First, full stack WebApp template that help you quickly start the maintainable mobile web app development. Webapplate enable you to export your optimized webapp to hosting server, Firefox/Chrome webapp store, Android, iOS, and more platforms.  
 http://webapplate.github.io/
 
 [![Build Status](https://travis-ci.org/webapplate/webapplate.png)](https://travis-ci.org/webapplate/webapplate) [![david-dm](https://david-dm.org/webapplate/webapplate.png)](https://david-dm.org/webapplate/webapplate) [![devDependency Status](https://david-dm.org/webapplate/webapplate/dev-status.svg)](https://david-dm.org/webapplate/webapplate#info=devDependencies) [![Coverage Status](https://coveralls.io/repos/webapplate/webapplate/badge.png?branch=master)](https://coveralls.io/r/webapplate/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/webapplate/webapplate.png)](https://codeclimate.com/github/webapplate/webapplate) [![Codacy Badge](https://www.codacy.com/project/badge/b0dbc808c4fb83b26706fb376ceea678)](https://www.codacy.com/public/gasolin_1667/webapplate)
 
-~~~
-                __                      __      __
- _      _____  / /_  ____ _____  ____  / /___ _/ /____
-| | /| / / _ \/ __ \/ __ `/ __ \/ __ \/ / __ `/ __/ _ \
-| |/ |/ /  __/ /_/ / /_/ / /_/ / /_/ / / /_/ / /_/  __/
-|__/|__/\___/_.___/\__,_/ .___/ .___/_/\__,_/\__/\___/
-                       /_/   /_/
-~~~
+![Real welcome page](http://i.imgur.com/8AGwXCG.png)
+This is the screenshot when you first time running webapplate
+
 current version: v2.0.0
 
 ## Why need webapplate?
