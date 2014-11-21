@@ -12,6 +12,11 @@ module.exports.tasks = {
       },
       {
         expand: false,
+        src: 'config.js',
+        dest: '<%= param.dst %>/server.js'
+      },
+      {
+        expand: false,
         src: 'package.json',
         dest: '<%= param.dst %>/package.json'
       },
@@ -40,7 +45,9 @@ module.exports.tasks = {
       '<%= param.dst %>/public/manifest.json',
       '<%= param.dst %>/public/manifest.webapp',
       '<%= param.dst %>/public/style/icons/icon128.png',
-      '<%= param.dst %>/public/locales/manifest.json'
+      '<%= param.dst %>/public/locales/manifest.json',
+      '<%= param.dst %>/server.js',
+      '<%= param.dst %>/config.js'
     ]
   }
 };
