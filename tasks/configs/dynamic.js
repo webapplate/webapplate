@@ -13,7 +13,7 @@ module.exports.tasks = {
       {
         expand: false,
         src: 'config.js',
-        dest: '<%= param.dst %>/server.js'
+        dest: '<%= param.dst %>/config.js'
       },
       {
         expand: false,
