@@ -42,7 +42,7 @@
     "grunt-mocha-cov": "~0.3.0",
     "grunt-mocha-phantomjs": "~0.6.0",
     "grunt-sloc": "~0.5.2",
-    "grunt-usemin": "~2.6.2",
+    "grunt-usemin": "~3.0.0",
     "grunt-zip": "~0.16.2",
     "karma": "^0.12.28",
     "karma-chai": "^0.1.0",
@@ -54,7 +54,7 @@
     "load-grunt-configs": "^0.4.1",
     "load-grunt-tasks": "^1.0.0",
     "mocha": "^2.0.1",
-    "sinon": "~1.12.1",
+    "sinon": "~1.12.2",
     "time-grunt": "~1.0.0"
   },
   "scripts": {
