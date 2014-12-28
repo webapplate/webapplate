@@ -7,9 +7,11 @@
  */
 (function() {
   'use strict';
-  document.addEventListener('DocumentLocalized', function() {
+  document.addEventListener('DocumentLocalized', function() { // l20n ready
     document.body.classList.remove('hidden');
     $.material.ripples();
-    // YourApp.init();
+    // document.addEventListener('deviceready', this.onDeviceReady, false); // cordova ready
+
+    // App.init();
   });
 }());
