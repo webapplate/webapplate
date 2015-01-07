@@ -2,9 +2,9 @@
 
 # Webapplate 
 
-The template to create new web application.
+The template to create a new web app.
 
-Webapplate is the Mobile First, full stack WebApp template that curated several libraries to help you quickly start a maintainable mobile web app development process. Webapplate enable you to export your optimized webapp to hosting server, Firefox/Chrome webapp store, Android, iOS, and more platforms.
+Webapplate is the Mobile First, full stack web app template that curated several libraries to help you quickly start a maintainable mobile web app development process. Webapplate enable you to optimized and export your web app to hosting server, Firefox/Chrome webapp store, Android, iOS, and more platforms.
 http://webapplate.github.io/
 
 [![Build Status](https://travis-ci.org/webapplate/webapplate.png)](https://travis-ci.org/webapplate/webapplate) [![david-dm](https://david-dm.org/webapplate/webapplate.png)](https://david-dm.org/webapplate/webapplate) [![devDependency Status](https://david-dm.org/webapplate/webapplate/dev-status.svg)](https://david-dm.org/webapplate/webapplate#info=devDependencies) [![Coverage Status](https://coveralls.io/repos/webapplate/webapplate/badge.png?branch=master)](https://coveralls.io/r/webapplate/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/webapplate/webapplate.png)](https://codeclimate.com/github/webapplate/webapplate) [![Codacy Badge](https://www.codacy.com/project/badge/b0dbc808c4fb83b26706fb376ceea678)](https://www.codacy.com/public/gasolin_1667/webapplate)
@@ -13,7 +13,7 @@ current version: v2.1.0
 
 ## Why need webapplate?
 
-Here is the screenshot when you first time running webapplate
+Here is the screenshot when you first time running webapplate.
 
 ![Real welcome page](http://i.imgur.com/8AGwXCG.png)
 
@@ -22,6 +22,8 @@ Though there are many powerful tools surround web technologies, web does not pro
 Thus developer who is approaching to the `web app`(make web site behaves like mobile app) concept need a bootstrap or template project to start with. That's why webapplate comes.
 
 ## How webapplate do
+
+Webapplate provide full HTML5 development experience, use javascript to rule frontend, backend, build and test.
 
 Webapplate provide a ready-to-deploy project bootstrap settings for both `hosted` (dynamic/static website) and `packaged` (no server) web app, with convention of file structure, [express](http://expressjs.com/) server-side support, and preconfigured helper tools like code style check, appcache generator, multi-locales and testframework.
 
