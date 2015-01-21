@@ -8,12 +8,12 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Load all custom tasks
-  grunt.loadTasks('tasks');
+  grunt.loadTasks('grunt');
 
   // Load grunt configurations
   var options = {
     config: { // set default configs location
-      src: 'tasks/configs/*.js'
+      src: 'grunt/configs/*.js'
     },
     pkg: grunt.file.readJSON('package.json'),
     param: { // Project settings
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
     'welcome', 'clean:dist',
     'optimize',
     'copy:static',
-    'copy:vendor', // customize tasks/configs/vendor_copy.js
+    'copy:vendor', // customize grunt/configs/vendor_copy.js
     'manifest',
     'copy:appcache',
     'clean:tests',
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
     'welcome', 'clean:dist',
     'optimize',
     'copy:static',
-    'copy:vendor', // customize tasks/configs/vendor_copy.js
+    'copy:vendor', // customize grunt/configs/vendor_copy.js
     'clean:tests',
     'copy:cordova',
     'clean:cordova',
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
     'welcome', 'clean:dist',
     'optimize',
     'copy:static',
-    'copy:vendor', // customize tasks/configs/vendor_copy.js
+    'copy:vendor', // customize grunt/configs/vendor_copy.js
     'copy:backgroundJs',
     'copy:installPage',
     'clean:pack',
