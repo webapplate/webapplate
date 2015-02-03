@@ -12,6 +12,7 @@ current version: v2.2.0
 
 * Project page http://webapplate.github.io/
 * [Webapplate introduction](https://hacks.mozilla.org/2014/09/webapplate-maintainable-web-app-template-for-firefox-os-and-chrome-apps/) from hacks.mozilla.org.
+* Learn more from [webapplate document](https://github.com/webapplate/webapplate/wiki).
 
 ## Why need webapplate?
 
@@ -22,6 +23,13 @@ Here is the screenshot when you first time running webapplate.
 Though there are many powerful tools surround web technologies, web does not provide the `SDK` or ready to use `template` that just like Android or iOS. Web apps are simple to write but hard to get done right. Developer who wants to quickly build an web app usually consume much longer time to make their web app right.
 
 Thus developer who is approaching to the `web app`(make web site behaves like mobile app) concept need a bootstrap or template project to start with. That's why webapplate comes.
+
+## What kind of web app webapplate supports?
+
+* **static hosting** web app
+* **dynamic** web app with node.js/express backend 
+* **packaged** web app for FirefoxOS or chrome app 
+* **cordova/phonegap** for multiple platform native app
 
 ## How webapplate do
 
@@ -125,10 +133,6 @@ docker run --rm -i -t -p 8000:8000 webapplate/webapplate
 To forwarding port to your desktop. Connect to `$(boot2docker ip):8000` on browser to see the web page.
 (generally is `http://192.168.59.103:8000/`)
 
-
-## Features
-
-Learn more from [webapplate document](https://github.com/webapplate/webapplate/wiki).
 
 ## License
 
