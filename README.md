@@ -4,7 +4,8 @@
 
 The template to create a new web app.
 
-Webapplate is the Mobile First, full stack web app template that curated several libraries to help you quickly start a maintainable mobile web app development process. Webapplate enable you to optimized and export your web app to hosting server, Firefox/Chrome webapp store, Android, iOS, and more platforms.
+Before hacking with webapplate, [jsfiddle playground](http://jsfiddle.net/gasolin/sxjja37j/) is available for experiment! Or fork [ghapplate](https://github.com/webapplate/ghapplate) for write web app directly on github!
+Note Webapplate is still the more maintainable choice.
 
 [![Build Status](https://travis-ci.org/webapplate/webapplate.png)](https://travis-ci.org/webapplate/webapplate) [![david-dm](https://david-dm.org/webapplate/webapplate.png)](https://david-dm.org/webapplate/webapplate) [![devDependency Status](https://david-dm.org/webapplate/webapplate/dev-status.svg)](https://david-dm.org/webapplate/webapplate#info=devDependencies) [![Coverage Status](https://coveralls.io/repos/webapplate/webapplate/badge.png?branch=master)](https://coveralls.io/r/webapplate/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/webapplate/webapplate.png)](https://codeclimate.com/github/webapplate/webapplate) [![Codacy Badge](https://www.codacy.com/project/badge/b0dbc808c4fb83b26706fb376ceea678)](https://www.codacy.com/public/gasolin_1667/webapplate)
 
@@ -14,11 +15,15 @@ current version: v2.2.0
 * [Webapplate introduction](https://hacks.mozilla.org/2014/09/webapplate-maintainable-web-app-template-for-firefox-os-and-chrome-apps/) from hacks.mozilla.org.
 * Learn more from [webapplate document](https://github.com/webapplate/webapplate/wiki).
 
-## Why need webapplate?
+## What is webapplate?
+
+Webapplate is the Mobile First, full stack web app template/boilerplate that curated several libraries to help you quickly start a maintainable mobile web app development process. Webapplate enable you to optimized and export your web app to hosting server, Firefox/Chrome webapp store, Android, iOS, and more platforms.
 
 Here is the screenshot when you first time running webapplate.
 
 ![Real welcome page](http://i.imgur.com/8AGwXCG.png)
+
+## Why need webapplate?
 
 Though there are many powerful tools surround web technologies, web does not provide the `SDK` or ready to use `template` that just like Android or iOS. Web apps are simple to write but hard to get done right. Developer who wants to quickly build an web app usually consume much longer time to make their web app right.
 
