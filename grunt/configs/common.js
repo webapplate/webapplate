@@ -113,6 +113,16 @@ module.exports.tasks = {
       }]
     }
   },
+  '6to5': {
+    dist: {
+      files: [{
+        expand: true,
+        cwd: '<%= param.src %>',
+        src: ['js/**/*.js'],
+        dest: '<%= param.build %>'
+      }]
+    }
+  },
   clean: {
     dist: ['<%= param.dst %>/', '<%= param.tmp %>/',
     '<%= param.build %>/', '<%= param.pack %>/', '<%= param.www %>'],

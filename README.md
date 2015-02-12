@@ -17,7 +17,7 @@ current version: v2.2.0
 
 ## What is webapplate?
 
-Webapplate is the Mobile First, full stack web app template/boilerplate that curated several libraries to help you quickly start a maintainable mobile web app development process. Webapplate enable you to optimized and export your web app to hosting server, Firefox/Chrome webapp store, Android, iOS, and more platforms.
+Webapplate is the Mobile First, full stack web app template/boilerplate that curated several libraries to help you quickly start a maintainable mobile web app development process. Webapplate enable you to optimized and export your web app to hosting server, Firefox/Chrome webapp store, or even Android, iOS, and more platforms.
 
 Here is the screenshot when you first time running webapplate.
 
@@ -33,7 +33,7 @@ Thus developer who is approaching to the `web app`(make web site behaves like mo
 
 * **static hosting** web app
 * **dynamic** web app with node.js/express backend 
-* **packaged** web app for FirefoxOS or chrome app 
+* **packaged** web app for Firefox Marketplace or Chrome Store
 * **cordova/phonegap** for multiple platform native app
 
 ## How webapplate do
