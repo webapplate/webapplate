@@ -36,7 +36,7 @@ module.exports = function(grunt) {
   // intemediate task to optimize resources
   grunt.registerTask('optimize', [
     'copy:build',
-    '6to5',
+    'babel',
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',

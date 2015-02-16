@@ -113,7 +113,7 @@ module.exports.tasks = {
       }]
     }
   },
-  '6to5': {
+  'babel': {
     dist: {
       files: [{
         expand: true,
