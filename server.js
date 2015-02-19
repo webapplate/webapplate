@@ -2,6 +2,8 @@
   'use strict';
 
   var express = require('express');
+  var fs = require('fs');
+  var https = require('https');
   var swig = require('swig');
   var bodyParser = require('body-parser');
   var compress = require('compression')();
@@ -11,7 +13,6 @@
   var session = require('express-session');
   var flash = require('connect-flash');
   var configs = require('./config');
-
   var app = express();
 
   // template
@@ -112,8 +113,20 @@
     console.warn('No IP address var, using 127.0.0.1');
     APP_IPADDRESS = '127.0.0.1';
   }
-  app.listen(APP_PORT, APP_IPADDRESS, function() {
-    console.log('%s: Node server started on %s:%d ...',
-      Date(Date.now()), APP_IPADDRESS, APP_PORT);
-  });
+
+  if (configs.sshSupport) {
+    var options = {
+      key: fs.readFileSync(configs.privatekeyPath),
+      cert: fs.readFileSync(configs.certificatePath),
+    };
+    https.createServer(options, app).listen(443, APP_IPADDRESS, function() {
+      console.log('%s: Node server started on %s:%d ...',
+        Date(Date.now()), APP_IPADDRESS, 443);
+    });
+  } else {
+    app.listen(APP_PORT, APP_IPADDRESS, function() {
+      console.log('%s: Node server started on %s:%d ...',
+        Date(Date.now()), APP_IPADDRESS, APP_PORT);
+    });
+  }
 }());
