@@ -7,6 +7,9 @@ module.exports = function(grunt) {
   // Load the plugin that provides tasks.
   require('load-grunt-tasks')(grunt);
 
+  // inherit center configs
+  var webapplateConfigs = require('./config');
+
   // Load all custom tasks
   grunt.loadTasks('grunt');
 
@@ -17,6 +20,7 @@ module.exports = function(grunt) {
     },
     pkg: grunt.file.readJSON('package.json'),
     param: { // Project settings
+      debug: webapplateConfigs.debug,
       src: 'public',
       build: 'build',
       tmp: '.tmp',
@@ -36,7 +40,7 @@ module.exports = function(grunt) {
   // intemediate task to optimize resources
   grunt.registerTask('optimize', [
     'copy:build',
-    'babel',
+    'babel', 'myth', // js/css transpiler
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',

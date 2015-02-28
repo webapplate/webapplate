@@ -41,6 +41,7 @@
     "grunt-manifest": "^0.4.0",
     "grunt-mocha-cov": "^0.3.0",
     "grunt-mocha-phantomjs": "^0.6.0",
+    "grunt-myth": "^1.0.0",
     "grunt-sloc": "^0.5.2",
     "grunt-usemin": "^3.0.0",
     "grunt-zip": "^0.16.2",

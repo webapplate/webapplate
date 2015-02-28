@@ -113,12 +113,28 @@ module.exports.tasks = {
       }]
     }
   },
-  'babel': {
+  babel: {
     dist: {
+      options: {
+        sourceMap: '<%= param.debug %>'
+      },
       files: [{
         expand: true,
         cwd: '<%= param.src %>',
         src: ['js/**/*.js'],
+        dest: '<%= param.build %>'
+      }]
+    }
+  },
+  myth: {
+    dist: {
+      options: {
+        sourcemap: '<%= param.debug %>'
+      },
+      files: [{
+        expand: true,
+        cwd: '<%= param.src %>',
+        src: ['style/**/*.css'],
         dest: '<%= param.build %>'
       }]
     }
