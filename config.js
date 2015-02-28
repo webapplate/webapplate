@@ -1,3 +1,4 @@
+/* global module */
 module.exports = {
   'secret': 'webapplate', // session secret key
   'port': 8000,

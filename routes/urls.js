@@ -1,3 +1,5 @@
+/* global module, require */
+'use strict';
 // REGISTER OUR ROUTES
 module.exports = function(app) {
   app.use('/', require('./index'));

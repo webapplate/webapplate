@@ -1,3 +1,4 @@
+/* global $ */
 /**
  * Main entry point.
  *
@@ -10,7 +11,8 @@
   document.addEventListener('DocumentLocalized', function() { // l20n ready
     document.body.classList.remove('hidden');
     $.material.ripples();
-    // document.addEventListener('deviceready', this.onDeviceReady, false); // cordova ready
+    // document.addEventListener('deviceready',
+    //  this.onDeviceReady, false); // cordova ready
 
     // App.init();
   });

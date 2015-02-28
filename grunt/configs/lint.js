@@ -5,21 +5,27 @@
 module.exports.tasks = {
   jshint: {
     utils: {
-      jshintrc: true,
+      options: {
+        jshintrc: true
+      },
       src: [
         '*.js',
         'tasks/**/*.js'
       ]
     },
     server: {
-      jshintrc: true,
+      options: {
+        jshintrc: true
+      },
       src: [
         'server.js',
         'routes/**/*.js'
       ]
     },
     client: {
-      jshintrc: true,
+      options: {
+        jshintrc: true
+      },
       src: [
         '<%= param.src %>/**/*.js'
       ]

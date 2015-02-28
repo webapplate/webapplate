@@ -1,3 +1,4 @@
+/* global require, __dirname, process */
 (function() {
   'use strict';
 

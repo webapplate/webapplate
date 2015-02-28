@@ -1,3 +1,4 @@
+/* global chrome */
 /**
  * Only used in Chrome Apps
  *
