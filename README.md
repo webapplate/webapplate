@@ -187,6 +187,7 @@ __Client side libraries__
 - [Bootstrap](http://getbootstrap.com) mobile first front-end framework
 - [Bootstrap Material Design](https://github.com/FezVrasta/bootstrap-material-design) material design theme for Bootstrap
 - [localForage](https://github.com/mozilla/localForage) offline storage
+
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
