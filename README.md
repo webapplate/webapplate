@@ -145,7 +145,48 @@ docker run --rm -i -t -p 8000:8000 webapplate/webapplate
 To forwarding port to your desktop. Connect to `$(boot2docker ip):8000` on browser to see the web page.
 (generally is `http://192.168.59.103:8000/`)
 
+## Tools Used:
 
+__Package Management__
+- [npm](https://www.npmjs.com/) Node Package manager
+- [bower](http://bower.io/) Libraries manager
+
+__Build__
+- [grunt](http://gruntjs.com/) javascript task runner
+
+__Transpiler__
+- [Babel](https://babeljs.io) (ES6)
+- [Myth](http://myth.io) (CSS)
+
+__Optimize__
+- [grunt-usemin](https://github.com/yeoman/grunt-usemin)
+- [UglifyJS](https://github.com/mishoo/UglifyJS) javascript Compressor
+- [cssmin](https://github.com/gruntjs/grunt-contrib-cssmin) Compress CSS files
+- [htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin)  Minify HTML
+
+__Code Quality & Analysis__
+- [grunt-githooks](https://github.com/wecodemore/grunt-githooks)
+- [jshint](http://jshint.com/) javascript code quality
+- [jscs](http://jscs.info/) javascript code style linter
+- [csslint](https://github.com/CSSLint/csslint) css code style linter
+- [grunt-sloc](https://github.com/rhiokim/grunt-sloc) Source line of codes
+- [grunt-jsdoc](https://github.com/krampstudio/grunt-jsdoc) Generate javascript doc by running jsdoc3
+
+__Test__
+- [Karma](http://karma-runner.github.io) test runner
+- [Mocha](http://mochajs.org/) test framework
+- [Chai](http://chaijs.com/) assertion library
+- [Sinon](http://sinonjs.org/) test spies, stubs and mocks
+
+__Server__
+- [Express](http://expressjs.com/)
+- [Swig](http://paularmstrong.github.io/swig/) JavaScript Template Engine
+
+__Client side libraries__
+- [l20n](http://l20n.org/) client side internationalization
+- [Bootstrap](http://getbootstrap.com) mobile first front-end framework
+- [Bootstrap Material Design](https://github.com/FezVrasta/bootstrap-material-design) material design theme for Bootstrap
+- [localForage](https://github.com/mozilla/localForage) offline storage
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
