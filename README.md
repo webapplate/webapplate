@@ -192,4 +192,6 @@ __Client side libraries__
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Credit: developers and designers from node.js, express, grunt.js, Firefox OS, bower, and people who involved in improving Web technologies.
+## Credit
+
+Developers and designers from node.js, express, grunt.js, Firefox OS, bower, and people who involved in improving Web technologies.

@@ -15,6 +15,7 @@
     "bootstrap": "^3.3.2",
     "bootstrap-material-design": "^0.2.2",
     "localforage": "^1.2.1",
-    "gremlins.js": "^0.1.0"
+    "gremlins.js": "^0.1.0",
+    "fetch": "^0.7.0"
   }
 }
