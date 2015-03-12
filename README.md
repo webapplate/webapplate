@@ -158,6 +158,10 @@ __Transpiler__
 - [Babel](https://babeljs.io) (ES6)
 - [Myth](http://myth.io) (CSS)
 
+__Browser polyfill__
+- [localforage](https://github.com/mozilla/localForage) enhanced offline storage API
+- [fetch](https://github.com/github/fetch) replacement of XMLHTTPRequest
+
 __Optimize__
 - [grunt-usemin](https://github.com/yeoman/grunt-usemin)
 - [UglifyJS](https://github.com/mishoo/UglifyJS) javascript Compressor
