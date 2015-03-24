@@ -69,7 +69,7 @@ module.exports.tasks = {
       csslintrc: '.csslintrc'
     },
     strict: { // attach exclude file with prefix '!', ex: ![path]/main.css
-      src: ['public/style/**/*.css']
+      src: ['<%= param.src %>/style/**/*.css']
     }
   },
   sloc: {
