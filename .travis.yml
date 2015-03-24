@@ -16,3 +16,4 @@ env:
   - CI_ACTION="grunt pack"
   - CI_ACTION="grunt karma"
   - CI_ACTION="grunt mochacov:travis"
+  - CI_ACTION="gulp lint"
