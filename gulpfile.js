@@ -34,21 +34,15 @@ gulp.task('jsdoc', function() {
 
 var lintSources = ['*.js', 'routes/**/*.js', options.param.src + '/**/*.js'];
 /**
- * Runs JSLint on all javascript files found in the app dir.
+ * Runs JSLint JSCS on all javascript files found in the app dir.
  */
-gulp.task('jslint', function() {
+gulp.task('lint', function() {
   return gulp.src(lintSources)
     .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
-    .pipe(jshint.reporter('fail'));
-});
-
-gulp.task('jscs', function() {
-  gulp.src(lintSources)
     .pipe(jscs())
     .on('error', noop) // don't stop on error
-    .pipe(stylish());
+    .pipe(stylish.combineWithHintResults())
+    .pipe(jshint.reporter('default'));
 });
 
-gulp.task('lint', ['jslint', 'jscs']);
 gulp.task('docs', ['clean-jsdoc', 'lint', 'jsdoc']);
