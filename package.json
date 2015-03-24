@@ -45,6 +45,8 @@
     "grunt-sloc": "^0.5.2",
     "grunt-usemin": "^3.0.0",
     "grunt-zip": "^0.16.2",
+    "gulp": "^3.8.11",
+    "gulp-jsdoc": "^0.1.4",
     "karma": "^0.12.31",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.7",

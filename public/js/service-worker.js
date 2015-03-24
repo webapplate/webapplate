@@ -1,6 +1,11 @@
 /*global caches, fetch*/
 'use strict';
-// http://www.html5rocks.com/en/tutorials/service-worker/introduction/
+/**
+ * Service worker script.
+ *
+ * http://www.html5rocks.com/en/tutorials/service-worker/introduction/
+ * @class ServiceWorker
+ */
 var CACHE_NAME = 'cache';
 // The files we want to cache
 var urlsToCache = [
