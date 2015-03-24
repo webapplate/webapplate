@@ -45,4 +45,9 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'));
 });
 
+gulp.task('githooks', function() {
+  return gulp.src(['pre-commit'])
+    .pipe(gulp.dest('.git/hooks'));
+});
+
 gulp.task('docs', ['clean-jsdoc', 'lint', 'jsdoc']);
