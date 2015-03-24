@@ -7,6 +7,7 @@ var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 var noop = function() {};
 var stylish = require('gulp-jscs-stylish');
+var jsonlint = require('gulp-jsonlint');
 // inherit center configs
 var webapplateConfigs = require('./config');
 
@@ -33,10 +34,22 @@ gulp.task('jsdoc', function() {
 });
 
 var lintSources = ['*.js', 'routes/**/*.js', options.param.src + '/**/*.js'];
+
+gulp.task('jsonlint', function() {
+  return gulp.src([
+    'package.json',
+    'bower.json',
+    options.param.src + '/manifest.webapp',
+    options.param.src + '/manifest.json',
+    options.param.src + '/**/*.json'
+    ])
+    .pipe(jsonlint())
+    .pipe(jsonlint.reporter());
+});
 /**
- * Runs JSLint JSCS on all javascript files found in the app dir.
+ * Runs JSLint and JSCS on all javascript files found in the app dir.
  */
-gulp.task('lint', function() {
+gulp.task('lint', ['jsonlint'], function() {
   return gulp.src(lintSources)
     .pipe(jshint('.jshintrc'))
     .pipe(jscs())
