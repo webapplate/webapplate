@@ -9,6 +9,7 @@ var noop = function() {};
 var stylish = require('gulp-jscs-stylish');
 var jsonlint = require('gulp-jsonlint');
 var csslint = require('gulp-csslint');
+var sloc = require('gulp-sloc');
 // inherit center configs
 var webapplateConfigs = require('./config');
 
@@ -53,17 +54,38 @@ gulp.task('csslint', function() {
     .pipe(csslint('.csslintrc'))
     .pipe(csslint.reporter());
 });
+
+gulp.task('sloc-client', function() {
+  gulp.src([
+    options.param.src + '/*.html',
+    options.param.src + '/js/*.js',
+    options.param.src + '/style/*.css',
+    options.param.src + '/test/unit/*.js',
+    ])
+    .pipe(sloc());
+});
+
+gulp.task('sloc-server', function() {
+  gulp.src([
+    'server.js',
+    'routes/**/*.js',
+    'views/**/*.html'
+    ])
+    .pipe(sloc());
+});
+
 /**
  * Runs JSLint and JSCS on all javascript files found in the app dir.
  */
-gulp.task('lint', ['jsonlint', 'csslint'], function() {
-  return gulp.src(lintSources)
-    .pipe(jshint('.jshintrc'))
-    .pipe(jscs())
-    .on('error', noop) // don't stop on error
-    .pipe(stylish.combineWithHintResults())
-    .pipe(jshint.reporter('default'));
-});
+gulp.task('lint', ['jsonlint', 'csslint', 'sloc-server', 'sloc-client'],
+  function() {
+    return gulp.src(lintSources)
+      .pipe(jshint('.jshintrc'))
+      .pipe(jscs())
+      .on('error', noop) // don't stop on error
+      .pipe(stylish.combineWithHintResults())
+      .pipe(jshint.reporter('default'));
+  });
 
 gulp.task('githooks', function() {
   return gulp.src(['pre-commit'])

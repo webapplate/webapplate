@@ -53,6 +53,7 @@
     "gulp-jsdoc": "^0.1.4",
     "gulp-jshint": "^1.9.4",
     "gulp-jsonlint": "^1.0.2",
+    "gulp-sloc": "^1.0.4",
     "karma": "^0.12.31",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.7",
