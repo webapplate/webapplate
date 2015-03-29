@@ -11,7 +11,7 @@ Before hacking with webapplate, [jsfiddle playground](http://jsfiddle.net/gasoli
 current version: v2.3.0
 
 * Project page http://webapplate.github.io/
-* Follow [Setup Instruction](https://github.com/webapplate/webapplate/wiki/SetupInstruction) to setup the webpplate project.
+* Follow [Setup Instruction](https://github.com/webapplate/webapplate/wiki/Setup-Instruction) to setup the webpplate project.
 * More Guides
   * Learn more from [webapplate document](https://github.com/webapplate/webapplate/wiki).
   * [Webapplate introduction](https://hacks.mozilla.org/2014/09/webapplate-maintainable-web-app-template-for-firefox-os-and-chrome-apps/) from hacks.mozilla.org.
@@ -34,7 +34,7 @@ Here are some examples that start the development by webapplate:
 * [Lookfor](http://jsfiddle.net/gasolin/d2z8gnm6/) (Web App)
 * [BMI](http://jsfiddle.net/gasolin/88ccfwLr/) (Web App)
 * [Tomodoro](http://jsfiddle.net/gasolin/d0hb39oo/) (Web App)
-* [Arthor's homepage](http://gasolin.idv.tw/) (Web page)
+* [Arthor's homepage](http://www.gasolin.idv.tw/) (Web page)
 
 ## What is webapplate?
 
@@ -59,7 +59,7 @@ All applications follow the same set of guidelines as far as how code is formatt
 
 * **Bower** - For library and app dependency management.
 * **npm** - For build-time dependency management.
-* **grunt** - For building, packaging, and workflow.
+* **grunt/gulp** - For building, packaging, and workflow.
 * **Babel** - So we can leverage es6 modules and classes today.
 * **Math.io** - So we can leverage new CSS specs today.
 
@@ -104,7 +104,8 @@ __Package Management__
 - [bower](http://bower.io/) Libraries manager
 
 __Build__
-- [grunt](http://gruntjs.com/) javascript task runner
+- [grunt](http://gruntjs.com/) Javascript build system
+- [gulp](http://gulpjs.com/) Javascript build system (partial support)
 
 -  __Transpiler__
   - [Babel](https://babeljs.io) (ES6)
