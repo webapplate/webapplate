@@ -28,7 +28,7 @@ self.addEventListener('fetch', function(event) {
       return response;
     }
     // return cache directly
-//      return fetch(event.request);
+    // return fetch(event.request);
 
     // cache new requests
     // IMPORTANT: Clone the request. A request is a stream and
