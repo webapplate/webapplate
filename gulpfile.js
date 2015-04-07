@@ -10,6 +10,14 @@ var stylish = require('gulp-jscs-stylish');
 var jsonlint = require('gulp-jsonlint');
 var csslint = require('gulp-csslint');
 var sloc = require('gulp-sloc');
+
+var babel = require('gulp-babel');
+var myth = require('gulp-myth');
+var useref = require('gulp-useref');
+var filter = require('gulp-filter');
+var uglify = require('gulp-uglify');
+var minifyHtml = require('gulp-minify-html');
+var minifyCss = require('gulp-minify-css');
 // inherit center configs
 var webapplateConfigs = require('./config');
 
@@ -24,11 +32,6 @@ var options = {
     www: 'www'
   }
 };
-
-gulp.task('clean-jsdoc', function() {
-  return gulp.src('docs', {read: false})
-    .pipe(clean());
-});
 
 gulp.task('jsdoc', function() {
   return gulp.src(options.param.src + '/js/*.js')
@@ -74,6 +77,70 @@ gulp.task('sloc-server', function() {
     .pipe(sloc());
 });
 
+gulp.task('clean-dist', function() {
+  return gulp.src([options.param.dst, options.param.tmp,
+    options.param.build, options.param.pack, options.param.www,
+    'docs'])
+    .pipe(clean());
+});
+
+gulp.task('clean-test', function() {
+  return gulp.src([options.param.dst + '/test'])
+    .pipe(clean());
+});
+
+gulp.task('copy-static', function() {
+  return gulp.src([
+    options.param.src + '/manifest.*',
+    options.param.src + '/style/icons/**/*',
+    options.param.src + '/style/images/**/*',
+    options.param.src + '/locales/**/*'],
+    {'base' : options.param.src})
+    .pipe(gulp.dest(options.param.dst));
+});
+
+gulp.task('copy-vendor', function() {
+  return gulp.src([
+    // bootstrap css
+    options.param.src + '/vendor/bootstrap/dist/css/*.min.css',
+    // bootstrap fonts
+    options.param.src + '/vendor/bootstrap/dist/fonts/*',
+    // bootstrap material design css
+    options.param.src + '/vendor/bootstrap-material-design/dist/css/*.min.css',
+    // bootstrap material design fonts, remove .woff to support < ie9
+    options.param.src + '/vendor/bootstrap-material-design/dist/fonts/*.woff',
+    // font awesome
+    //options.param.src + '/vendor/font-awesome/css/font-awesome.min.css',
+    //options.param.src + '/vendor/font-awesome/font/*.woff'
+    ],
+    {'base' : options.param.src})
+    .pipe(gulp.dest(options.param.dst));
+});
+
+gulp.task('optimize', function() {
+  var assets = useref.assets();
+  var jsFilter = filter("**/*.js");
+  var cssFilter = filter("**/*.css");
+  var htmlFilter = filter("**/*.html");
+
+  return gulp.src(options.param.src + '/{,*/}*.html')
+    .pipe(assets)
+    .pipe(jsFilter)
+    .pipe(babel({compact: false}))
+    .pipe(uglify())
+    .pipe(jsFilter.restore())
+    .pipe(cssFilter)
+    .pipe(myth())
+    .pipe(minifyCss())
+    .pipe(cssFilter.restore())
+    .pipe(htmlFilter)
+    .pipe(minifyHtml({empty: true}))
+    .pipe(htmlFilter.restore())
+    .pipe(assets.restore())
+    .pipe(useref())
+    .pipe(gulp.dest(options.param.dst));
+});
+
 /**
  * Runs JSLint and JSCS on all javascript files found in the app dir.
  */
@@ -93,3 +160,11 @@ gulp.task('githooks', function() {
 });
 
 gulp.task('docs', ['clean-jsdoc', 'lint', 'jsdoc']);
+gulp.task('static', ['optimize', 'copy-static', 'copy-vendor'], function() {
+  // clean test
+  return gulp.src([options.param.dst + '/test'])
+    .pipe(clean());
+});
+//gulp.task('cordova', ['clean-dist', 'optimize']);
+//gulp.task('dynamic', ['optimize']);
+//gulp.task('pack', ['optimize']);
