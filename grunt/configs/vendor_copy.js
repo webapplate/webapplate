@@ -23,10 +23,10 @@ module.exports.tasks = {
         src: 'vendor/bootstrap-material-design/dist/css/*.min.css',
         dest: '<%= param.dst %>/'
       },
-      { // bootstrap material design fonts
+      { // bootstrap material design fonts, remove .woff to support < ie9
         expand: true,
         cwd: '<%= param.src %>/',
-        src: 'vendor/bootstrap-material-design/dist/fonts/*',
+        src: 'vendor/bootstrap-material-design/dist/fonts/*.woff',
         dest: '<%= param.dst %>/'
       }
       /*,{ // font awesome
