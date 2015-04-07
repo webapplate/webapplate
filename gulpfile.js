@@ -1,7 +1,7 @@
 /* global require, __dirname */
 'use strict';
 var gulp = require('gulp');
-var clean = require('gulp-clean');
+var clean = require('gulp-rimraf');
 var jsdoc = require('gulp-jsdoc');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
@@ -163,6 +163,7 @@ gulp.task('cordova', ['optimize', 'copy-static', 'copy-vendor'], function() {
   return gulp.src([options.param.dst + '/**/*'], {'base' : options.param.dst})
     .pipe(gulp.dest(options.param.www));
 });
+
 //gulp.task('dynamic', ['optimize']);
 //gulp.task('pack', ['optimize']);
 
