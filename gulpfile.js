@@ -1,4 +1,4 @@
-/* global require */
+/* global require, __dirname */
 'use strict';
 var gulp = require('gulp');
 var clean = require('gulp-clean');
@@ -169,7 +169,7 @@ gulp.task('cordova', ['optimize', 'copy-static', 'copy-vendor'], function() {
 /**
  * Run test once and exit
  */
-gulp.task('test', function (done) {
+gulp.task('test', function(done) {
   karma.start({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
