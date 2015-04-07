@@ -20,6 +20,7 @@ var minifyHtml = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
 // inherit center configs
 var webapplateConfigs = require('./config');
+var karma = require('karma').server;
 
 var options = {
   param: { // Project settings
@@ -164,3 +165,13 @@ gulp.task('cordova', ['optimize', 'copy-static', 'copy-vendor'], function() {
 });
 //gulp.task('dynamic', ['optimize']);
 //gulp.task('pack', ['optimize']);
+
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+  karma.start({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done);
+});

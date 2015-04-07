@@ -16,6 +16,7 @@ env:
   - CI_ACTION="grunt pack"
   - CI_ACTION="grunt karma"
   - CI_ACTION="grunt mochacov:travis"
+  - CI_ACTION="gulp test"
   - CI_ACTION="gulp lint"
   - CI_ACTION="gulp static"
   - CI_ACTION="gulp cordova"
