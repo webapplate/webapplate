@@ -80,12 +80,7 @@ gulp.task('sloc-server', function() {
 gulp.task('clean-dist', function() {
   return gulp.src([options.param.dst, options.param.tmp,
     options.param.build, options.param.pack, options.param.www,
-    'docs'])
-    .pipe(clean());
-});
-
-gulp.task('clean-test', function() {
-  return gulp.src([options.param.dst + '/test'])
+    'docs'], {read: false})
     .pipe(clean());
 });
 
@@ -123,7 +118,8 @@ gulp.task('optimize', function() {
   var cssFilter = filter('**/*.css');
   var htmlFilter = filter('**/*.html');
 
-  return gulp.src(options.param.src + '/{,*/}*.html')
+  return gulp.src([options.param.src + '/{,*/}*.html',
+                  '!' + options.param.src + '/test/**.*'])
     .pipe(assets)
     .pipe(jsFilter)
     .pipe(babel({compact: false}))
@@ -160,11 +156,11 @@ gulp.task('githooks', function() {
 });
 
 gulp.task('docs', ['clean-jsdoc', 'lint', 'jsdoc']);
-gulp.task('static', ['optimize', 'copy-static', 'copy-vendor'], function() {
-  // clean test
-  return gulp.src([options.param.dst + '/test'])
-    .pipe(clean());
+gulp.task('static', ['optimize', 'copy-static', 'copy-vendor']);
+
+gulp.task('cordova', ['optimize', 'copy-static', 'copy-vendor'], function() {
+  return gulp.src([options.param.dst + '/**/*'], {'base' : options.param.dst})
+    .pipe(gulp.dest(options.param.www));
 });
-//gulp.task('cordova', ['clean-dist', 'optimize']);
 //gulp.task('dynamic', ['optimize']);
 //gulp.task('pack', ['optimize']);
