@@ -12,5 +12,17 @@
       "node_modules/**",
       "public/vendor/**",
       "public/test/**"
-    ]
+    ],
+    "plugins": ["jscs-jsdoc"],
+    "jsDoc": {
+      "checkAnnotations": "jsdoc3",
+      "checkParamNames": true,
+      "requireParamTypes": true,
+      "checkRedundantParams": true,
+      "checkReturnTypes": true,
+      "checkRedundantReturns": true,
+      "requireReturnTypes": true,
+      "checkTypes": "strictNativeCase",
+      "checkRedundantAccess": true
+    }
 }
