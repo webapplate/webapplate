@@ -119,9 +119,9 @@ gulp.task('copy-vendor', function() {
 
 gulp.task('optimize', function() {
   var assets = useref.assets();
-  var jsFilter = filter("**/*.js");
-  var cssFilter = filter("**/*.css");
-  var htmlFilter = filter("**/*.html");
+  var jsFilter = filter('**/*.js');
+  var cssFilter = filter('**/*.css');
+  var htmlFilter = filter('**/*.html');
 
   return gulp.src(options.param.src + '/{,*/}*.html')
     .pipe(assets)
