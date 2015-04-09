@@ -1,4 +1,4 @@
-/* global require, __dirname */
+/* jshint node: true */
 'use strict';
 var gulp = require('gulp');
 var clean = require('gulp-rimraf');
@@ -36,7 +36,9 @@ var options = {
 
 gulp.task('jsdoc', function() {
   return gulp.src(options.param.src + '/js/*.js')
-    .pipe(jsdoc('./docs'));
+    .pipe(babel())
+    .pipe(jsdoc.parser())
+    .pipe(gulp.dest('./docs'));
 });
 
 var lintSources = ['*.js', 'routes/**/*.js', options.param.src + '/**/*.js'];
