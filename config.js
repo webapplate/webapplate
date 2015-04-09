@@ -1,4 +1,4 @@
-/* global module */
+/* jshint node: true */
 module.exports = {
   'secret': 'webapplate', // session secret key
   'port': 8000,

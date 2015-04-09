@@ -1,4 +1,4 @@
-/* global require, __dirname, process */
+/* jshint node: true */
 (function() {
   'use strict';
 

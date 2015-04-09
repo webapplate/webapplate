@@ -1,4 +1,4 @@
-/* global module, require */
+/* jshint node: true */
 module.exports = function(grunt) {
   'use strict';
 

@@ -1,4 +1,4 @@
-/* global module, require */
+/* jshint node: true */
 'use strict';
 // REGISTER OUR ROUTES
 module.exports = function(app) {

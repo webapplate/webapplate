@@ -1,4 +1,4 @@
-/* global module */
+/* jshint node: true */
 // Karma configuration
 // Generated on Fri Jun 20 2014 14:13:49 GMT+0800 (CST)
 'use strict';
