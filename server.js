@@ -8,7 +8,6 @@
   var swig = require('swig');
   var bodyParser = require('body-parser');
   var compress = require('compression')();
-  var serveStatic = require('serve-static');
   var errorHandler = require('errorhandler');
   var cookieParser = require('cookie-parser');
   var session = require('express-session');
@@ -50,7 +49,7 @@
   // static files, cached and expire in 30 days
   // change path / to /public if need dynamic web
   var staticPath = configs.isDynamic ? '/public' : '/';
-  app.use(staticPath, serveStatic(__dirname + '/public', {maxAge: 2592000000}));
+  app.use(staticPath, express.static('/public', {maxAge: 2592000000}));
 
   // mime
   express.static.mime.define(

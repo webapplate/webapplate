@@ -38,18 +38,18 @@ gulp.task('jsdoc', function() {
   return gulp.src(options.param.src + '/js/*.js')
     .pipe(babel())
     .pipe(jsdoc.parser())
-    .pipe(gulp.dest('./docs'));
+    .pipe(jsdoc.generator('./docs'));
 });
 
 var lintSources = ['*.js', 'routes/**/*.js', options.param.src + '/**/*.js'];
 
 gulp.task('jsonlint', function() {
   return gulp.src([
-    'package.json',
-    'bower.json',
-    options.param.src + '/manifest.webapp',
-    options.param.src + '/manifest.json',
-    options.param.src + '/**/*.json'
+      'package.json',
+      'bower.json',
+      options.param.src + '/manifest.webapp',
+      options.param.src + '/manifest.json',
+      options.param.src + '/**/*.json'
     ])
     .pipe(jsonlint())
     .pipe(jsonlint.reporter());
@@ -63,19 +63,19 @@ gulp.task('csslint', function() {
 
 gulp.task('sloc-client', function() {
   gulp.src([
-    options.param.src + '/*.html',
-    options.param.src + '/js/*.js',
-    options.param.src + '/style/*.css',
-    options.param.src + '/test/unit/*.js',
+      options.param.src + '/*.html',
+      options.param.src + '/js/*.js',
+      options.param.src + '/style/*.css',
+      options.param.src + '/test/unit/*.js',
     ])
     .pipe(sloc());
 });
 
 gulp.task('sloc-server', function() {
   gulp.src([
-    'server.js',
-    'routes/**/*.js',
-    'views/**/*.html'
+      'server.js',
+      'routes/**/*.js',
+      'views/**/*.html'
     ])
     .pipe(sloc());
 });
@@ -89,29 +89,32 @@ gulp.task('clean-dist', function() {
 
 gulp.task('copy-static', function() {
   return gulp.src([
-    options.param.src + '/manifest.*',
-    options.param.src + '/style/icons/**/*',
-    options.param.src + '/style/images/**/*',
-    options.param.src + '/locales/**/*'],
-    {'base' : options.param.src})
+      options.param.src + '/manifest.*',
+      options.param.src + '/style/icons/**/*',
+      options.param.src + '/style/images/**/*',
+      options.param.src + '/locales/**/*'],
+      {'base' : options.param.src
+    })
     .pipe(gulp.dest(options.param.dst));
 });
 
 gulp.task('copy-vendor', function() {
   return gulp.src([
-    // bootstrap css
-    options.param.src + '/vendor/bootstrap/dist/css/*.min.css',
-    // bootstrap fonts
-    options.param.src + '/vendor/bootstrap/dist/fonts/*',
-    // bootstrap material design css
-    options.param.src + '/vendor/bootstrap-material-design/dist/css/*.min.css',
-    // bootstrap material design fonts, remove .woff to support < ie9
-    options.param.src + '/vendor/bootstrap-material-design/dist/fonts/*.woff',
-    // font awesome
-    //options.param.src + '/vendor/font-awesome/css/font-awesome.min.css',
-    //options.param.src + '/vendor/font-awesome/font/*.woff'
-    ],
-    {'base' : options.param.src})
+      // bootstrap css
+      options.param.src + '/vendor/bootstrap/dist/css/*.min.css',
+      // bootstrap fonts
+      options.param.src + '/vendor/bootstrap/dist/fonts/*',
+      // bootstrap material design css
+      options.param.src +
+      '/vendor/bootstrap-material-design/dist/css/*.min.css',
+      // bootstrap material design fonts, remove .woff to support < ie9
+      options.param.src + '/vendor/bootstrap-material-design/dist/fonts/*.woff',
+      // font awesome
+      //options.param.src + '/vendor/font-awesome/css/font-awesome.min.css',
+      //options.param.src + '/vendor/font-awesome/font/*.woff'
+      ],
+      {'base' : options.param.src}
+    )
     .pipe(gulp.dest(options.param.dst));
 });
 
@@ -147,7 +150,7 @@ gulp.task('lint', ['jsonlint', 'csslint', 'sloc-server', 'sloc-client'],
   function() {
     return gulp.src(lintSources)
       .pipe(jshint('.jshintrc'))
-      .pipe(jscs())
+      .pipe(jscs('.jscsrc'))
       .on('error', noop) // don't stop on error
       .pipe(stylish.combineWithHintResults())
       .pipe(jshint.reporter('default'));
@@ -167,7 +170,7 @@ gulp.task('cordova', ['optimize', 'copy-static', 'copy-vendor'], function() {
 });
 
 //gulp.task('dynamic', ['optimize']);
-//gulp.task('pack', ['optimize']);
+//gulp.task('pack', , ['optimize', 'copy-static', 'copy-vendor']);
 
 /**
  * Run test once and exit
