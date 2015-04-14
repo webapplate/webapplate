@@ -1,7 +1,7 @@
 /* jshint node: true */
 'use strict';
 var gulp = require('gulp');
-var clean = require('gulp-rimraf');
+var del = require('del');
 var jsdoc = require('gulp-jsdoc');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
@@ -80,11 +80,15 @@ gulp.task('sloc-server', function() {
     .pipe(sloc());
 });
 
-gulp.task('clean-dist', function() {
-  return gulp.src([options.param.dst, options.param.tmp,
-    options.param.build, options.param.pack, options.param.www,
-    'docs'], {read: false})
-    .pipe(clean());
+gulp.task('clean-dist', function(cb) {
+  del([
+    options.param.dst,
+    options.param.tmp,
+    options.param.build,
+    options.param.pack,
+    options.param.www,
+    'docs'
+  ], cb);
 });
 
 gulp.task('copy-static', function() {
@@ -161,7 +165,7 @@ gulp.task('githooks', function() {
     .pipe(gulp.dest('.git/hooks'));
 });
 
-gulp.task('docs', ['clean-jsdoc', 'lint', 'jsdoc']);
+gulp.task('docs', ['clean-dist', 'lint', 'jsdoc']);
 gulp.task('static', ['optimize', 'copy-static', 'copy-vendor']);
 
 gulp.task('cordova', ['optimize', 'copy-static', 'copy-vendor'], function() {
