@@ -61,6 +61,7 @@
     "gulp-sloc": "^1.0.4",
     "gulp-uglify": "^1.2.0",
     "gulp-useref": "^1.1.2",
+    "gulp-zip": "^3.0.2",
     "jscs-jsdoc": "^0.4.6",
     "karma": "^0.12.31",
     "karma-chai": "^0.1.0",

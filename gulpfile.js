@@ -18,6 +18,7 @@ var filter = require('gulp-filter');
 var uglify = require('gulp-uglify');
 var minifyHtml = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
+var zip = require('gulp-zip');
 // inherit center configs
 var webapplateConfigs = require('./config');
 var karma = require('karma').server;
@@ -116,10 +117,8 @@ gulp.task('copy-vendor', function() {
       // font awesome
       //options.param.src + '/vendor/font-awesome/css/font-awesome.min.css',
       //options.param.src + '/vendor/font-awesome/font/*.woff'
-      ],
-      {'base' : options.param.src}
-    )
-    .pipe(gulp.dest(options.param.dst));
+    ], {'base' : options.param.src})
+  .pipe(gulp.dest(options.param.dst));
 });
 
 gulp.task('optimize', function() {
@@ -128,21 +127,27 @@ gulp.task('optimize', function() {
   var cssFilter = filter('**/*.css');
   var htmlFilter = filter('**/*.html');
 
-  return gulp.src([options.param.src + '/{,*/}*.html',
-                  '!' + options.param.src + '/test/**.*'])
+  return gulp.src([
+      options.param.src + '/{,*/}*.html',
+      '!' + options.param.src + '/test/**.*'
+    ])
     .pipe(assets)
+    // js
     .pipe(jsFilter)
     .pipe(babel({compact: false}))
     .pipe(uglify())
     .pipe(jsFilter.restore())
+    // css
     .pipe(cssFilter)
     .pipe(myth())
     .pipe(minifyCss())
     .pipe(cssFilter.restore())
+    // html
     .pipe(htmlFilter)
     .pipe(minifyHtml({empty: true}))
     .pipe(htmlFilter.restore())
     .pipe(assets.restore())
+    // inject
     .pipe(useref())
     .pipe(gulp.dest(options.param.dst));
 });
@@ -167,14 +172,21 @@ gulp.task('githooks', function() {
 
 gulp.task('docs', ['clean-dist', 'lint', 'jsdoc']);
 gulp.task('static', ['optimize', 'copy-static', 'copy-vendor']);
+gulp.task('pack', ['optimize', 'copy-static', 'copy-vendor'], function() {
+  console.log('export packed web app is not supported yet');
+  return gulp.src(options.param.dst + '/**/*', {'base' : options.param.dst})
+    .pipe(zip('archive.zip'))
+    .pipe(gulp.dest(options.param.pack));
+});
 
 gulp.task('cordova', ['optimize', 'copy-static', 'copy-vendor'], function() {
   return gulp.src([options.param.dst + '/**/*'], {'base' : options.param.dst})
     .pipe(gulp.dest(options.param.www));
 });
 
-//gulp.task('dynamic', ['optimize']);
-//gulp.task('pack', , ['optimize', 'copy-static', 'copy-vendor']);
+gulp.task('dynamic', function() {
+  console.log('export dynamic web site is not supported yet');
+});
 
 /**
  * Run test once and exit
