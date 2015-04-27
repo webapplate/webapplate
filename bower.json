@@ -14,7 +14,7 @@
     "l20n": "^1.0.2",
     "bootstrap": "^3.3.4",
     "bootstrap-material-design": "^0.3.0",
-    "localforage": "^1.2.1",
+    "localforage": "^1.2.2",
     "gremlins.js": "^0.1.0",
     "fetch": "^0.7.0"
   }
