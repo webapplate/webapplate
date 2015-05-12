@@ -8,10 +8,10 @@
       "checkRedundantParams": true,
       "requireParamTypes": true
     },
+    "esnext": true,
     "excludeFiles": [
       "node_modules/**",
-      "public/vendor/**",
-      "public/test/**"
+      "public/vendor/**"
     ],
     "plugins": ["jscs-jsdoc"],
     "jsDoc": {
