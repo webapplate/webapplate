@@ -175,7 +175,7 @@ gulp.task('static', ['optimize', 'copy-static', 'copy-vendor']);
 gulp.task('pack', ['optimize', 'copy-static', 'copy-vendor'], function() {
   console.log('export packed web app is not supported yet');
   return gulp.src(options.param.dst + '/**/*', {'base' : options.param.dst})
-    .pipe(zip('archive.zip'))
+    .pipe(zip('package.zip'))
     .pipe(gulp.dest(options.param.pack));
 });
 
