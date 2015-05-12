@@ -49,7 +49,7 @@
   // static files, cached and expire in 30 days
   // change path / to /public if need dynamic web
   var staticPath = configs.isDynamic ? '/public' : '/';
-  app.use(staticPath, express.static('/public', {maxAge: 2592000000}));
+  app.use(staticPath, express.static('public', {maxAge: 2592000000}));
 
   // mime
   express.static.mime.define(
