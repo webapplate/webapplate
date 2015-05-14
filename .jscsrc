@@ -11,7 +11,8 @@
     "esnext": true,
     "excludeFiles": [
       "node_modules/**",
-      "public/vendor/**"
+      "public/vendor/**",
+      "public/test/vendor/**"
     ],
     "plugins": ["jscs-jsdoc"],
     "jsDoc": {

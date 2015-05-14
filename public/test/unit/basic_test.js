@@ -1,3 +1,4 @@
+/* global require, suite, test */
 'use strict';
 
 if ('undefined' !== typeof require) {
@@ -5,7 +6,7 @@ if ('undefined' !== typeof require) {
   var chai = require('chai');
   var assert = chai.assert;
   var expect = chai.expect;
-  var should = chai.should();
+  //var should = chai.should();
 }
 
 // BDD test example

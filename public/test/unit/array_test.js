@@ -1,3 +1,4 @@
+/* global require, suite, setup, test */
 'use strict';
 
 if ('undefined' !== typeof require) {
