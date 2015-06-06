@@ -6,7 +6,7 @@ The template to create a maintainable web app.
 
 Before hacking with webapplate, [jsfiddle playground](http://jsfiddle.net/gasolin/sxjja37j/) is available for experiment! Or you can fork [ghapplate](https://github.com/webapplate/ghapplate) to write web app directly on github! Webapplate is still the more maintainable choice which allows you write with future proved javascript and css and trans-compile to current working code.
 
-[![Build Status](https://travis-ci.org/webapplate/webapplate.png)](https://travis-ci.org/webapplate/webapplate) [![Dependency Status](https://gemnasium.com/webapplate/webapplate.svg)](https://gemnasium.com/webapplate/webapplate) (https://coveralls.io/r/webapplate/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/webapplate/webapplate.png)](https://codeclimate.com/github/webapplate/webapplate) [![Codacy Badge](https://www.codacy.com/project/badge/b0dbc808c4fb83b26706fb376ceea678)](https://www.codacy.com/public/gasolin_1667/webapplate)
+[![Build Status](https://travis-ci.org/webapplate/webapplate.png)](https://travis-ci.org/webapplate/webapplate) [![Dependency Status](https://gemnasium.com/webapplate/webapplate.svg)](https://gemnasium.com/webapplate/webapplate) [![Code Climate](https://codeclimate.com/github/webapplate/webapplate.png)](https://codeclimate.com/github/webapplate/webapplate) [![Codacy Badge](https://www.codacy.com/project/badge/b0dbc808c4fb83b26706fb376ceea678)](https://www.codacy.com/public/gasolin_1667/webapplate)
 
 current version: v3.0.0
 

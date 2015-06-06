@@ -1,8 +1,8 @@
 /* jshint node: true */
 'use strict';
 var gulp = require('gulp');
+var shell = require('gulp-shell');
 var del = require('del');
-var jsdoc = require('gulp-jsdoc');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 var noop = function() {};
@@ -35,12 +35,9 @@ var options = {
   }
 };
 
-gulp.task('jsdoc', function() {
-  return gulp.src(options.param.src + '/js/*.js')
-    .pipe(babel())
-    .pipe(jsdoc.parser())
-    .pipe(jsdoc.generator('./docs'));
-});
+gulp.task('jsdoc', shell.task([
+  './node_modules/jsdoc/jsdoc.js -c jsdoc.json'
+]));
 
 var lintSources = ['*.js', 'routes/**/*.js', options.param.src + '/**/*.js'];
 
