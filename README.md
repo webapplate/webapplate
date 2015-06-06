@@ -6,9 +6,9 @@ The template to create a maintainable web app.
 
 Before hacking with webapplate, [jsfiddle playground](http://jsfiddle.net/gasolin/sxjja37j/) is available for experiment! Or you can fork [ghapplate](https://github.com/webapplate/ghapplate) to write web app directly on github! Webapplate is still the more maintainable choice which allows you write with future proved javascript and css and trans-compile to current working code.
 
-[![Build Status](https://travis-ci.org/webapplate/webapplate.png)](https://travis-ci.org/webapplate/webapplate) [![Dependency Status](https://gemnasium.com/webapplate/webapplate.svg)](https://gemnasium.com/webapplate/webapplate) [![Coverage Status](https://coveralls.io/repos/webapplate/webapplate/badge.png?branch=master)](https://coveralls.io/r/webapplate/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/webapplate/webapplate.png)](https://codeclimate.com/github/webapplate/webapplate) [![Codacy Badge](https://www.codacy.com/project/badge/b0dbc808c4fb83b26706fb376ceea678)](https://www.codacy.com/public/gasolin_1667/webapplate)
+[![Build Status](https://travis-ci.org/webapplate/webapplate.png)](https://travis-ci.org/webapplate/webapplate) [![Dependency Status](https://gemnasium.com/webapplate/webapplate.svg)](https://gemnasium.com/webapplate/webapplate) (https://coveralls.io/r/webapplate/webapplate?branch=master) [![Code Climate](https://codeclimate.com/github/webapplate/webapplate.png)](https://codeclimate.com/github/webapplate/webapplate) [![Codacy Badge](https://www.codacy.com/project/badge/b0dbc808c4fb83b26706fb376ceea678)](https://www.codacy.com/public/gasolin_1667/webapplate)
 
-current version: v2.5.1
+current version: v3.0.0
 
 * Project page http://webapplate.github.io/
 * Follow [Setup Instruction](https://github.com/webapplate/webapplate/wiki/Setup-Instruction) to setup the webpplate project.
@@ -60,9 +60,9 @@ All applications follow the same set of guidelines as far as how code is formatt
 
 * **Bower** - For library and app dependency management.
 * **npm** - For build-time dependency management.
-* **grunt/gulp** - For building, packaging, and workflow.
+* **gulp** - For building, packaging, and workflow.
 * **Babel** - So we can leverage es6 modules and classes today.
-* **Myth.io** - So we can leverage new CSS specs today.
+* **CssNext** - So we can leverage new CSS specs today.
 
 ## Why need webapplate?
 
@@ -80,10 +80,10 @@ Thus developer who is approaching to the `web app`(make web site behaves like mo
 To build the deployable web app, run command:
 
   ```
-  $ grunt static|dynamic|pack|github|cordova
+  $ gulp static|dynamic|pack|cordova
   ```
   
-   Choose one of the above [grunt command](https://github.com/webapplate/webapplate/blob/master/Gruntfile.js) based on your needs.
+   Choose one of the above [gulp command](https://github.com/webapplate/webapplate/blob/master/gulpfile.js) based on your needs.
 
 ## How does webapplate do
 
@@ -105,26 +105,24 @@ __Package Management__
 - [bower](http://bower.io/) Libraries manager
 
 __Build__
-- [grunt](http://gruntjs.com/) Javascript build system
-- [gulp](http://gulpjs.com/) Javascript build system (partial support)
+- [gulp](http://gulpjs.com/) Javascript build system
 
 -  __Transpiler__
   - [Babel](https://babeljs.io) (ES6)
-  - [Myth](http://myth.io) (CSS)
+  - [Cssnext](http://cssnext.io/) (CSS)
 
 - __Optimize__
-  - [grunt-usemin](https://github.com/yeoman/grunt-usemin)
   - [UglifyJS](https://github.com/mishoo/UglifyJS) javascript Compressor
-  - [cssmin](https://github.com/gruntjs/grunt-contrib-cssmin) Compress CSS files
-  - [htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin)  Minify HTML
+  - [cssmin](https://github.com/murphydanger/gulp-minify-css) Compress CSS files
+  - [htmlmin](https://github.com/murphydanger/gulp-minify-html)  Minify HTML
 
 - __Code Quality & Analysis__
-  - [grunt-githooks](https://github.com/wecodemore/grunt-githooks)
   - [jshint](http://jshint.com/) javascript code quality
   - [jscs](http://jscs.info/) javascript code style linter
   - [csslint](https://github.com/CSSLint/csslint) css code style linter
-  - [grunt-sloc](https://github.com/rhiokim/grunt-sloc) Source line of codes
-  - [grunt-jsdoc](https://github.com/krampstudio/grunt-jsdoc) Generate javascript doc by running jsdoc3
+  - [jsonlint] (https://github.com/rogeriopvl/gulp-jsonlint) json linter
+  - [sloc](https://github.com/oddjobsman/gulp-sloc) Source line of codes
+  - [jsdoc] Generate javascript doc by running jsdoc3
 
 __Test__
 - [Karma](http://karma-runner.github.io) test runner
@@ -151,4 +149,4 @@ __Client side libraries__
 
 ## Credit
 
-Developers and designers from node.js, express, grunt.js, Firefox OS, bower, and people who involved in improving Web technologies.
+Developers and designers from node.js, bower, express, gulp, Firefox OS, and people who involved in improving Web technologies.

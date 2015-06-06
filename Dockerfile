@@ -1,5 +1,5 @@
 # Pull base image.
-FROM dockerfile/nodejs-bower-grunt
+FROM neo9polska/nodejs-bower-gulp
 
 # modify from
 # https://registry.hub.docker.com/u/dockerfile/nodejs-bower-grunt-runtime/
