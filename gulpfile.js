@@ -179,7 +179,7 @@ gulp.task('dynamic', function() {
   console.log('export dynamic web site is not supported yet');
 });
 
-gulp.task('github', function() {
+gulp.task('github', ['static'], function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
 });
