@@ -29,6 +29,7 @@
     "gulp-eslint": "^0.13.2",
     "gulp-expect-file": "0.0.7",
     "gulp-filter": "^2.0.2",
+    "gulp-gh-pages": "^0.5.2",
     "gulp-jsonlint": "^1.0.2",
     "gulp-minify-css": "^1.1.5",
     "gulp-minify-html": "^1.0.3",

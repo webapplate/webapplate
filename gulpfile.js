@@ -19,6 +19,7 @@ var zip = require('gulp-zip');
 // inherit center configs
 var webapplateConfigs = require('./config');
 var karma = require('karma').server;
+var ghPages = require('gulp-gh-pages');
 
 var options = {
   param: { // Project settings
@@ -176,6 +177,11 @@ gulp.task('cordova', ['optimize', 'copy-static', 'copy-vendor'], function() {
 
 gulp.task('dynamic', function() {
   console.log('export dynamic web site is not supported yet');
+});
+
+gulp.task('github', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
 
 // Run test once and exit
