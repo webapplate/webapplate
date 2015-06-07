@@ -160,6 +160,9 @@
         "use-isnan": 0,
         "validdoc.js": 0,
         "valid-typeof": 0,
+        "valid-jsdoc": [2, {
+          "requireReturn": false
+        }],
         "vars-on-top": 0,
         "wrap-iife": 0,
         "wrap-regex": 0,

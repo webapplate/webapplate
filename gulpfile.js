@@ -147,9 +147,7 @@ gulp.task('optimize', function() {
     .pipe(gulp.dest(options.param.dst));
 });
 
-/**
- * Runs ESLint on all javascript files found in the app dir.
- */
+// Runs ESLint on all javascript files found in the app dir.
 gulp.task('lint', ['jsonlint', 'csslint', 'sloc-server', 'sloc-client'],
   function() {
     return gulp.src(lintSources)
@@ -181,9 +179,7 @@ gulp.task('dynamic', function() {
   console.log('export dynamic web site is not supported yet');
 });
 
-/**
- * Run test once and exit
- */
+// Run test once and exit
 gulp.task('test', function(done) {
   karma.start({
     configFile: __dirname + '/karma.conf.js',
