@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var shell = require('gulp-shell');
 var del = require('del');
-var stylish = require('gulp-jscs-stylish');
 var jsonlint = require('gulp-jsonlint');
 var csslint = require('gulp-csslint');
 var sloc = require('gulp-sloc');
