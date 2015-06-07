@@ -1,8 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<!--
+Exchange the line above for this to enable offline support
+<html lang="en" manifest="manifest.appcache">
+-->
   <head>
-  <meta http-equiv="Refresh" content="1; url=public/index.html">
+    <meta charset="UTF-8">
+    <link rel="manifest" href="manifest.json">
+    <title></title>
+    <meta name="description" content="">
+    <!-- remove maximum-scale for mobile web -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- installable from browser -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- icons -->
+    <link rel="icon" href="style/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" sizes="128x128" href="apple-touch-icon-precomposed.png">
+    <link rel="style/icons/apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- IE compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--[if IE]><link rel="shortcut icon" href="style/icons/favicon.ico"  type="image/x-icon"><![endif]-->
+
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-material-design/dist/css/ripples.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-material-design/dist/css/material.min.css">
+    <link rel="stylesheet" href="style/app.min.css">
+    <link rel="localization" href="locales/manifest.json">
+
+    <script src="js/app.min.js"></script>
+    <!-- web component
+    <script defer src="vendor/platform/platform.js"></script>
+    <link rel="import" href="parts/app-main.html">
+    -->
+    <!-- uncomment to enable stress test
+    <script src="vendor/gremlins.js/gremlins.min.js"></script>
+    <script>
+      gremlins.createHorde().unleash();
+    </script>
+    -->
   </head>
-  <body>
-    Redirect to public/index.html
+  <body fullbleed unresolved class="hidden">
+    <header id="header" class="navbar navbar-fixed-top shadow-z-3">
+      <a class="navbar-brand" href="#" data-l10n-id="projectName"></a>
+      <ul class="nav navbar-nav pull-left">
+      </ul>
+    </header>
+    <section id="content" class="well">
+      <!-- Add your site or application content here -->
+      <h3 data-l10n-id="hello"></h3>
+      <p data-l10n-id="info_static"></p>
+    </section>
+
+    <script src="js/body.min.js"></script>
+
+    <!-- Debugger - remove for production -->
+    <!--<script defer src="https://getfirebug.com/firebug-lite.js"></script>-->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!--<script>
+        var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+        g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+        s.parentNode.insertBefore(g,s)}(document,"script"));
+    </script>-->
   </body>
 </html>
