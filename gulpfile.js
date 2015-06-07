@@ -3,13 +3,11 @@
 var gulp = require('gulp');
 var shell = require('gulp-shell');
 var del = require('del');
-var jshint = require('gulp-jshint');
-var jscs = require('gulp-jscs');
-var noop = function() {};
 var stylish = require('gulp-jscs-stylish');
 var jsonlint = require('gulp-jsonlint');
 var csslint = require('gulp-csslint');
 var sloc = require('gulp-sloc');
+var eslint = require('gulp-eslint');
 
 var babel = require('gulp-babel');
 var cssNext = require('gulp-cssnext');
@@ -150,16 +148,14 @@ gulp.task('optimize', function() {
 });
 
 /**
- * Runs JSLint and JSCS on all javascript files found in the app dir.
+ * Runs ESLint on all javascript files found in the app dir.
  */
 gulp.task('lint', ['jsonlint', 'csslint', 'sloc-server', 'sloc-client'],
   function() {
     return gulp.src(lintSources)
-      .pipe(jshint('.jshintrc'))
-      .pipe(jscs('.jscsrc'))
-      .on('error', noop) // don't stop on error
-      .pipe(stylish.combineWithHintResults())
-      .pipe(jshint.reporter('default'));
+      .pipe(eslint('.eslintrc'))
+      .pipe(eslint.format())
+      .pipe(eslint.failAfterError()); // don't stop on error
   });
 
 gulp.task('githooks', function() {
