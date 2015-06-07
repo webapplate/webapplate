@@ -2,9 +2,9 @@
 
 # Webapplate 
 
-The template to create a maintainable web app.
+The template to create a maintainable web app. For your server, client, Android/iOS/FxOS or desktop projects.
 
-Before hacking with webapplate, [jsfiddle playground](http://jsfiddle.net/gasolin/sxjja37j/) is available for experiment! Or you can fork [ghapplate](https://github.com/webapplate/ghapplate) to write web app directly on github! Webapplate is still the more maintainable choice which allows you write with future proved javascript and css and trans-compile to current working code.
+Before hacking with webapplate, Try it with [jsfiddle playground](http://jsfiddle.net/gasolin/sxjja37j/)! Or you can fork [ghapplate](https://github.com/webapplate/ghapplate) to experience web app directly on github! Webapplate is the most maintainable choice which allows you write with future proved javascript and css and trans-compile to current working code.
 
 [![Build Status](https://travis-ci.org/webapplate/webapplate.png)](https://travis-ci.org/webapplate/webapplate) [![Dependency Status](https://gemnasium.com/webapplate/webapplate.svg)](https://gemnasium.com/webapplate/webapplate) [![Code Climate](https://codeclimate.com/github/webapplate/webapplate.png)](https://codeclimate.com/github/webapplate/webapplate) [![Codacy Badge](https://www.codacy.com/project/badge/b0dbc808c4fb83b26706fb376ceea678)](https://www.codacy.com/public/gasolin_1667/webapplate)
 
@@ -41,19 +41,19 @@ Here are some examples that start the development by webapplate:
 
 Webapplate is the Mobile First, full stack web app template/boilerplate that curated several libraries to help you quickly start a maintainable mobile web app development process. Webapplate enable you to optimized and export your web app to hosting server, Firefox/Chrome webapp store, or even Android, iOS, and more platforms.
 
-Here is the screenshot when you first time running webapplate.
+When you first time running, webapplate provide you a material-designed web app frame.
 
 ![Real welcome page](http://i.imgur.com/8AGwXCG.png)
 
 
-### Application Architecture
+### Application Structure
 
 All applications follow the same set of guidelines as far as how code is formatted, build, and structured. A typical app looks like this:
 
 * **public/** - The application runtime code.
 * **public/manifest.webapp** - The application manifest.
 * **public/js/** - All javascript for your app. This code is converted during the build step using Babel, and should be using es6 modules.
-* **public/style/** - Stylesheets for the app. This code is converted during the build step using math.io, to support css variable and more emerging CSS specs.
+* **public/style/** - Stylesheets for the app. This code is converted during the build step using cssnext, to support css variable and more emerging CSS specs.
 * **public/*** - Dotfiles and metadata for packagers such as bower, npm, etc.
 
 ### Key Technologies
