@@ -1,6 +1,5 @@
 {
     "plugins": [
-        "no-unsafe-innerhtml"
     ],
     "rules": {
         "block-scoped-var": 0,
