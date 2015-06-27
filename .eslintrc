@@ -3,7 +3,6 @@
         "no-unsafe-innerhtml"
     ],
     "rules": {
-        "no-unsafe-innerhtml/no-unsafe-innerhtml": 0,
         "block-scoped-var": 0,
         "brace-style": 0,
         "camelcase": 0,
