@@ -18,7 +18,7 @@ var minifyCss = require('gulp-minify-css');
 var zip = require('gulp-zip');
 // inherit center configs
 var webapplateConfigs = require('./config');
-var karma = require('karma').server;
+var Server = require('karma').Server;
 var ghPages = require('gulp-gh-pages');
 
 var options = {
@@ -186,8 +186,8 @@ gulp.task('github', ['static'], function() {
 
 // Run test once and exit
 gulp.task('test', function(done) {
-  karma.start({
+  new Server({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
-  }, done);
+  }, done).start();
 });
