@@ -31,11 +31,10 @@ Or click 'ZIP' button on [github](https://github.com/webapplate/webapplate) to *
 Here are some examples that start the development by webapplate:
 
 * [WebbyMouse](https://github.com/gasolin/webbymouse) Touchpad & Air mouse with full web technology (Desktop + Web App)
-* [FoxQR](https://marketplace.firefox.com/app/qrcode-1/) (Packaged App), QRCode scanner for Firefox OS, via WebRTC.
 * [Lookfor](http://jsfiddle.net/gasolin/d2z8gnm6/) (Web App)
 * [BMI](http://jsfiddle.net/gasolin/88ccfwLr/) (Web App)
 * [Tomodoro](http://jsfiddle.net/gasolin/d0hb39oo/) (Web App)
-* [Arthor's homepage](http://www.gasolin.idv.tw/) (Web page)
+* [Author's homepage](http://www.gasolin.idv.tw/) (Web page)
 
 ## What is webapplate?
 
