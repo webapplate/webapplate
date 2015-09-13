@@ -22,6 +22,10 @@ Exchange the line above for this to enable offline support
     <!-- IE compatibility -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--[if IE]><link rel="shortcut icon" href="style/icons/favicon.ico"  type="image/x-icon"><![endif]-->
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US, zh-TW">
+    <link rel="localization" href="locales/locales.{locale}.l20n">
+    <script defer src="vendor/l20n/dist/webcompat/l20n.min.js"></script>
 
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/bootstrap-material-design/dist/css/ripples.min.css">
@@ -29,10 +33,8 @@ Exchange the line above for this to enable offline support
     <!-- build:css style/app.min.css -->
     <link rel="stylesheet" href="style/main.css">
     <!-- endbuild -->
-    <link rel="localization" href="locales/manifest.json">
 
     <!-- build:js js/app.min.js -->
-    <script defer src="vendor/l20n/l20n.min.js"></script>
     <!-- endbuild -->
     <!-- web component
     <script defer src="vendor/platform/platform.js"></script>

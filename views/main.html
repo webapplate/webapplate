@@ -19,6 +19,10 @@
     <!-- IE compatibility -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--[if IE]><link rel="shortcut icon" href="style/icons/favicon.ico"  type="image/x-icon"><![endif]-->
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US, zh-TW">
+    <link rel="localization" href="locales/locales.{locale}.l20n">
+    <script defer src="public/vendor/l20n/dist/webcompat/l20n.js"></script>
 
     <link rel="stylesheet" href="public/vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/vendor/bootstrap-material-design/dist/css/ripples.min.css">
@@ -26,10 +30,8 @@
     <!-- build:css style/app.min.css -->
     <link rel="stylesheet" href="public/style/main.css">
     <!-- endbuild -->
-    <link rel="localization" href="public/locales/manifest.json">
 
     <!-- build:js js/app.min.js -->
-    <script defer src="public/vendor/l20n/l20n.min.js"></script>
     <!-- endbuild -->
     {% endblock %}
 </head>
