@@ -34,6 +34,7 @@ Here are some examples that start the development by webapplate:
 * [Lookfor](http://jsfiddle.net/gasolin/d2z8gnm6/) (Web App)
 * [BMI](http://jsfiddle.net/gasolin/88ccfwLr/) (Web App)
 * [Tomodoro](http://jsfiddle.net/gasolin/d0hb39oo/) (Web App)
+* [BeautyClock](http://jsfiddle.net/gasolin/LeLs1dk8/) (Web App)
 * [Author's homepage](http://www.gasolin.idv.tw/) (Web page)
 
 ## What is webapplate?
