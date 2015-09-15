@@ -6,7 +6,6 @@ if ('undefined' !== typeof require) {
   var chai = require('chai');
   var assert = chai.assert;
   var expect = chai.expect;
-  /*jshint -W098 */
   var should = chai.should();
 }
 

@@ -23,6 +23,7 @@ function once(fn) {
   return function() {
     if (!called) {
       called = true;
+      /*eslint no-invalid-this: 0*/
       returnValue = fn.apply(this, arguments);
     }
     return returnValue;
