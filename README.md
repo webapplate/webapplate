@@ -117,12 +117,11 @@ __Build__
   - [htmlmin](https://github.com/murphydanger/gulp-minify-html)  Minify HTML
 
 - __Code Quality & Analysis__
-  - [jshint](http://jshint.com/) javascript code quality
-  - [jscs](http://jscs.info/) javascript code style linter
+  - [eslint](http://eshint.org/) javascript linting utility
   - [csslint](https://github.com/CSSLint/csslint) css code style linter
   - [jsonlint] (https://github.com/rogeriopvl/gulp-jsonlint) json linter
   - [sloc](https://github.com/oddjobsman/gulp-sloc) Source line of codes
-  - [jsdoc] Generate javascript doc by running jsdoc3
+  - [jsdoc](http://usejsdoc.org/) Generate javascript doc by running jsdoc3
 
 __Test__
 - [Karma](http://karma-runner.github.io) test runner
