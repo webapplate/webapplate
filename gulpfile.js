@@ -131,16 +131,16 @@ gulp.task('optimize', function() {
   .pipe(jsFilter)
   .pipe(babel({compact: false}))
   .pipe(uglify())
-  .pipe(jsFilter.restore())
+  .pipe(jsFilter.restore)
   // css
   .pipe(cssFilter)
   .pipe(cssNext())
   .pipe(minifyCss())
-  .pipe(cssFilter.restore())
+  .pipe(cssFilter.restore)
   // html
   .pipe(htmlFilter)
   .pipe(minifyHtml({empty: true}))
-  .pipe(htmlFilter.restore())
+  .pipe(htmlFilter.restore)
   .pipe(assets.restore())
   // inject
   .pipe(useref())
