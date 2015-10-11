@@ -17,7 +17,7 @@ var foobar = {
 };
 
 suite('As a developer, I want to know supported assertions type,' +
-         ' that I can use in other tests', function() {
+      ' that I can use in other tests', function() {
   suite('#sayHello()', function() {
     test('should work with assert', function() {
       assert.equal(foobar.sayHello(), 'Hello World!');
