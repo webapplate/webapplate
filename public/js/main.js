@@ -8,7 +8,7 @@
  */
 (function() {
   'use strict';
-  document.addEventListener('DOMLocalized', function() { // l20n ready
+  document.l10n.ready.then(function() { // l20n ready
     document.body.classList.remove('hidden');
     $.material.ripples();
     // document.addEventListener('deviceready',
