@@ -1,6 +1,6 @@
-![project logo](https://raw.github.com/webapplate/webapplate/master/public/style/icons/icon128.png) 
+![project logo](https://raw.github.com/webapplate/webapplate/master/public/style/icons/icon128.png)
 
-# Webapplate 
+# Webapplate
 
 The template to create a maintainable web app. For your server, client, Android/iOS/FxOS or desktop projects.
 
@@ -8,7 +8,7 @@ Before hacking with webapplate, Try it with [jsfiddle playground](http://jsfiddl
 
 [![Build Status](https://travis-ci.org/webapplate/webapplate.png)](https://travis-ci.org/webapplate/webapplate) [![Dependency Status](https://gemnasium.com/webapplate/webapplate.svg)](https://gemnasium.com/webapplate/webapplate) [![Code Climate](https://codeclimate.com/github/webapplate/webapplate.png)](https://codeclimate.com/github/webapplate/webapplate) [![Codacy Badge](https://www.codacy.com/project/badge/b0dbc808c4fb83b26706fb376ceea678)](https://www.codacy.com/public/gasolin_1667/webapplate)
 
-current version: v3.0.0
+current version: v3.1.0
 
 * Project page http://webapplate.github.io/
 * Follow [Setup Instruction](https://github.com/webapplate/webapplate/wiki/Setup-Instruction) to setup the webpplate project.
@@ -73,7 +73,7 @@ Thus developer who is approaching to the `web app`(make web site behaves like mo
 ## What kind of web app webapplate supports?
 
 * **static hosting** web app
-* **dynamic** web app with node.js/express backend 
+* **dynamic** web app with node.js/express backend
 * **packaged** web app for Firefox Marketplace or Chrome Store
 * **cordova/phonegap** for multiple platform native app
 
@@ -82,7 +82,7 @@ To build the deployable web app, run command:
   ```
   $ gulp static|dynamic|pack|cordova|github
   ```
-  
+
    Choose one of the above [gulp command](https://github.com/webapplate/webapplate/blob/master/gulpfile.js) based on your needs.
 
 ## How does webapplate do
