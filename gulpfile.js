@@ -1,7 +1,7 @@
 /* jshint node: true */
 'use strict';
 var gulp = require('gulp');
-var shell = require('gulp-shell');
+var documentation = require('gulp-documentation');
 var del = require('del');
 var jsonlint = require('gulp-jsonlint');
 var csslint = require('gulp-csslint');
@@ -33,9 +33,11 @@ var options = {
   }
 };
 
-gulp.task('jsdoc', shell.task([
-  './node_modules/jsdoc/jsdoc.js -c jsdoc.json'
-]));
+gulp.task('jsdoc', function() {
+  gulp.src(['public/js/**/*.js', 'server.js', 'routes/**/*.js'])
+    .pipe(documentation({ format: 'html' }))
+    .pipe(gulp.dest('docs'));
+});
 
 var lintSources = ['*.js', 'routes/**/*.js', options.param.src + '/**/*.js'];
 
