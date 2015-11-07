@@ -38,10 +38,10 @@ module.exports = function(config) {
         presets: ['stage-0', 'es2015'],
         sourceMap: 'inline'
       },
-      filename: function (file) {
+      filename: function(file) {
         return file.originalPath.replace(/\.js$/, '.es5.js');
       },
-      sourceFileName: function (file) {
+      sourceFileName: function(file) {
         return file.originalPath;
       }
     },

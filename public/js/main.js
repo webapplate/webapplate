@@ -14,11 +14,11 @@
       ready: new Promise(function(resolve) {
         return resolve();
       })
-    }
+    };
   }
 
   var App = {
-    init: function app_init() {
+    init: function() {
       document.body.classList.remove('hidden');
       $.material.ripples();
       // document.addEventListener('deviceready',
