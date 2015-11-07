@@ -20,7 +20,7 @@
   var App = {
     init: function() {
       document.body.classList.remove('hidden');
-      $.material.ripples();
+      // $.material.ripples();
       // document.addEventListener('deviceready',
       //  this.onDeviceReady, false); // cordova ready
 
