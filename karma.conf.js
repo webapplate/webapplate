@@ -15,6 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      '../node_modules/babel-polyfill/dist/polyfill.js',
       'test/vendor/mocha-config.js',
       'js/**/*.js',
       'test/**/*_test.js'
@@ -29,6 +30,20 @@ module.exports = function(config) {
     // available preprocessors:
     // https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'js/**/*.js': ['babel'],
+      'test/**/*_test.js': ['babel']
+    },
+    babelPreprocessor: {
+      options: {
+        presets: ['stage-0', 'es2015'],
+        sourceMap: 'inline'
+      },
+      filename: function (file) {
+        return file.originalPath.replace(/\.js$/, '.es5.js');
+      },
+      sourceFileName: function (file) {
+        return file.originalPath;
+      }
     },
 
     // test results reporter to use
