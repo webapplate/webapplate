@@ -80,10 +80,10 @@ Thus developer who is approaching to the `web app`(make web site behaves like mo
 To build the deployable web app, run command:
 
   ```
-  $ gulp static|dynamic|pack|cordova|github
+  $ npm static|dynamic|pack|cordova|github
   ```
 
-   Choose one of the above [gulp command](https://github.com/webapplate/webapplate/blob/master/gulpfile.js) based on your needs.
+   Choose one of the above [npm command](https://github.com/webapplate/webapplate/blob/master/package.json) based on your needs.
 
 ## How does webapplate do
 
