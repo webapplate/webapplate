@@ -9,6 +9,7 @@ script:
 env:
   matrix:
   - CI_ACTION="npm test"
-  - CI_ACTION="npm lint"
-  - CI_ACTION="npm static"
-  - CI_ACTION="npm cordova"
+  - CI_ACTION="npm run lint"
+  - CI_ACTION="npm run static"
+  - CI_ACTION="npm run pack"
+  - CI_ACTION="npm run cordova"

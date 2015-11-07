@@ -80,7 +80,7 @@ Thus developer who is approaching to the `web app`(make web site behaves like mo
 To build the deployable web app, run command:
 
   ```
-  $ npm static|dynamic|pack|cordova|github
+  $ npm run static|dynamic|pack|cordova|github
   ```
 
    Choose one of the above [npm command](https://github.com/webapplate/webapplate/blob/master/package.json) based on your needs.
