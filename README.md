@@ -121,7 +121,7 @@ __Build__
   - [csslint](https://github.com/CSSLint/csslint) css code style linter
   - [jsonlint] (https://github.com/rogeriopvl/gulp-jsonlint) json linter
   - [sloc](https://github.com/oddjobsman/gulp-sloc) Source line of codes
-  - [jsdoc](http://usejsdoc.org/) Generate javascript doc by running jsdoc3
+  - [jsdoc](http://usejsdoc.org/) Generate API document by running [documentationjs](http://documentation.js.org/)
 
 __Test__
 - [Karma](http://karma-runner.github.io) test runner
