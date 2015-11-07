@@ -35,7 +35,7 @@ module.exports = function(config) {
     },
     babelPreprocessor: {
       options: {
-        presets: ['stage-0', 'es2015'],
+        presets: ['stage-2', 'es2015'],
         sourceMap: 'inline'
       },
       filename: function(file) {

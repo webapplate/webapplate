@@ -131,7 +131,10 @@ gulp.task('optimize', function() {
   .pipe(assets)
   // js
   .pipe(jsFilter)
-  .pipe(babel({compact: false}))
+  .pipe(babel({
+    compact: false,
+    presets: ["stage-2", 'es2015']
+  }))
   .pipe(uglify())
   .pipe(jsFilter.restore)
   // css
