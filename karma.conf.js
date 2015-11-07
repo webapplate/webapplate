@@ -16,6 +16,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       '../node_modules/babel-polyfill/dist/polyfill.js',
+      'vendor/jquery/dist/jquery.js',
       'test/vendor/mocha-config.js',
       'js/**/*.js',
       'test/**/*_test.js'
