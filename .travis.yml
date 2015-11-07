@@ -8,7 +8,7 @@ script:
   - $CI_ACTION
 env:
   matrix:
-  - CI_ACTION="gulp test"
-  - CI_ACTION="gulp lint"
-  - CI_ACTION="gulp static"
-  - CI_ACTION="gulp cordova"
+  - CI_ACTION="npm test"
+  - CI_ACTION="npm lint"
+  - CI_ACTION="npm static"
+  - CI_ACTION="npm cordova"
