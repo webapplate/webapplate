@@ -35,7 +35,7 @@ var options = {
 
 gulp.task('jsdoc', function() {
   gulp.src(['public/js/**/*.js', 'server.js', 'routes/**/*.js'])
-    .pipe(documentation({ format: 'html' }))
+    .pipe(documentation({format: 'html'}))
     .pipe(gulp.dest('docs'));
 });
 
