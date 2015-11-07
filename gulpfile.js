@@ -9,7 +9,8 @@ var sloc = require('gulp-sloc');
 var eslint = require('gulp-eslint');
 
 var babel = require('gulp-babel');
-var cssNext = require('gulp-cssnext');
+var postcss = require('gulp-postcss');
+var cssNext = require('postcss-cssnext');
 var useref = require('gulp-useref');
 var filter = require('gulp-filter');
 var uglify = require('gulp-uglify');
@@ -139,7 +140,7 @@ gulp.task('optimize', function() {
   .pipe(jsFilter.restore)
   // css
   .pipe(cssFilter)
-  .pipe(cssNext())
+  .pipe(postcss([cssNext]))
   .pipe(minifyCss())
   .pipe(cssFilter.restore)
   // html
