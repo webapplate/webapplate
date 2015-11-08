@@ -11,7 +11,7 @@
     "bower_components"
   ],
   "dependencies": {
-    "l20n": "^3.4.0",
+    "l20n": "^3.4.1",
     "bootstrap": "^3.3.5",
     "bootstrap-material-design": "^0.3.0",
     "localforage": "^1.3.0",
