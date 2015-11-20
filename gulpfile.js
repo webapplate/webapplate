@@ -12,7 +12,7 @@ var babel = require('gulp-babel');
 var postcss = require('gulp-postcss');
 var cssNext = require('postcss-cssnext');
 var useref = require('gulp-useref');
-var filter = require('gulp-filter');
+var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
 var minifyHtml = require('gulp-minify-html');
 var cssnano = require('cssnano');
@@ -120,35 +120,19 @@ gulp.task('copy-vendor', function() {
 });
 
 gulp.task('optimize', function() {
-  var assets = useref.assets();
-  var jsFilter = filter('**/*.js', {restore: true});
-  var cssFilter = filter('**/*.css', {restore: true});
-  var htmlFilter = filter('**/*.html', {restore: true});
-
   return gulp.src([
     options.param.src + '/{,*/}*.html',
     '!' + options.param.src + '/test/**.*'
   ])
-  .pipe(assets)
-  // js
-  .pipe(jsFilter)
-  .pipe(babel({
-    compact: false,
-    presets: ['stage-2', 'es2015']
-  }))
-  .pipe(uglify())
-  .pipe(jsFilter.restore)
-  // css
-  .pipe(cssFilter)
-  .pipe(postcss([cssNext, cssnano]))
-  .pipe(cssFilter.restore)
-  // html
-  .pipe(htmlFilter)
-  .pipe(minifyHtml({empty: true}))
-  .pipe(htmlFilter.restore)
-  .pipe(assets.restore())
   // inject
   .pipe(useref())
+  .pipe(gulpif('**/*.js', babel({
+    compact: false,
+    presets: ['stage-2', 'es2015']
+  })))
+  .pipe(gulpif('**/*.js', uglify()))
+  .pipe(gulpif('**/*.css', postcss([cssNext, cssnano])))
+  .pipe(gulpif('**/*.html', minifyHtml({empty: true})))
   .pipe(gulp.dest(options.param.dst));
 });
 

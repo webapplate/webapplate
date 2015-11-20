@@ -13,7 +13,7 @@
   "dependencies": {
     "l20n": "^3.4.1",
     "bootstrap": "^3.3.5",
-    "bootstrap-material-design": "^0.3.0",
+    "bootstrap-material-design": "^0.4.1",
     "localforage": "^1.3.0",
     "gremlins.js": "^0.1.0",
     "fetch": "^0.10.1"
