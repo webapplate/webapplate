@@ -15,7 +15,7 @@ var useref = require('gulp-useref');
 var filter = require('gulp-filter');
 var uglify = require('gulp-uglify');
 var minifyHtml = require('gulp-minify-html');
-var minifyCss = require('gulp-minify-css');
+var cssnano = require('cssnano');
 var zip = require('gulp-zip');
 // inherit center configs
 var webapplateConfigs = require('./config');
@@ -140,8 +140,7 @@ gulp.task('optimize', function() {
   .pipe(jsFilter.restore)
   // css
   .pipe(cssFilter)
-  .pipe(postcss([cssNext]))
-  .pipe(minifyCss())
+  .pipe(postcss([cssNext, cssnano]))
   .pipe(cssFilter.restore)
   // html
   .pipe(htmlFilter)
