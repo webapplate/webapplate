@@ -24,6 +24,8 @@
   app.set('view cache', false);
   // To disable Swig's cache, do the following:
   swig.setDefaults({cache: false});
+  // Security config
+  app.set('X-powered-by', false);
   // NOTE: You should always cache templates in a production environment.
   // Don't leave both of these to `false` in production!
 
