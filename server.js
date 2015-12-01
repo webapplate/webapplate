@@ -27,7 +27,9 @@
   swig.setDefaults({cache: false});
   // Security config
   // https://github.com/helmetjs/helmet
-  app.use(helmet());
+  if (!configs.debug) {
+    app.use(helmet());
+  }
   // configure app to use bodyParser()
   // this will let us get the data from a POST via
   // POST: {"name":"foo","color":"red"} or
