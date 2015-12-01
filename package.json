@@ -14,6 +14,7 @@
     "errorhandler": "^1.4.2",
     "express": "^4.13.3",
     "express-session": "^1.12.1",
+    "helmet": "^0.15.0",
     "swig": "^1.4.2"
   },
   "devDependencies": {

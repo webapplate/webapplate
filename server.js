@@ -2,6 +2,7 @@
   'use strict';
 
   var express = require('express');
+  var helmet = require('helmet');
   var fs = require('fs');
   var https = require('https');
   var swig = require('swig');
@@ -25,10 +26,8 @@
   // To disable Swig's cache, do the following:
   swig.setDefaults({cache: false});
   // Security config
-  app.set('X-powered-by', false);
-  // NOTE: You should always cache templates in a production environment.
-  // Don't leave both of these to `false` in production!
-
+  // https://github.com/helmetjs/helmet
+  app.use(helmet());
   // configure app to use bodyParser()
   // this will let us get the data from a POST via
   // POST: {"name":"foo","color":"red"} or
