@@ -41,7 +41,5 @@
     }
   };
 
-  document.l10n.ready.then(function() {
-    App.init();
-  });
+  document.l10n.ready.then(App.init);
 }());
