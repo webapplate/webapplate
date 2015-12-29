@@ -1,7 +1,7 @@
 {
   "name": "Webapplate",
   "description": "The template to create a universal web app, with ES6 and future-proved CSS",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "engines": {
     "node": ">= 0.10.0",
     "npm": ">= 1.0.0"
