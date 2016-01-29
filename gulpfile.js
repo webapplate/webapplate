@@ -14,7 +14,7 @@ var cssNext = require('postcss-cssnext');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
-var minifyHtml = require('gulp-minify-html');
+var htmlmin = require('gulp-htmlmin');
 var cssnano = require('cssnano');
 var zip = require('gulp-zip');
 // inherit center configs
@@ -132,7 +132,7 @@ gulp.task('optimize', function() {
   })))
   .pipe(gulpif('**/*.js', uglify()))
   .pipe(gulpif('**/*.css', postcss([cssNext, cssnano])))
-  .pipe(gulpif('**/*.html', minifyHtml({empty: true})))
+  .pipe(gulpif('**/*.html', htmlmin({empty: true})))
   .pipe(gulp.dest(options.param.dst));
 });
 
