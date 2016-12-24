@@ -2,6 +2,8 @@
 
 # Webapplate
 
+**Webapplate is inactive, please consider [neutrino](https://github.com/mozilla-neutrino/neutrino) instead**
+
 The template to create a maintainable web app. For your server, client, Android/iOS/FxOS or desktop projects.
 
 Before hacking with webapplate, Try it with [jsfiddle playground](http://jsfiddle.net/gasolin/sxjja37j/)! Or you can fork [ghapplate](https://github.com/webapplate/ghapplate) to experience web app directly on github! Webapplate is the most maintainable choice which allows you write with future proved javascript and css and trans-compile to current working code.
